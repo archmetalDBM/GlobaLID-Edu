@@ -1,0 +1,79 @@
+## Welcome {.unnumbered}
+This interactive textbook is part of  [GlobaLID](), the Global Lead Isotope Database. GlobaLID aims to modernise the handling of lead isotope data in archaeological research by providing an modern infrastructure for handling, storing and accessing these data. While working on this infrastructure, it became quickly obvious that beside the infrastructural aspects, a large demand on training in the lead isotope method exists, too. As a result, the idea of this interactive textbook was born.
+
+This textbook aims to provide a holistic approach on how lead isotope are obtained, used and interpret in archaeological research by combining aspects from geoscience, archaeology, and data science. The target group are all persons with a general background in science and basic knowledge in geosciences and preferably archaeology. 
+
+The content of this book mixes text with a wide range of media, such as videos, interactive content, serious games and small embedded application. The principles guiding work on the book was to make its content available and as accessible as possible without requiring specialised infrastructure, including a collection of print templates and other resources that you will hopefully find useful for, e.g., everyday work in the lab.  
+
+This textbook is still work in progress with additional chapters being added over time. We are welcoming any kind of contributions and feedback from our readers and the experts in the field. This being said, the current outline of the book is already presented to show what is yet to come and where we would be particularly happy about contributions of the community. If you want to contribute, either do so by [contacting the editor](mailto:globalid@bergbaumuseum.de) or by forking the [associated Github repository](https://github.com/archmetalDBM/GlobaLID-Edu) and create a push request with your materials. 
+
+## The team
+
+### Editor
+
+::: {layout="[ 15 , 85 ]"}
+
+::: {#column-image}
+![](assets/TRose.png)
+:::
+
+::: {#column-text}
+**Thomas Rose** (Goethe-Universität Frankfurt) <br> Thomas is a coordinator in the NDFI4Earth at Goethe University Frankfurt and visiting scientist of the Deutsches Bergbau-Museum Bochum. He gained expertise in ancient copper metallurgy with focus on the Chalcolithic Southern Levant and various metal isotope systems. In addition, he is member of the GlobaLID Core Team and developer of the R package ChronochRt. More info at <https://copper-smelting.com>.
+::: 
+
+:::
+
+
+### Authors 
+
+::: {layout="[ 15 , 85 ]"}
+
+::: {#column-image}
+![](cover.png)
+:::
+
+::: {#column-text}
+**Tim Greifelt** (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany)
+::: 
+
+:::
+
+
+::: {layout="[ 15 , 85 ]"}
+
+::: {#column-image}
+![](assets/Y-KHsu.png)
+:::
+
+::: {#column-text}
+**Yiu-Kang Hsu** (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany)
+::: 
+
+:::
+
+::: {layout="[ 15 , 85 ]"}
+
+::: {#column-image}
+![](assets/SKlein.png)
+:::
+
+::: {#column-text}
+**Sabine Klein** (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany; Institut für Archäologische Wissenschaften, Ruhr-Universität Bochum, Bochum, Germany; FIERCE, Frankfurt Isotope & Element Research Centre, Goethe Universität, Frankfurt am Main, Germany)
+::: 
+
+:::
+
+::: {layout="[ 15 , 85 ]"}
+
+::: {#column-image}
+![](assets/KWestner.png)
+:::
+
+::: {#column-text}
+**Katrin J. Westner** (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany)
+::: 
+
+:::
+
+## Acknowledgements 
+This work has been partially funded by the German Research Foundation (DFG) through the project NFDI4Earth (NFDI4Earth Educational Pilot, DFG project no. 460036893, <https://www.nfdi4earth.de/>) within the German National Research Data Infrastructure (NFDI, <https://www.nfdi.de/>). 

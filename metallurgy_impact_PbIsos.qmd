@@ -1,0 +1,52 @@
+---
+title: Evolution of Pb isotopes during (s)melting
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will gain understanding of the changes of Pb isotope signatures in the metallurgical process.
+
+## Prior knowledge
+... building upon what you already know about ... 
+
+* lead isotope signatures of ores
+* metallurgical process
+
+
+## Outline
+... by doing these things: 
+
+* no isotope fractionation
+* Mixing processes: fluxes, recycling, alloying
+
+
+## Learning content
+
+Powerpoint slides
+interactive tool: “buckets” with material with different materials (copper, tin, lead, scrap metal) and “mixer”, coupled with respective changes in Pb isotope diagram
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Cui, J., and Wu, X., 2011, An experimental investigation on lead isotopic fractionati
+on during metallurgical processes, Archaeometry, 53(1), 205–14.
+* Rademakers, F. W., Verly, G., Somaglino, C., and Degryse, P., 2020, Geochemical changes during Egyptian copper smelting? An experimental approach to the Ayn Soukhna process and broader implications for archaeometallurgy, Journal of Archaeological Science, 122, 105223.
+* Baron, S., Le-Carlier, C., Carignan, J., and Ploquin, A., 2009, Archaeological reconstruction of medieval lead production: Implications for ancient metal provenance studies and paleopollution tracing by Pb isotopes, Applied Geochemistry, 24(11), 2093–101.
+* Longman, J., Veres, D., Ersek, V., Phillips, D. L., Chauvel, C., and Tamas, C. G., 2018, Quantitative assessment of Pb sources in isotopic mixtures using a Bayesian mixing model, Scientific Reports, 8(1), 6154.
+* Eshel, T., Gilboa, A., Yahalom-Mack, N., Tirosh, O., and Erel, Y., 2021, Debasement of silver throughout the Late Bronze – Iron Age transition in the Southern Levant: Analytical and cultural implications, Journal of Archaeological Science, 125, 105268.
+* Pollard, A. M., and Bray, P. J., 2015, A New Method For Combining Lead Isotope and Lead Abundance Data to Characterize Archaeological Copper Alloys, Archaeometry, 57(6), 996–1008.
+* Sun, Z., Liu, S., Zhang, J., Chen, K., and Kaufman, B., 2023, Resolving the complex mixing history of ancient Chinese bronzes by Manifold Learning and a Bayesian Mixing Model, Journal of Archaeological Science, 151, 105728.
+* Bray, P., 2020, Modelling Roman Concepts of Copper-Alloy Recycling and Mutability: The Chemical Characterization Hypothesis and Roman Britain, In Recycling and Reuse in the Roman Economy (P. Bray), 237–64, Oxford University Press.
+
+

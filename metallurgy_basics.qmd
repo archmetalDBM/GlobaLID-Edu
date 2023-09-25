@@ -1,0 +1,48 @@
+---
+title: Metallurgical processes -- basics
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will gain general understanding of the metallurgical process.
+
+## Prior knowledge
+... building upon what you already know ... 
+
+* general understanding of ore structure
+
+## Material
+... by doing these things: 
+
+Video: off-voice over sequential sketches or similar
+“cheat sheet” with visualisation of basic concepts and glossary
+
+## Learning content
+
+* General process
+* General basic concepts (e.g. density segregation, slagging, fluxing, furnace atmosphere)
+
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Tylecote, R. F., 1987, The Early History of Metallurgy in Europe, Longman London and New York.
+* Allibert, M., Gaye, H., Geiseler, J., Janke, D., Keene, B. J., Kirner, D., Kowalski, M., Lehmann, J., Mills, K. C., Neuschütz, D., Parra, R., Saint-Jours, C., Spencer, P. J., Susa, M., Tmar, M., and Woermann, E., 1995, Slag Atlas, Verlag Stahleisen GmbH, Düsseldorf.
+* Bachmann, H. G., 1982, The identification of slags from archaeological sites, Institute of Archaeology Occasional Publication, 6.
+* Piatak, N. M., Parsons, M. B., and Seal, R. R., 2015, Characteristics and environmental aspects of slag: A review, Applied Geochemistry, 57, 236–66.
+* Rosenqvist, T., 2004, Principles of extractive metallurgy 2nd ed.
+* Goldenberg, G., 1996, Archäometallurgische Untersuchungen zur Entwicklung des Metallhüttenwesens im Schwarzwald. Blei-, Silber- und Kupfergewinnung von der Frühgeschichte bis zum 19. Jahrhundert, In Archäometallurgische Untersuchungen zum Metallhüttenwesen im Schwarzwald (eds. G. Goldenberg, J. Otto, and H. Steuer), 9–274, Jan Thorbecke Verlag, Sigmaringen.
+* Vignes, A., 2013, Extractive metallurgy 1: Basic thermodynamics and kinetics, John Wiley & Sons.
+* Vignes, A., 2013, Extractive metallurgy 2: metallurgical reaction processes, John Wiley & Sons.
+

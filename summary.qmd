@@ -1,0 +1,16 @@
+---
+title: Summary
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+In summary, this book has no content whatsoever.
+
+```{r}
+1 + 1
+```

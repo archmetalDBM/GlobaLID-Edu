@@ -1,0 +1,45 @@
+---
+title: What can Pb isotopes tell us?
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will learn the potential of lead isotopes in archaeological research.
+
+## Prior knowledge
+... building upon what you already know ... 
+
+* Geochemical understanding
+* Ore geology
+* Visualisation of lead isotopes
+
+
+## Material
+... by doing these things: 
+
+Expert interviews (D. Wigg-Wolf, other archaeologists)
+
+
+## Learning content
+Limitations and application of lead isotopes in archaeological research
+
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Killick, D. J., Stephens, J. A., and Fenn, T. R., 2020, Geological constraints on the use of lead isotopes for provenance in archaeometallurgy, Archaeometry, 62(S1), 86–105.
+* Artioli, G., Canovaro, C., Nimis, P., and Angelini, I., 2020, LIA of Prehistoric Metals in the Central Mediterranean Area: A Review, Archaeometry, 62(S1), 53–85.
+* Artioli, G., Angelini, I., Kaufmann, G., Canovaro, C., Dal Sasso, G., and Villa, I. M., 2017, Long-distance connections in the Copper Age: New evidence from the Alpine Iceman’s copper axe, PLOS ONE, 12(7), e0179263.
+* Pollard, A. M., 2009, What a long, strange trip it’s been: lead isotopes and archaeology, In From Mine to Microscope. Advances in the Study of Ancient Technology (eds. A. J. Shortland, I. C. Freestone, and T. Rehren), 181–90, Oxbow Books.
+* Gale, N. H., 2009, A response to the paper of A.M. Pollard: What a long, strange trip it’s been: lead isotopes and archaeology, In From Mine to Microscope. Advances in the Study of Ancient Technology (eds. A. J. Shortland, I. C. Freestone, and T. Rehren), 191–6, Oxbow Books.

@@ -1,0 +1,712 @@
+---
+title: Visualisation of lead isotope data
+author: 
+  - name: Yiu-Kang Hsu
+    orcid: 0000-0002-2439-4863
+    corresponding: true
+    email: Yiu-Kang.Hsu@bergbaumuseum.de
+---
+
+## Learning objective
+By the end of this unit you are aware about the benefits and limitations of the different ways lead isotope data can be visualised. 
+
+## Prior knowledge
+This section assumes familiarity with the prior learning materials on Pb isotope geochemistry, esp. [Chapter 3](isotope_system.qmd).
+
+
+## Material
+This section discusses different types of plots. Interactive examples of these plots allows you to explore their suitability for the different research questions on your own. 
+
+## Learning content
+Because lead isotopes are represented by three independent ratios, e.g., ^206^Pb/^204^Pb, ^207^Pb/^204^Pb, and ^208^Pb/^204^Pb, they can be visualised in a three dimensional geometric space. However, often only two dimensions can be represented in one plot. In addition, different ways of optically grouping and highlighting groups within the lead isotope space exist. Published real archaeological datasets will be used as examples to demonstrate how these data can be treated in different ways. They are available in [the GitHub repository of this book](https://github.com/archmetalDBM/GlobaLID-Edu/tree/main/example_dataset). 
+It is important to keep in mind that every plot has its pros and cons and there is no general consensus which is the best presentation.
+
+All plots were created in [R](https://cran.r-project.org) with support of different packages. The respective scripts are embedded in the [unrendered version of this chapter](https://github.com/archmetalDBM/GlobaLID-Edu/blob/main/visualisation.qmd).
+
+<!--
+Let's start with loading the required R packages:
+-->
+
+```{r}
+#| label: load-pkgs
+#| code-summary: "Packages"
+#| message: false
+#| echo: false
+#| warning: false
+
+library(plotly) # for interactive plots
+library(ggtern) # for ternary kernel density plots
+library(ks)# for kernel density plots
+library(rgl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(purrr)# for kernel density calculation
+library(downlit)# code linking
+library(xml2)   # code linking
+```
+
+
+### Binary scatter plot
+The bi-plot (@fig-plotlybinary) is by far the most common option to display lead isotope data. Since there are four isotopes of Pb, twelve combinations of isotopic ratios can be derived. The use of paired ratios depends on the instruments used and the scientific disciplines of the studies. In the early days, Pb isotopic ratios were often reported based on ^206^Pb-based ratios as ^204^Pb could not be measured precisely. However, in the 2000s, the advent of the multi-collector mass spectrometer (MC-ICP-MS) and the double- or triple-spiked technique created a huge amount of Pb isotope data with precisely measured ^204^Pb. Conventionally, environmental science tends to use the ratios based on ^206^Pb, which however generates plots with linear patterns and thus a low discrimination power [@Ellam.2010]. In geological literature, ratios based on ^204^Pb are commonplace which enable a better visualisation of system closure time (or model age) and U-Th-Pb composition (or µ and κ) of parental source(s) [@Albarede.2012]. However, it has to be kept in mind that all two-dimensional plots incompletely represent a dataset. All twelve combination plots are suggested to be tested to view the full isotopic extent of ore deposits [@Albarede.2020]. Ideally, the Pb isotopic ratios should be considered in a three-dimensional space.
+
+```{r}
+#| label: fig-plotlybinary
+#| fig-cap: "A binary plot of Roman lead artefacts in comparison with ore districts in Germany."
+#| message: false
+#| echo: false
+
+# R code modifed from https://stackoverflow.com/questions/75596474/add-a-legend-to-a-plotly-plot-with-drop-down-menus-in-r
+
+##load dataset
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+## select column names (change it later) X204.206,207/206,208/206,208/204,207/204,206/204,Region 
+data <- subset(Roman_case, select=c('Pb204.Pb206','Pb207.Pb206','Pb208.Pb206','Pb208.Pb204','Pb207.Pb204','Pb206.Pb204','Region') )
+
+## select region of interest for plotting 
+data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
+
+## reorder the plotting levels
+data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
+
+## change column names to Pb isotopic ratio with superscript
+# 0: \U2070, 2:\U00B2, 4:\U2074, 6:\U02076, 7: \U2077, 8:\U2078
+#colnames(data1) <- c('\U00B2\U2070\U02074Pb/\U00B2\U2070\U2076Pb','\U00B2\U2070\U02077Pb/\U00B2\U2070\U2076Pb',
+#                    '\U00B2\U2070\U02078Pb/\U00B2\U2070\U2076Pb','\U00B2\U2070\U02078Pb/\U00B2\U2070\U2074Pb',
+#                    '\U00B2\U2070\U02077Pb/\U00B2\U2070\U2074Pb','\U00B2\U2070\U02076Pb/\U00B2\U2070\U2074Pb','Region')
+
+
+# initial plot setup
+roman.col <- factor(data1$Region, label = c('red','blue','green', 'black'))
+roman.symbol <- factor(data1$Region, labels = c('diamond', 'triangle-up', 'square','cross-thin'))
+
+
+plt <- plot_ly(data = data1, x = ~data1$Pb206.Pb204, y = ~data1$Pb207.Pb204, 
+                split = ~Region,                                # <- I'm new
+                marker = list(color = alpha(as.character(roman.col), 0.25), 
+                              symbol = ~roman.symbol, size = 10, 
+                              line = list(color = 'rgb(0, 0, 0)', width = 1)),
+                type = "scatter", mode = "markers", text = ~Region,
+                hovertemplate = paste('<i>Region</i>: %{text}',
+                                      '<br><b>X</b>: %{x}<br>',
+                                      '<b>Y</b>: %{y}'))
+# dataframe for each region
+ia <- data1[data1$Region == levels(data1$Region)[1],] 
+ib <- data1[data1$Region == levels(data1$Region)[2],]
+ic <- data1[data1$Region == levels(data1$Region)[3],]
+id <- data1[data1$Region == levels(data1$Region)[4],]
+
+
+##set up drop-down menus for x and y variables 
+btn <- function(xLoc, m, nms, xOry) { # x btn position, method, names, x or y
+  list(type = "list", x = xLoc, xanchor = "left", y = 1.2, 
+       buttons = lapply(
+         nms, function(k) {           # iterate over names
+           if(xOry == "x") { # is this creating x or y btns?
+             args = list(    # a list for each trace (each legend entry)
+               list(x = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
+               list(xaxis = list(title = k)))
+           } else {
+             args = list(    # a list for each trace (each legend 
+               list(y = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
+               list(yaxis = list(title = list(text = k))))
+           }
+           list(
+             method = m, label = k, args = args)
+         })
+  )
+}
+
+# add layout
+plot2 <- plt %>% layout(
+  xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
+  yaxis = list(title = "<sup>207</sup>Pb/<sup>204</sup>Pb"),
+  updatemenus = list(btn(.2, "update", names(data1)[-7], "x"),
+                     btn(.8, "update", names(data1)[-7], "y")), 
+  showlegend = TRUE,
+  annotations = list(
+    list(
+      text = "<b>X-Axis:</b>", x=0.04, y=1.18, 
+      xref='paper', yref='paper',xanchor = "left", showarrow=FALSE
+    ),
+    list(
+      text = "<b>Y-Axis:</b>", x=0.63, y=1.18, 
+      xref='paper', yref='paper',xanchor = "left", showarrow=FALSE
+    )
+  )
+)
+#make the plot
+plot2
+```
+
+### Bi-plot using geological-informed parameters
+Instead of isotopic ratios, @Albarede.2012 advocate the use of calculated geological model parameters, namely the model age (T), U/Pb (μ), and Th/U (κ) to discriminate potential ore sources in provenance studies (@fig-plotlygeobinary). As shown in [chapter 3](isotope_system.qmd), ^206^Pb, ^207^Pb, and ^208^Pb are generated by radioactive decay of their parental isotopes ^238U^, ^235^U, and ^232^Th, respectively. We can therefore calculate the model age, ^238^U/^204^Pb and ^232^Th/^238^U from the Pb isotope ratios determined for a given sample using the equations provided in @Albarede.2012 or any other of the Pb isotope models mentioned in chapter 3 by using, e.g., an [R script](https://github.com/archmetalDBM/GlobaLID-database/blob/main/calculate_model_ages.R).
+
+```{r}
+#| label: fig-plotlygeobinary
+#| fig-cap: "A binary plot of Roman lead artefacts using geological parameters of model age (T), U/Pb (μ), and Th/U (κ)."
+#| message: false
+#| echo: false
+
+# R code modifed from https://stackoverflow.com/questions/75596474/add-a-legend-to-a-plotly-plot-with-drop-down-menus-in-r
+
+##load dataset
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+## select column names Age, Mu, Kappa,Region 
+data <- subset(Roman_case, select=c('Age','Mu','Kappa','Region') )
+
+## remove missing values 
+data1<-na.omit(data)
+
+## select region of interset for plotting 
+data2 <- subset(data1,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
+
+## reorder the plotting levels
+data2$Region <- factor(data2$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
+
+## column names
+colnames(data2) <- c('Age','U/Pb','Th/U','Region')
+
+# initial plot setup
+roman.col <- factor(data2$Region, label = c('red','blue','green', 'black'))
+roman.symbol <- factor(data2$Region, labels = c('diamond', 'triangle-up', 'square','cross-thin'))
+
+
+plt1 <- plot_ly(data = data2, x = ~data2$Age, y = ~data2$`U/Pb`, 
+               split = ~Region,                                # <- I'm new
+               marker = list(color = alpha(as.character(roman.col), 0.25), 
+                             symbol = ~roman.symbol, size = 10, 
+                             line = list(color = 'rgb(0, 0, 0)', width = 1)),
+               type = "scatter", mode = "markers", text = ~Region,
+               hovertemplate = paste('<i>Region</i>: %{text}',
+                                     '<br><b>X</b>: %{x}<br>',
+                                     '<b>Y</b>: %{y}'))
+# dataframe for each region
+ia <- data2[data2$Region == levels(data2$Region)[1],] 
+ib <- data2[data2$Region == levels(data2$Region)[2],]
+ic <- data2[data2$Region == levels(data2$Region)[3],]
+id <- data2[data2$Region == levels(data2$Region)[4],]
+
+
+##set up drop-down menus for x and y variables 
+btn <- function(xLoc, m, nms, xOry) { # x btn position, method, names, x or y
+  list(type = "list", x = xLoc, xanchor = "left", y = 1.2, 
+       buttons = lapply(
+         nms, function(k) {           # iterate over names
+           if(xOry == "x") { # is this creating x or y btns?
+             args = list(    # a list for each trace (each legend entry)
+               list(x = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
+               list(xaxis = list(title = k)))
+           } else {
+             args = list(    # a list for each trace (each legend 
+               list(y = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
+               list(yaxis = list(title = list(text = k))))
+           }
+           list(
+             method = m, label = k, args = args)
+         })
+  )
+}
+
+# add layout
+plot3 <- plt1 %>% layout(
+  xaxis = list(title = "Age"),
+  yaxis = list(title = "U/Pb"),
+  updatemenus = list(btn(.2, "update", names(data2)[-4], "x"),
+                     btn(.8, "update", names(data2)[-4], "y")), 
+  showlegend = TRUE,
+  annotations = list(
+    list(
+      text = "<b>X-Axis:</b>", x=0.04, y=1.18, 
+      xref='paper', yref='paper',xanchor = "left", showarrow=FALSE
+    ),
+    list(
+      text = "<b>Y-Axis:</b>", x=0.63, y=1.18, 
+      xref='paper', yref='paper',xanchor = "left", showarrow=FALSE
+    )
+  )
+)
+#make the plot
+plot3
+
+```
+
+### Bi-plot with 90% confidence ellipse
+The increasing amount of available Pb isotope analyses resulted in the issue of how to effectively present overlapping data. One way to circumvent this problem is the creation of so-called "ore fields" that represent the extent of Pb isotopic variation given that the data follow a normal distribution. Some researchers have resorted to the 90% confidence ellipse (@fig-ellipse) as the reference for ore sourcing [@StosGale.1997]. This technique was severely criticised by @Baxter.1998, who demonstrated the non-normality of Pb isotope data in a number of instances. The 90% confidence ellipse is no longer considered suitable for representing an ore Pb isotopic population.
+
+```{r}
+#| label: fig-ellipse 
+#| fig-cap: "Binary scatter plots with 90%confidence ellipses around data points."
+#| fig-subcap:
+#|   - "Ellipses based on ^206^Pb vs ^207^Pb"
+#|   - "Ellipses based on ^206^Pb vs ^208^Pb" 
+#| fig-height: 8
+#| fig-width: 10
+#| layout-ncol: 2
+#| message: false
+#| echo: false
+
+##load dataset
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+## select column names (change it later) X204.206,207/206,208/206,208/204,207/204,206/204,Region 
+data <- subset(Roman_case, select=c('Pb204.Pb206','Pb207.Pb206','Pb208.Pb206','Pb208.Pb204','Pb207.Pb204','Pb206.Pb204','Region') )
+
+## select region of interest for plotting 
+data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
+
+## reorder the plotting levels
+data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
+
+p_206 <- ggplot(data1, aes(x=Pb206.Pb204,y= Pb207.Pb204, color = Region,shape = Region, fill = Region)) +
+  geom_point(stroke =0.2,size = 2.5) +
+  scale_shape_manual(name = "",
+                     labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),
+                     values = c(23,24,22,3))+
+  scale_colour_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values = c("black","black","black","black"))+
+  scale_fill_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values =alpha(c("red","blue", "green","black"),0.8))+
+  stat_ellipse(level = 0.9,type = "t",linewidth=0.1,show.legend = NA)+
+  theme_bw()
+
+ggplotly(p_206,tooltip = c("x", "y", "fill"))%>% layout( xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
+              yaxis = list(title = "<sup>207</sup>Pb/<sup>204</sup>Pb"),
+              legend = list(font = list(size = 10),orientation = "h",xanchor = "center", x = 0.4, y = 1))
+
+p_208 <- ggplot(data1, aes(x= Pb206.Pb204,y= Pb208.Pb204, color = Region,shape = Region, fill = Region)) +
+  geom_point(stroke =0.2,size = 2.5) +
+  scale_shape_manual(name = "",
+                     labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),
+                     values = c(23,24,22,3))+
+  scale_colour_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values = c("black","black","black","black"))+
+  scale_fill_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values =alpha(c("red","blue", "green","black"),0.8))+
+  stat_ellipse(level = 0.9,type = "t",linewidth=0.1,show.legend = NA)+
+  theme_bw()
+
+ggplotly(p_208,tooltip = c("x", "y", "fill")) %>% layout( xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
+                    yaxis = list(title = "<sup>208</sup>Pb/<sup>204</sup>Pb"),
+                    legend = list(font = list(size = 10),orientation = "h",xanchor = "center", x = 0.4,y = 1))
+
+
+```
+
+### Binary plot with the kernel density estimation
+Due to the non-normality of Pb isotope data, both @Baxter.1997 and @Scaife.1999 advocated the use of more robust kernel density estimates (KDEs) to display the isotopic extent of orefields (@fig-2dKDE). KDEs are a non-parametric method to transform continuous data into a smoothed probability density function. KDEs offer three main advantages: 
+
+1. They do not assume the normality of data; 
+2. They can produce smoother distributions than conventional histograms, whose appearance is significantly affected by the choices of bin width and the start/end points of bins; and 
+3. They can represent data in a multidimensional space and enable users to effectively compare different datasets either graphically or mathematically. 
+
+Given these advantages, the KDE method has become popular in recent publications of archaeological sciences [@Hsu.2018].
+
+```{r}
+#| label: fig-2dKDE 
+#| fig-cap: "Binary plots with the KDEs of mining regions. Note that three different color gradients from light to dark represent respective intervals of 95%, 75%, and 50%."
+#| fig-subcap:
+#|   - "KDEs based on ^206^Pb vs ^207^Pb"
+#|   - "KDEs based on ^206^Pb vs ^208^Pb" 
+#| fig-height: 8
+#| fig-width: 10
+#| layout-ncol: 2
+#| message: false
+#| echo: false
+
+##load dataset
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+# select individual regions/assemblages
+N_Eifel<-Roman_case[which(Roman_case$Region=="Northern Eifel"),]
+Sauerland<-Roman_case[which(Roman_case$Region=="Sauerland"),]
+Bergisches_Land<-Roman_case[which(Roman_case$Region=="Bergisches Land"),]
+Roman_object<-Roman_case[which(Roman_case$Region=="Roman object"),]
+
+# select variables to compute KDE
+
+N_Eifel_206v207<-subset(N_Eifel, select=c(Pb206.Pb204,Pb207.Pb204))
+Sauerland_206v207<-subset(Sauerland, select=c(Pb206.Pb204,Pb207.Pb204))
+Bergisches_Land_206v207<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb207.Pb204))
+Roman_object_206v207<-subset(Roman_object, select=c(Pb206.Pb204,Pb207.Pb204))
+
+N_Eifel_206v208<-subset(N_Eifel, select=c(Pb206.Pb204,Pb208.Pb204))
+Sauerland_206v208<-subset(Sauerland, select=c(Pb206.Pb204,Pb208.Pb204))
+Bergisches_Land_206v208<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb208.Pb204))
+Roman_object_206v208<-subset(Roman_object, select=c(Pb206.Pb204,Pb208.Pb204))
+
+
+# 2-D KDE computation for lead isotopes 206/204 vs 207/204
+
+N_Eifel_206v207_kdh<-ks::kde(N_Eifel_206v207,  compute.cont = TRUE,gridsize = 1024)
+Sauerland_206v207_kdh<-ks::kde(Sauerland_206v207,  compute.cont = TRUE,gridsize = 1024)
+Bergisches_Land_206v207_kdh<-ks::kde(Bergisches_Land_206v207,  compute.cont = TRUE,gridsize = 1024)
+
+## compute KDE for contour 95%, 75%, and 50%
+N_Eifel_206v207_95<- with(N_Eifel_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+N_Eifel_206v207_95 <- lapply(N_Eifel_206v207_95, data.frame)    
+N_Eifel_206v207_95 <- purrr::map_dfr(.x=N_Eifel_206v207_95, .f=~., .id="group")
+
+N_Eifel_206v207_75<- with(N_Eifel_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+N_Eifel_206v207_75 <- lapply(N_Eifel_206v207_75, data.frame)    
+N_Eifel_206v207_75 <- purrr::map_dfr(.x=N_Eifel_206v207_75, .f=~., .id="group")
+
+N_Eifel_206v207_50<- with(N_Eifel_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+N_Eifel_206v207_50 <- lapply(N_Eifel_206v207_50, data.frame)    
+N_Eifel_206v207_50 <- purrr::map_dfr(.x=N_Eifel_206v207_50, .f=~., .id="group")
+
+
+Sauerland_206v207_95<- with(Sauerland_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+Sauerland_206v207_95 <- lapply(Sauerland_206v207_95, data.frame)    
+Sauerland_206v207_95 <- purrr::map_dfr(.x=Sauerland_206v207_95, .f=~., .id="group")
+
+Sauerland_206v207_75<- with(Sauerland_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+Sauerland_206v207_75 <- lapply(Sauerland_206v207_75, data.frame)    
+Sauerland_206v207_75 <- purrr::map_dfr(.x=Sauerland_206v207_75, .f=~., .id="group")
+
+Sauerland_206v207_50<- with(Sauerland_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+Sauerland_206v207_50 <- lapply(Sauerland_206v207_50, data.frame)    
+Sauerland_206v207_50 <- purrr::map_dfr(.x=Sauerland_206v207_50, .f=~., .id="group")
+
+
+Bergisches_Land_206v207_95<- with(Bergisches_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+Bergisches_Land_206v207_95 <- lapply(Bergisches_Land_206v207_95, data.frame)    
+Bergisches_Land_206v207_95 <- purrr::map_dfr(.x=Bergisches_Land_206v207_95, .f=~., .id="group")
+
+Bergisches_Land_206v207_75<- with(Bergisches_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+Bergisches_Land_206v207_75 <- lapply(Bergisches_Land_206v207_75, data.frame)    
+Bergisches_Land_206v207_75 <- purrr::map_dfr(.x=Bergisches_Land_206v207_75, .f=~., .id="group")
+
+Bergisches_Land_206v207_50<- with(Bergisches_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+Bergisches_Land_206v207_50 <- lapply(Bergisches_Land_206v207_50, data.frame)    
+Bergisches_Land_206v207_50 <- purrr::map_dfr(.x=Bergisches_Land_206v207_50, .f=~., .id="group")
+
+# 2-D KDE computation for lead isotopes 206/204 vs 208/204
+
+N_Eifel_206v208_kdh<-ks::kde(N_Eifel_206v208,  compute.cont = TRUE,gridsize = 1024)
+Sauerland_206v208_kdh<-ks::kde(Sauerland_206v208,  compute.cont = TRUE,gridsize = 1024)
+Bergisches_Land_206v208_kdh<-ks::kde(Bergisches_Land_206v208,  compute.cont = TRUE,gridsize = 1024)
+
+## compute KDE for contour 95%, 75%, and 50%
+N_Eifel_206v208_95<- with(N_Eifel_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+N_Eifel_206v208_95 <- lapply(N_Eifel_206v208_95, data.frame)    
+N_Eifel_206v208_95 <- purrr::map_dfr(.x=N_Eifel_206v208_95, .f=~., .id="group")
+
+N_Eifel_206v208_75<- with(N_Eifel_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+N_Eifel_206v208_75 <- lapply(N_Eifel_206v208_75, data.frame)    
+N_Eifel_206v208_75 <- purrr::map_dfr(.x=N_Eifel_206v208_75, .f=~., .id="group")
+
+N_Eifel_206v208_50<- with(N_Eifel_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+N_Eifel_206v208_50 <- lapply(N_Eifel_206v208_50, data.frame)    
+N_Eifel_206v208_50 <- purrr::map_dfr(.x=N_Eifel_206v208_50, .f=~., .id="group")
+
+
+Sauerland_206v208_95<- with(Sauerland_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+Sauerland_206v208_95 <- lapply(Sauerland_206v208_95, data.frame)    
+Sauerland_206v208_95 <- purrr::map_dfr(.x=Sauerland_206v208_95, .f=~., .id="group")
+
+Sauerland_206v208_75<- with(Sauerland_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+Sauerland_206v208_75 <- lapply(Sauerland_206v208_75, data.frame)    
+Sauerland_206v208_75 <- purrr::map_dfr(.x=Sauerland_206v208_75, .f=~., .id="group")
+
+Sauerland_206v208_50<- with(Sauerland_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+Sauerland_206v208_50 <- lapply(Sauerland_206v208_50, data.frame)    
+Sauerland_206v208_50 <- purrr::map_dfr(.x=Sauerland_206v208_50, .f=~., .id="group")
+
+
+Bergisches_Land_206v208_95<- with(Bergisches_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+Bergisches_Land_206v208_95 <- lapply(Bergisches_Land_206v208_95, data.frame)    
+Bergisches_Land_206v208_95 <- purrr::map_dfr(.x=Bergisches_Land_206v208_95, .f=~., .id="group")
+
+Bergisches_Land_206v208_75<- with(Bergisches_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+Bergisches_Land_206v208_75 <- lapply(Bergisches_Land_206v208_75, data.frame)    
+Bergisches_Land_206v208_75 <- purrr::map_dfr(.x=Bergisches_Land_206v208_75, .f=~., .id="group")
+
+Bergisches_Land_206v208_50<- with(Bergisches_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+Bergisches_Land_206v208_50 <- lapply(Bergisches_Land_206v208_50, data.frame)    
+Bergisches_Land_206v208_50 <- purrr::map_dfr(.x=Bergisches_Land_206v208_50, .f=~., .id="group")
+
+
+## plot 2d-kde diagram for 206/204 vs 207/204
+k1<-ggplot(data=Roman_object_206v207, aes(x = Pb206.Pb204, y = Pb207.Pb204)) + 
+  geom_polygon(aes(x,y,group=group),data=N_Eifel_206v207_95,color="red",fill="red",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=N_Eifel_206v207_75,color="red",fill="red",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=N_Eifel_206v207_50,color="red",fill="red",alpha=0.10) +
+  geom_polygon(aes(x,y,group=group),data=Sauerland_206v207_95,color="blue",fill="blue",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=Sauerland_206v207_75,color="blue",fill="blue",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=Sauerland_206v207_50,color="blue",fill="blue",alpha=0.10) +
+  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v207_95,color="green",fill="green",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v207_75,color="green",fill="green",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v207_50,color="green",fill="green",alpha=0.10) +
+  geom_point(shape=3,size=2.3,color="black",alpha=0.65)+
+  annotate("rect", xmin=18.35, xmax=18.38, ymin=15.54 , ymax=15.55, alpha=0.5, color="red", fill="red")+
+  annotate(geom = "text", x = 18.475, y = 15.545, label = "Northern Eifel",size =3, hjust = "left")+
+  annotate("rect", xmin=18.35, xmax=18.38, ymin=15.527 , ymax=15.537, alpha=0.5, color="blue", fill="blue")+
+  annotate(geom = "text", x = 18.452, y = 15.532, label = "Sauerland", size =3,hjust = "left")+
+  annotate("rect", xmin=18.35, xmax=18.38, ymin=15.514 , ymax=15.524, alpha=0.5, color="green", fill="green")+
+  annotate(geom = "text", x = 18.482, y = 15.519, label = "Bergisches Land",size =3, hjust = "left")+
+  annotate(geom = "point", x = 18.365, y = 15.507,shape = 3, colour = "black",alpha=0.5, size = 3) + 
+  annotate(geom = "text", x = 18.475, y = 15.507, label = "Roman object",size =3, hjust = "left")+
+  theme_bw()+
+  labs( x = expression(""^"206"*"Pb/"^"204"*"Pb"),
+        y = expression(""^"207"*"Pb/"^"204"*"Pb")) +
+  theme(panel.grid.minor= element_blank())+
+  theme(axis.text=element_text(size=10))+  # adjust x y axis tick mark
+  theme(axis.title = element_text(size=14))+ # adjust x y axis title 
+  scale_x_continuous(limits = c(18, 18.6), breaks = seq(18, 18.6, by = 0.1))+
+  scale_y_continuous(limits = c(15.5, 15.8), breaks = seq(15.5, 15.8, by = 0.05))
+
+p1<-ggplotly(k1)%>% layout(
+  xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
+  yaxis = list(title = "<sup>207</sup>Pb/<sup>204</sup>Pb"))
+p1                                                                                      
+
+
+## plot 2d-kde diagram for 206/204 vs 208/204
+k2<-ggplot(data=Roman_object_206v208, aes(x = Pb206.Pb204, y = Pb208.Pb204)) + 
+  geom_polygon(aes(x,y,group=group),data=N_Eifel_206v208_95,color="red",fill="red",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=N_Eifel_206v208_75,color="red",fill="red",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=N_Eifel_206v208_50,color="red",fill="red",alpha=0.10) +
+  geom_polygon(aes(x,y,group=group),data=Sauerland_206v208_95,color="blue",fill="blue",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=Sauerland_206v208_75,color="blue",fill="blue",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=Sauerland_206v208_50,color="blue",fill="blue",alpha=0.10) +
+  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v208_95,color="green",fill="green",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v208_75,color="green",fill="green",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v208_50,color="green",fill="green",alpha=0.10) +
+  geom_point(shape=3,size=3,color="black",alpha=0.65)+
+  annotate("rect", xmin=18.35, xmax=18.38, ymin=38.07 , ymax=38.1, alpha=0.5, color="red", fill="red")+
+  annotate(geom = "text", x = 18.475, y = 38.078, label = "Northern Eifel",size =3,hjust = "left")+
+  annotate("rect", xmin=18.35, xmax=18.38, ymin=38.03 , ymax=38.06, alpha=0.5, color="blue", fill="blue")+
+  annotate(geom = "text", x = 18.452, y = 38.045, label = "Sauerland",size =3, hjust = "left")+
+  annotate("rect", xmin=18.35, xmax=18.38, ymin=37.99 , ymax=38.02, alpha=0.5, color="green", fill="green")+
+  annotate(geom = "text", x = 18.482, y = 38.005, label = "Bergisches Land",size =3, hjust = "left")+
+  annotate(geom = "point", x = 18.365, y = 37.965, colour = "black",shape =3, alpha=0.5, size = 3) + 
+  annotate(geom = "text", x = 18.475, y = 37.965, label = "Roman object",size =3, hjust = "left")+
+  theme_bw()+
+  labs( x = expression(""^"206"*"Pb/"^"204"*"Pb"),
+        y = expression(""^"208"*"Pb/"^"204"*"Pb")) +
+  theme(panel.grid.minor= element_blank())+
+  theme(axis.text=element_text(size=10))+  # adjust x y axis tick mark
+  theme(axis.title = element_text(size=14))+ # adjust x y axis title 
+  scale_x_continuous(limits = c(18, 18.6), breaks = seq(18, 18.6, by = 0.1))+
+  scale_y_continuous(limits = c(37.9, 38.8), breaks = seq(38, 39, by = 0.1))
+
+p2<-ggplotly(k2)%>% layout(
+  xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
+  yaxis = list(title = "<sup>208</sup>Pb/<sup>204</sup>Pb"))
+p2   
+```
+
+### Ternary diagram
+This plotting method was first utilised by @Cannon.1961 who aimed to understand the principles of isotopic variations in ore lead. Raw isotopic ratios were expressed as relative abundances of ^206^Pb, ^207^Pb, ^208^Pb summed up to 100% by leaving out ^204^Pb. The transformed data were plotted as trilinear coordinates. The choice of represented masses was justified by the incapability of precisely determining the amount of ^204^Pb due to its low natural abundance of only 1.4% (uncertainties ~2.5%). These ternary diagrams were proposed as a solution to overcome the problem of analytically fundamentally biased data. However, they were rendered irrelevant with the advent of improved analytical techniques and the development of error correction models, which greatly increased precision [@Taylor.2015]. A good example of using ternary diagrams is provided in [@Hsu.2019]. 
+
+The raw isotopic ratios are mathematically converted to three individual Pb compositions using the following equations:
+
+$$
+^{206}Pb = \frac{\left(\frac{^{206}Pb}{^{204}Pb}\right) \cdot 100}{\left(\frac{^{206}Pb}{^{204}Pb}\right) + \left(\frac{^{207}Pb}{^{204}Pb}\right) + \left(\frac{^{208}Pb}{^{204}Pb}\right)}
+$$
+
+$$
+^{207}Pb = \frac{\left(\frac{^{207}Pb}{^{204}Pb}\right) \cdot 100}{\left(\frac{^{206}Pb}{^{204}Pb}\right) + \left(\frac{^{207}Pb}{^{204}Pb}\right) + \left(\frac{^{208}Pb}{^{204}Pb}\right)}
+$$
+
+$$
+^{208}Pb = \frac{\left(\frac{^{208}Pb}{^{204}Pb}\right) \cdot 100}{\left(\frac{^{206}Pb}{^{204}Pb}\right) + \left(\frac{^{207}Pb}{^{204}Pb}\right) + \left(\frac{^{208}Pb}{^{204}Pb}\right)}
+$$
+@fig-ternaryscatter displays a ternary scatter plot. 
+
+```{r}
+#| label: fig-ternaryscatter
+#| fig-cap: "A ternary plot of lead isotope data visualising the same dataset."
+#| message: false
+#| echo: false
+
+##load dataset
+Roman_case <- read.csv("./example_dataset/Roman.csv", encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+## select column names X204.206,207/206,208/206,208/204,207/204,206/204,Region 
+data <- subset(Roman_case, select=c('Pb207','Pb206','Pb208','Region') )
+
+## select region of interest for plotting 
+data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
+
+## reorder the plotting levels
+data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
+
+roman.col <- factor(data1$Region, labels = c('red','blue','green', 'black'))
+roman.symbol <- factor(data1$Region, labels = c('diamond', 'triangle-up', 'square','cross-thin'))
+
+
+p1 <- plot_ly(data = data1, a = ~Pb206, b = ~Pb207, c = ~Pb208,
+              color = ~Region, symbol = ~Region, type = "scatterternary",mode ="markers",
+              marker = list(color = alpha(as.character(roman.col), 0.25), 
+                            symbol = ~roman.symbol, size = 8.5, 
+                            line = list(color = 'rgb(0, 0, 0)', width = 1)))
+              
+p2 <- p1 %>% layout(ternary = list(
+              sum = 100,
+              aaxis = list(title = "206",
+                tickfont = list(size = 10),
+                tickangle = 60,
+                ticklen = 10,
+                min = min(data1$Pb206),
+                max = max(data1$Pb206)
+              ),
+              baxis = list(title = "207",
+                tickfont = list(size = 10),
+                tickangle = -60,
+                ticklen = 10,
+                min = min(data1$Pb207),
+                max = max(data1$Pb207)
+              ),
+              caxis = list(title = "208",
+                tickfont = list(size = 10),
+                ticklen = 10,
+                min = min(data1$Pb208),
+                max = max(data1$Pb208)
+              )
+            ))
+
+p2
+```
+### Ternary diagram with the kernel density estimation
+KDE contour plots like in @fig-2dKDE can also be generated for ternary diagrams (@fig-ternaryKDE). This helps us to better visualise the isotopic distribution of ore populations when many data are presented. However, the ternary KDE, in a sense, is not equal to the three-dimensional KDE. It is rather a regular KDE that is truncated to the ternary triangle.
+
+```{r}
+#| label: fig-ternaryKDE
+#| fig-cap: "Ternary plot with the KDEs of mining regions. Note that the contours in the KDEs represent different intervals. "
+#| message: false
+#| echo: false
+
+##load dataset
+Roman_case <- read.csv("./example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+## select column names X204.206,207/206,208/206,208/204,207/204,206/204,Region 
+data <- subset(Roman_case, select=c('Pb207','Pb206','Pb208','Region') )
+
+## select region of interset for plotting 
+data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land') )
+data_object <- subset(data,Region %in% c('Roman object') )
+## reorder the plotting levels
+data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land'))
+
+## ternary contour plot
+plot <- ggtern(data= data1,aes(x=Pb207,y=Pb206,z=Pb208,color = Region))+ 
+  geom_density_tern(n = 1000,bins=10,alpha = 0.5)+
+  geom_point (data = data_object, size = 2, alpha = 0.5)+
+  scale_colour_manual(values = c("green","red","black","blue"))+
+  theme_bw()+
+  labs( x       = expression({}^207*"Pb(%)"),
+        xarrow  = "207",
+        y       = expression({}^206*"Pb(%)"),
+        yarrow  = "206",
+        z       = expression({}^208*"Pb(%)"),
+        zarrow  = "208")  +
+  theme(legend.position      = c(1.01,0.95),
+        legend.justification = c(1,1),
+        legend.box.just      = 'left') +
+  theme(legend.text=element_text(size=12),legend.key = element_rect(fill = NA,colour=NA))+
+  scale_T_continuous (limits = c(0.258,0.252))+
+  scale_L_continuous (limits = c(0.213,0.219))+
+  scale_R_continuous (limits = c(0.529,0.535))
+
+plot
+
+```
+
+### Three-dimensional plot
+The use of any single bivariate plot is insufficient for provenancing and is visually confusing when the ratios overlap. Therefore, additional diagrams are needed to show other combinations of isotopes. Three-dimensional plots represent the distribution of data in a three dimensional space (@fig-3dplot) which has a higher discrimination power and is therefore better suited for provenance studies. The downside is that it is inherently difficult to read a 3D diagram and, therefore, a rotatable version is highly recommended. 
+
+```{r}
+#| label: fig-3dplot
+#| fig-cap: "The same dataset visualised as a three-dimensional plot. "
+#| message: false
+#| echo: false
+
+##load dataset
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+N_Eifel<-Roman_case[which(Roman_case$Region=="Northern Eifel"),]
+Sauerland<-Roman_case[which(Roman_case$Region=="Sauerland"),]
+Bergisches_Land<-Roman_case[which(Roman_case$Region=="Bergisches Land"),]
+Roman_object<-Roman_case[which(Roman_case$Region=="Roman object"),]
+
+N_Eifel_1<-subset(N_Eifel, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
+Sauerland_1<-subset(Sauerland, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
+Bergisches_Land_1<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
+Roman_object_1<-subset(Roman_object, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
+total <- rbind(N_Eifel_1, Sauerland_1,Bergisches_Land_1,Roman_object_1)
+
+total$Region <- factor(total$Region ,levels = c("Northern Eifel", "Sauerland", "Bergisches Land","Roman object"))# reordering 
+
+fig <- plot_ly(total, x = ~Pb206.Pb204, y = ~Pb207.Pb204, z = ~Pb208.Pb204, color = ~Region, colors = c('red', 'blue', 'green', 'black'))
+fig <- fig %>% add_markers()
+fig <- fig %>% layout(scene = list(xaxis = list(title = '<sup>206</sup>Pb/<sup>204</sup>Pb'),
+                                   yaxis = list(title = '<sup>207</sup>Pb/<sup>204</sup>Pb'),
+                                   zaxis = list(title = '<sup>208</sup>Pb/<sup>204</sup>Pb'),aspectmode='cube'))
+
+fig <- plotly_build(fig)
+fig$x$data[[1]]$marker$symbol <- 'diamond'
+fig$x$data[[2]]$marker$symbol <- 'triangle-up'
+fig$x$data[[3]]$marker$symbol <- 'square'
+fig$x$data[[4]]$marker$symbol <- 'cross'
+fig
+
+
+```
+
+### Three-dimensional plot with kernel density estimation
+This plotting method applies kernel density estimation to a three-dimensional diagram (@fig-3dKDEplot). It can help to delineate reference datasets with which targeted artefacts can be compared. @Beardah.1999 pioneered the application of a three-dimensional kernel plot in Pb isotope studies and suggested a sample size of 20 as an acceptable value. However, they also realised that larger sample sizes, ranging from 40 to 60, would be necessary if the population from which the sample is drawn is not normally distributed. To construct the 3D kernel plot using R, we modified the code from @Ma.2022.
+
+```{r}
+#| label: fig-3dKDEplot
+#| fig-cap: "Three-dimensional plot with the KDEs of the mining regions."
+#| message: false
+#| echo: false
+
+##load dataset
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+# select variables to compute KDE
+N_Eifel_1<-subset(N_Eifel, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
+Sauerland_1<-subset(Sauerland, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
+Bergisches_Land_1<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
+Roman_object_1<-subset(Roman_object, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
+
+N_Eifel_H.pi <- Hpi(N_Eifel_1,binned=TRUE) ## b is a matrix of x,y,z points
+N_Eifel_1_kde<-kde(N_Eifel_1,H=N_Eifel_H.pi)
+Sauerland_H.pi <- Hpi(Sauerland_1,binned=TRUE) ## b is a matrix of x,y,z points
+Sauerland_1_kde<-kde(Sauerland_1,H=Sauerland_H.pi)
+Bergisches_Land_H.pi <- Hpi(Bergisches_Land_1,binned=TRUE) ## b is a matrix of x,y,z points
+Bergisches_Land_1_kde<-kde(Bergisches_Land_1,H=Bergisches_Land_H.pi)
+Roman_object_H.pi <- Hpi(Roman_object_1,binned=TRUE) ## b is a matrix of x,y,z points
+Roman_object_1_kde<-kde(Roman_object_1,H=Roman_object_H.pi)
+
+#rglwidget()
+#par3d(cex=1)
+plot(N_Eifel_1_kde,display="rgl",cont=c(95),col.fun=colorRampPalette(c('red')), col.pt = 'red',xlab="", ylab="", zlab="",add=FALSE, drawpoints = FALSE, box=FALSE, axes=FALSE) 
+plot(Sauerland_1_kde,display="rgl",cont=c(95),col.fun=colorRampPalette(c('blue')), col.pt = 'blue',xlab="", ylab="", zlab="",add=TRUE, drawpoints = FALSE, box=FALSE, axes=FALSE)
+plot(Bergisches_Land_1_kde,display="rgl",cont=c(95),col.fun=colorRampPalette(c('green')), col.pt = 'green',xlab="", ylab="", zlab="",add=TRUE, drawpoints = FALSE, box=FALSE, axes=FALSE)
+plot(Roman_object_1_kde,display="rgl", cont=c(0),col.fun=colorRampPalette(c('transparent')),col.pt = 'black',size=6, pch=3,alpha=2,xlab="", ylab="", zlab="",add=TRUE, drawpoints = TRUE, box=TRUE, axes=FALSE)
+title3d(xlab = expression({}^206*"Pb/"*{}^204*"Pb"), ylab = expression({}^207*"Pb/"*{}^204*"Pb"), zlab = expression({}^208*"Pb/"*{}^204*"Pb"))
+# add legend
+#legend3d("topright", 
+#         legend = c("Monday", "Tuesday", "Wednesday", "Thursday", "Saturday"),
+#         pch = 16,
+#         col = palette("default"),
+#         cex=0.65, inset=c(0))
+bbox3d(color=c("grey","black"), emission="white", specular="lightgrey", shininess=5, alpha=0.8 )
+
+rglwidget()
+
+```
+
+## Self check
+
+* Nowadays, which pairs of Pb isotopes are better suited to discriminate the isotopic ratios of artefacts and ore samples? 
+* What statistical assumptions are appropriate to describe the distribution of Pb isotopic data in an assemblage?
+* What are the pros and cons when it comes to a three-dimensional diagram? 
+
+## Further reading
+
+* Albarede F, Blichert-Toft J, Gentelli L, Milot J, Vaxevanopoulos M, Klein S, Westner KJ, Birch T, Davis G, Callataÿ F de (2020) A miner's perspective on Pb isotope provenances in the Western and Central Mediterranean. J. Archaeol. Sci. 121:105194. <https://doi.org/10.1016/j.jas.2020.105194>
+* Blichert-Toft J, Delile H, Lee C-T, Stos-Gale Z, Billström K, Andersen T, Hannu H, Albarède F (2016) Large-scale tectonic cycles in Europe revealed by distinct Pb isotope provinces. Geochem. Geophys. Geosyst. 17:3854–3864. <https://doi.org/10.1002/2016GC006524>
+* Hsu Y-K, Sabatini BJ (2019) A geochemical characterization of lead ores in China: An isotope database for provenancing archaeological materials. PLoS ONE 14:e0215973. <https://doi.org/10.1371/journal.pone.0215973>

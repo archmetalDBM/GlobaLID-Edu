@@ -1,0 +1,48 @@
+## Legal Notice
+
+The Deutsche Bergbau-Museum Bochum is a dependent facility of the
+DMT-Gesellschaft für Lehre und Bildung mbH.
+
+Provider according to § 5 TMG is therefore:  
+DMT-Gesellschaft für Lehre und Bildung mbH  
+Am Bergbaumuseum 28  
+44791 Bochum  
+Phone +49 234 5877-0  
+E-Mail: [info@bergbaumuseum.de](info@bergbaumuseum.de)
+
+Managing Director: Prof. Susanne Lengyel (chairman), Prof. Dr. Sunhild Kleingärtner, Ulrich Wessel
+
+Commercial register: Amtsgericht Bochum, HRB 4052  
+VAT identification number according to § 27 UStG: DE124091698
+
+Regulatory body: Ministerium für Kultur und Wissenschaft des Landes
+Nordrhein Westfalen
+
+## Privacy
+
+This webpage does not use any cookies. It does not collect, store or process personal data. The website is hosted by [GitHub Inc.](https://github.com/) using [GitHub pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). The privacy statement of Github is available [here](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement). 
+
+## License
+
+::: {layout="[ 75 , 25 ]"}
+
+::: {#column-text}
+Unless otherwise stated, material on this website is licensed under a [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/). 
+::: 
+
+::: {#column-image}
+[![](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg)](http://creativecommons.org/licenses/by/4.0/)
+:::
+
+:::
+
+This licence allows you to:
+
+* **Share** — copy and redistribute the material in any medium or format
+* **Adapt** — remix, transform, and build upon the material
+* for any purpose
+
+if you 
+
+* provide proper **attribution** and 
+* indicate any **changes** to the material you made.

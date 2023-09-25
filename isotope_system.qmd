@@ -1,0 +1,76 @@
+---
+title: The U--Th--Pb isotope system
+author: 
+  - name: Katrin Westner
+    corresponding: true
+    orcid: 0000-0001-5529-1165
+    email: Katrin.Westner@bergbaumuseum.de
+  - name: Sabine Klein
+    orcid: 0000-0002-3939-4428
+---
+
+## Learning objective
+By the end of the unit, you will understand the origins of the different lead isotope ratios. Further, you can summarise which information they can provide about geological processes and relate them to the theoretical background for the application of lead isotopes in archaeological research. 
+
+## Prior knowledge
+This unit expects that you already know: 
+
+* [What are isotopes?](https://www.youtube.com/watch?v=xGGelFHCNYo)
+* [Basics of radioactive decay](https://www.youtube.com/watch?v=UtZw9jfIxXM)
+* General concepts of geology and the creation of mountain ranges (orogenesis)
+
+## Material
+The unit combines text with an expert interview. 
+
+## Learning content
+
+Pb has four long-time stable isotopes - ^208^Pb (52.4&nbsp;%), ^207^Pb (22.1&nbsp;%), and ^206^Pb (24.1&nbsp;%), which are continuously produced by radiogenic decay of ^232^Th, ^235^U and ^238^U, respectively. ^204^Pb (1.4&nbsp;%) is primordial and its abundance therefore is constant. Other naturally occurring isotopes of Pb are short-lived; for example ^210^Pb only has a half-life of 22.3 years. 
+The abundances of ^208^Pb, ^207^Pb, and ^206^Pb vary as a function of the U--Th--Pb contents of the parental source(s) and the system closure time. By relating the radiogenic isotopes to the primordial ^204^Pb, these relationships can be deduced and are described by the following equations:
+
+$$ \left(\frac{^{206}Pb}{^{204}Pb}\right) = \left(\frac{^{206}Pb}{^{204}Pb}\right)_0 + \left(\frac{^{238}U}{^{204}Pb}\right) \cdot \left(e^{\lambda_{238} \cdot t}-1\right)$$
+
+$$ \left(\frac{^{207}Pb}{^{204}Pb}\right) = \left(\frac{^{207}Pb}{^{204}Pb}\right)_0 + \left(\frac{^{235}U}{^{204}Pb}\right) \cdot \left(e^{\lambda_{235} \cdot t}-1\right)$$
+
+$$ \left(\frac{^{208}Pb}{^{204}Pb}\right) = \left(\frac{^{208}Pb}{^{204}Pb}\right)_0 + \left(\frac{^{232}Th}{^{204}Pb}\right) \cdot \left(e^{\lambda_{232} \cdot t}-1\right)$$
+
+The subscript $_0$ denotes the initial Pb at the start of the model $t$. It is the ratio of the isotopic composition of Pb when the system closed (e.g., crystallisation of a mineral). Isotope ratios without subscripts denote the measured lead isotope composition, i.e. today’s ratios ($t=0$). 
+The decay constants of ^238^U, ^235^U and ^232^Th are: 
+
+$$λ_{238}=4.468\cdot10^9\ a$$
+
+$$λ_{235}=0.704\cdot10^9\ a$$
+
+$$λ_{232}=14.1\cdot10^9\ a$$
+
+Therefore, different geological environments (e.g., mantle, crust) and tectonic processes result in distinct Pb isotope ratios. These relationships often are assessed on the basis of model parameters -- the model age, µ (^235^U/^204^Pb) and κ (^232^Th/^235^U) -- which are calculated from the ^204^Pb-based isotope ratios. Different models have been developed, of which the most widely used are the two-stage models of @Stacey.1975 and @Albarede.1984. 
+
+Pb isotope ratios are applied in ore deposit geology to reconstruct the metal sources and formation processes of ore mineralisations. @Grogler.1966 and @Brill.1967 first analysed Pb isotope ratios of archaeological metal objects to determine from which ore deposits the raw material might have potentially been sourced. The direct comparison between the isotope signatures of archaeological objects and ore mineralisations is possible since the effect of pyrometallurgical and weathering processes on Pb isotope ratios is typically negligible. Nowadays, Pb isotopes are therefore a key method for assessing the potential raw material provenance of various Pb-bearing archaeological materials such as metals and alloys, glass, glazes, pigments and ceramics.
+
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* Which Pb isotopes are stable, radiogenic, and radioactive? And what is the difference?
+* Do I need to measure U and Th isotopes to determine the lead isotope ratios or to calculate the lead isotope age of a material?
+* What generates variations in Pb isotope ratios?
+* Why are Pb isotopes useful for investigating archaeological artefacts?
+* What archaeological materials can be investigated with Pb isotopes?
+* Which Pb isotope ratios are used for the calculation of model parameters?
+* Which Pb isotope ratio is proportional to a) the model age, b) µ, and c) κ?
+
+## Further reading
+### General
+* Brill RH, Wampler JM (1967) Isotope Studies of Ancient Lead. American Journal of Archaeology 71:63–77. <https://doi.org/10.2307/501589>
+* Faure G (1986) Principles of isotope geology, 2nd edn. Wiley, New York, Chichester.
+* Grögler N, Geiss J, Grünenfelder M, Houtermans FG (1966) Isotopenuntersuchungen zur Bestimmung der Herkunft römischer Bleirohre und Bleibarren. Zeitschrift für Naturforschung A 21:1167–1172. <https://doi.org/10.1515/zna-1966-0744>
+* Huston DL, Champion DC (2023) Applications of Lead Isotopes to Ore Geology, Metallogenesis and Exploration. In: Huston D, Gutzmer J (eds) Isotopes in Economic Geology, Metallogenesis and Exploration. Springer, Cham, 155-187. <https://doi.org/10.1007/978-3-031-27897-6_6>
+* Köppel V, Grünenfelder M (1979) Isotope geochemistry of lead. In: Jäger E, Hunziker JC (eds) Lectures in isotope geology. Springer, Berlin, pp 134–153. <https://doi.org/10.1007/978-3-642-67161-6_9>
+* Schoene B (2014) 4.10 - U–Th–Pb Geochronology. In: Holland HD, Turekian KK (eds) Treatise on geochemistry, 2nd edn., vol 4. Elsevier, Amsterdam, pp 341–378. [(read online)](https://timslab.princeton.edu/sites/g/files/toruqf2276/files/schoene-treatisegeochemistry-2014.pdf) 
+* Tosdal RM, Wooden JL, Bouse RM (1999) Pb Isotopes, Ore Deposits, and Metallogenic Terranes. In: Lambert DD, Ruiz J (eds) Application of Radiogenic Isotopes to Ore Deposit Research and Exploration. Society of Economic Geologists, Littleton, pp 2–28.
+* Weis D (2018) Lead Isotopes. In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 1–5. <https://doi.org/10.1007/978-3-319-39312-4_293>
+
+### Age models
+* Albarède F, Juteau M (1984) Unscrambling the lead model ages. Geochimica et Cosmochimica Acta 48:207–212. <https://doi.org/10.1016/0016-7037(84)90364-8>
+* Cumming GL, Richards JR (1975) Ore lead isotope ratios in a continuously changing earth. Earth and Planetary Science Letters 28:155–171. <https://doi.org/10.1016/0012-821X(75)90223-X>
+* Stacey JS, Kramers JD (1975) Approximation of terrestrial lead isotope evolution by a two-stage model. Earth and Planetary Science Letters 26:207–221. <https://doi.org/10.1016/0012-821X(75)90088-6>

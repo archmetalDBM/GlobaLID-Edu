@@ -1,0 +1,62 @@
+---
+title: Collecting reference data
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will learn ...
+
+* Awareness for wide variability
+* Strategies to harmonise data
+* Data collections, initiatives (e.g. GlobaLID)
+
+## Prior knowledge
+... building upon what you already know ... 
+
+* none
+
+## Material
+... by doing these things: 
+
+Powerpoint/lecture
+Exercise: Mapping of data sets (e.g. column titles of different datasets that need to be correlated by dragging, by click on column title more info
+
+## Learning content
+
+* Where to find lead isotope data?
+* Handling legacy data
+* Challenges in metadata (e.g. “galena” vs. “lead ore”)
+* Bridging gaps/harmonise metadata
+* Existing initiatives
+* Advantages of FAIR and LO data
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Klein, S., Rose, T., Westner, K. J., and Hsu, Y., 2022, From OXALID to GlobaLID: Introducing a modern and FAIR lead isotope database with an interactive application, Archaeometry, arcm.12762.
+* Westner, K. J., Rose, T., Klein, S., and Hsu, Y.-K., 2021, GlobaLID – Global Lead Isotope Database: V. 1.0, GFZ Data Services.
+
+Existing initiatives:
+
+* Stos-Gale, Z. A., and Gale, N. H., 2009, Metal provenancing using isotopes and the Oxford archaeological lead isotope database (OXALID), Archaeological and Anthropological Sciences, 1(3), 195–213. 
+* https://oxalid.arch.ox.ac.uk/
+* García de Madinabeitia, S., Gil Ibarguchi, J. I., and Santos Zalduegui, J. F., 2021, IBERLID: A lead isotope database and tool for metal provenance and ore deposits research, Ore Geology Reviews, 137, 104279.
+* https://www.ehu.eus/ibercron/iberlid
+Klöcking, M., Profeta, L., Brase, J., Cao, S., Figueroa, J. D., Horstmann, W., Ji, P., Johansson, A., Kurzawe, D., Möller, S., Mukhumova, M., Nieschulze, J., Sarbas, B., Sturm, A., Sweets, H., Lehnert, K., Willbold, M., Wörner, G., and Kallas, L., 2022, GEOROC and EarthChem: Synchronizing Services on the Road to Global Geochemical Data Exchange, In Goldschmidt2022 abstracts, Goldschmidt2022, European Association of Geochemistry, Honolulu, HI, USA.
+* https://georoc.eu/georoc/new-start.asp
+* https://www.earthchem.org/
+* https://www.nfdi4earth.de/
+* https://www.nfdi4objects.net/
+
+

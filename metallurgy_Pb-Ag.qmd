@@ -1,0 +1,42 @@
+---
+title: Lead/Silver smelting
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will learn about lead smelting process and cupellation process.
+
+## Prior knowledge
+... building upon what you already know ...
+
+* general metallurgical process
+
+## Material
+... by doing these things: 
+
+Expert interview (?)
+summary slide of general process
+
+## Learning content
+
+* cupellation
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Rehren, Th., 1996, Alchemy and Fire Assay – An Analytical Approach., Historical Metallurgy, 30, 136–42.
+* Baron, S., Le-Carlier, C., Carignan, J., and Ploquin, A., 2009, Archaeological reconstruction of medieval lead production: Implications for ancient metal provenance studies and paleopollution tracing by Pb isotopes, Applied Geochemistry, 24(11), 2093–101.
+* Nriagu, J. O., 1985, Cupellation: The oldest quantitative chemical process, Journal of Chemical Education, 62(8), 668.
+* Swinbourne, D., Yan, S., Hoang, G., and Higgins, D., 2003, Thermodynamic modelling of cupellation: activity of AgO0· 5 in molten PbO at 1000ºC, Mineral Processing and Extractive Metallurgy, 112(2), 69–74.
+* Merkel, S. W., 2021, Evidence for the widespread use of dry silver ore in the early Islamic period and its implications for the history of silver metallurgy, Journal of Archaeological Science, 135, 105478.

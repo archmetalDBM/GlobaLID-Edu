@@ -1,0 +1,41 @@
+---
+title: Bringing the evidences together
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will receive training combining evidence from multiple sources.
+
+## Prior knowledge
+... building upon what you already know ... 
+
+all of the above
+
+## Material
+... by doing these things: 
+
+Puzzles + Multiple choice
+
+## Learning content
+Case studies of advances lead isotope studies
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Duckworth, C. N., and Wilson, A. (eds.), 2020, Recycling and Reuse in the Roman Economy 1st ed., Oxford University Press.
+* Butcher, K., and Ponting, M., 2014, The Metallurgy of Roman Silver Coinage: From the Reform of Nero to the Reform of Trajan, Cambridge University Press, Cambridge.
+* Butcher, K. E. T., and Ponting, M., 2005, The Roman denarius under the Julio-Claudian emperors: mints, metallurgy and Technology, Oxford Journal of Archaeology, 24, 163–97.
+* Eshel, T., Erel, Y., Yahalom-Mack, N., Tirosh, O., and Gilboa, A., 2019, Lead isotopes in silver reveal earliest Phoenician quest for metals in the west Mediterranean, Proceedings of the National Academy of Sciences, 116(13), 6007.
+* Eshel, T., Erel, Y., Yahalom-Mack, N., Tirosh, O., and Gilboa, A., 2022, From Iberia to Laurion: Interpreting Changes in Silver Supply to the Levant in the Late Iron Age Based on Lead Isotope Analysis, Archaeological and Anthropological Sciences, 14(6), 120.
+

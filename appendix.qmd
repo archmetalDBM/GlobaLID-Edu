@@ -1,0 +1,20 @@
+---
+title: "Appendix"
+---
+
+## Packing list ([pdf](download/Sampling_packing list.pdf) | [pdf form](download/Sampling_packing list.pdf) | [docx](download/Sampling_packing list.docx))
+
+## Sample labels
+* Single label ([svg](download/Sampling_labels.svg) | [pdf](download/Sampling_labels_single.pdf))
+* A4 print template ([pdf](download/Sampling_labels_A4_blank.pdf) | [pdf form](download/Sampling_labels_A4_form.pdf))
+
+## Cleaning procedures for labware ([pdf](download/Cleaning_procedures_labware.pdf) | [pdf form](download/Cleaning_procedures_labware_form.pdf) | [docx](download/Cleaning_procedures_labware.docx))
+
+## IEC protocol for the separation of Pb
+* Portrait ([pdf](download/IEC_protocol_portrait.pdf) | [pdf form](download/IEC_protocol_portrait_form.pdf) | [docx](download/IEC_protocol_portrait.docx))
+* Landscape ([pdf](download/IEC_protocol_landscape.pdf) | [pdf form](download/IEC_protocol_landscape_form.pdf) | [docx](download/IEC_protocol_landscape.docx) | [xlsx](download/IEC_protocol.xlsx))
+
+## Preparation and ion exchange protocol for separating Pb and Cu from Au-Ag matrices according to @Bendall.2003
+* Portrait ([pdf](download/IEC-Au-Ag_protocol_portrait.pdf) | [pdf form](download/IEC-Au-Ag_protocol_portrait_form.pdf) | [docx](download/IEC-Au-Ag_protocol_portrait.docx))
+* Landscape ([pdf](download/IEC-Au-Ag_protocol_landscape.pdf) | [pdf form](download/IEC-Au-Ag_protocol_landscape_form.pdf) | [docx](download/IEC-Au-Ag_protocol_landscape.docx) | [xlsx](download/IEC-Au-Ag_protocol.xlsx))
+

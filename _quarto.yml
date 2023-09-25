@@ -1,0 +1,103 @@
+project:
+  type: book
+
+book:
+  title: "Lead Isotopes in Archaeology: An Interactive Textbook"
+  abstract: |
+    This interactive textbook provides learning content for all aspects related 
+    to the use of lead isotopes in archaeological research, particularly the 
+    reconstruction of the raw material provenance. It combines aspects of 
+    geochemistry, archaeology and data science into a holistic approach to this 
+    topic. It is an open educational resources, meaning that its content is free 
+    and the community is invited to participate in its creation. 
+#  doi: 10.1234/5678
+  editor: 
+    - name: Thomas Rose
+      corresponding: true
+      orcid: 0000-0002-8186-3566
+      url: https://copper-smelting.com/
+      email: globalid@bergbaumuseum.de
+      affiliations: 
+        - name: Goethe-Universität Frankfurt
+          department: Institut für Geowissenschaften
+          city: Frankfurt
+          country: Germany
+          url: https://www.uni-frankfurt.de/45741218/Willkommen_am_Institut_f%C3%BCr_Geowissenschaften
+        - name: Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum
+          department: Forschungsbereich Archäometallurgie
+          city: Bochum
+          country: Germany
+          url: https://www.bergbaumuseum.de/
+  date: "today"
+  reader-mode: true
+  language: en
+  cover-image: cover.png
+  
+  page-footer: 
+    left: 
+      - text: Built with <a href="https://quarto.org/">Quarto</a>.
+    right: 
+      - text: "Legal information"
+        href: about.qmd
+  back-to-top-navigation: true
+  
+  favicon: assets/favicon.png
+#  site-url:
+  repo-url: https://github.com/archmetalDBM/GlobaLID-Edu
+  repo-branch: main
+  repo-actions: [edit, issue]
+  sharing: [twitter, facebook, linkedin]
+  twitter-card: true
+  open-graph: true
+  
+  chapters:
+    - index.qmd
+    - preface.qmd
+    - intro.qmd
+    - part: basics.qmd
+      chapters: 
+        - isotope_system.qmd
+        - sample_processing.qmd
+        - measurement.qmd
+        - exam1.qmd
+        - deposit_formation.qmd
+        - deposit_impact_PbIsos.qmd
+        - exam2.qmd
+        - metallurgy_basics.qmd
+        - metallurgy_Pb-Ag.qmd
+        - metallurgy_Cu.qmd
+        - metallurgy_impact_PbIsos.qmd
+        - exam3.qmd
+        - summary_bascis.qmd
+    - part: application.qmd
+      chapters: 
+        - correction_QA.qmd
+        - storage.qmd
+        - reference_data.qmd
+        - exam4.qmd
+        - visualisation.qmd
+        - matching.qmd
+        - exam5.qmd
+        - summary_application.qmd
+    - part: interpretation.qmd
+      chapters: 
+        - interpretation_additional.qmd
+        - interpretation_potential.qmd
+        - interpretation_combined.qmd
+        - summary_interpretation.qmd
+    - summary.qmd
+    - references.qmd
+    - appendix.qmd
+
+bibliography: references.bib
+csl: https://www.zotero.org/styles/archaeological-and-anthropological-sciences
+
+format:
+  html:
+    theme: 
+      - cosmo
+      - theme-light.scss
+    smooth-scroll: true
+    link-external-newwindow: true
+    code-link: true
+    code-fold: true

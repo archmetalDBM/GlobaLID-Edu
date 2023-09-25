@@ -1,0 +1,62 @@
+---
+title: Evolution of Pb isotope signatures in ore deposits
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will learn about the Pb-Isotope specific aspects of ores.
+
+## Prior knowledge
+... building upon what you already know ... 
+
+* formation of ore deposits
+* lead isotope systematics
+* partitioning of elements
+
+## Material
+... by doing these things: 
+
+Interactive figure: typical minerals in ore deposits, one for Pb/Ag, one for Cu
+
+Animation: large-scale effects such as multiple generations, hydrothermal overprinting (deposit + Pb-Isotope diagram)
+
+Graphical quiz to emphasize bulk vs. in-situ analysis: shooting with LA on multiple generations in ore, coupled with Pb isotope diagram, button for bulk
+
+
+## Learning content
+
+* Important minerals, e.g. separation of U and Pb, differences between Cu, Pb
+* Problems (multiple generations, reactivation) 
+
+### Minerals in copper ore deposits
+
+Deposits interact with their environment, leading to an alteration of the ore minerals. Have a look on the figure below to learn more about which copper ore minerals occur in which zone of an ore deposit.
+
+<iframe src="/H5P/ore_Minerals.html" width="100%" height="745px" ></iframe>
+
+::: {.callout-important appearance="simple"}
+
+* Fluctuations in the depth of the ground water table will obscure the start and end of the zones.
+* Geologic uplift of the deposit can result in the creation of multiple supergene enrichment zones.
+
+:::
+
+### Minerals in lead/silver ore deposits
+
+
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Tosdal, R. M., Wooden, J. L., and Bouse, R. M., 1999, Pb Isotopes, Ore Deposits, and Metallogenic Terranes., In D. D. Lambert & J. Ruiz (Eds.): Application of Radiogenic Isotopes to Ore Deposit Research and Exploration, 1–28, Society of Economic Geologists.

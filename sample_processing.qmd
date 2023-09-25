@@ -1,0 +1,230 @@
+---
+title: Sample processing
+author: 
+  - name: Katrin Westner
+    corresponding: true
+    orcid: 0000-0001-5529-1165
+    email: Katrin.Westner@bergbaumuseum.de
+  - name: Thomas Rose
+    orcid: 0000-0002-8186-3566
+    url: https://copper-smelting.com/
+  - name: Sabine Klein
+    orcid: 0000-0002-3939-4428
+  - name: Tim Greifelt
+
+---
+
+## Learning objective
+By the end of this unit, you will be able to describe how a sample is processed, from the taking the sample to the preparation of a pure Pb solution ready for isotope analysis from it. You will further be able to judge which sampling techniques and lab protocols are appropriate in which context and for which material. 
+
+## Prior knowledge
+This unit expects that you have 
+
+* General basics in chemistry
+* General understanding of the properties of a material (e.g., phase composition, microstructure) and how they determine the material’s interaction with the environment (weathering, corrosion, post-depositional processes)
+
+## Material
+This unit combines text with a small serious game, a video, and a puzzle. 
+
+## Learning content
+### Sampling techniques
+
+Before deciding which method to use for sampling, some general points have to be considered: 
+
+* Permission of persons responsible for the materials to be sampled
+* Health and safety restrictions at the sampling site
+* Specific requirements of the institutions 
+* Focus of analysis (weathered/corroded vs. unaltered material and their potential thickness, ancient surface treatments, conservation treatments)
+* Contamination sources during sampling and (pre-)cleaning of equipment
+* Check for availability of power supply and need for potential additional equipment at sampling site (e.g., lighting, magnifier, extensional power cord and converters, chemicals for cleaning) 
+* Transportability of instruments (e.g., laser sampling unit) and chemicals (e.g., H~2~O~2~ and NH~4~OH are necessary for the etching solution but forbidden to transport on passenger planes and can be difficult to obtain in laboratory grade purity at the sampling location)
+
+All sampling campaigns have to be individually prepared with consideration of the necessary information and restrictions. In the appendix, we provide an [exemplary packlist](appendix.qmd#packing-list-pdf-pdf-form-docx). 
+
+Below we listed the most common sampling methods with their advantages and disadvantages. 
+
+::: {.panel-tabset}
+
+## Drilling {-}
+
+### Description {-}
+A small quantity of material is removed by drilling the object at one or several locations. Surficial material is separated or given to the curators for restoration of the objects after sampling. Material for analysis is stored in centrifuge tubes and then further processed in the laboratory.
+
+### Equipment {-}
+
+* Handheld or stationary rotary drills
+* Drill bits. HSS (high-speed steel) drill bits are the material of choice due to their high hardness and resistance towards abrasion. Typical drill bit sizes used for sampling of silver coins or other small artefacts are in the range of 0.5 to 0.8&nbsp;mm, while for bigger objects larger drill bit sizes may be used. Obtaining a representative and sufficient amount of material for analyses generally has to be weighed up against curatorial requirements. HSS drill bits are particularly available from shops specialising in goldsmith’s supplies. 
+
+### Advantages {-}
+
+* Excellent control over sampling depth, allows to access unaltered material from the interior
+* Different drill bit sizes and materials available for adjustment to object types, shapes, and dimensions
+* Comparatively cheap and easily accessible equipment, handheld drills can be easily transported to the sampling site 
+
+### Typical disadvantages {-}
+Sampling technique causes visual deterioration of the objects (= (minimally) invasive), therefore sometimes not accepted by institutions
+
+### Exemplary publication {-}
+Birch T, Westner KJ, Kemmers F, Klein S, Höfer HE, Seitz H-M (2020) Retracing Magna Graecia's silver: Coupling lead isotopes with a multi‐standard trace element procedure. Archaeometry 62:81–108. <https://doi.org/10.1111/arcm.12499>
+
+## Tweaking/clipping/cutting {-}
+
+### Description {-}
+A piece of the object is removed by tweaking, clipping or cutting.
+
+### Equipment {-}
+
+* Tong
+* Scalpel
+* Jeweller's saw
+* Other suitable equipment
+
+### Advantages {-}
+
+* Allows to access unaltered material from the interior
+* Information on the texture and internal structure is preserved, i.e. metallographic studies possible
+* Cheap, easily accessible, and transportable equipment
+
+### Typical disadvantages {-}
+
+Sampling technique causes visual deterioration of the objects (= (minimally) invasive), therefore sometimes not accepted by institutions
+
+### Exemplary publication {-}
+Pászthory E (1980) Investigations of the early electrum coins of the Alyattes type. In: Metcalf DM, Oddy WA (eds) Metallurgy in numismatics. Royal Numismatic Society, London
+
+## Etching {-}
+
+### Description {-}
+A minute quantity of material is extracted from the surface of objects using an etching solution. Round objects such as coins can be rolled on paper strips soaked with etching solution while uneven objects are sampled with cotton buds soaked with etching solution. The loaded strips or cotton buds are stored in centrifuge tubes and adhering material is leached by using suitable acids. 
+
+See also: Milot J, Malod-Dognin C, Blichert-Toft J, Télouk P, Albarède F (2021) Sampling and combined Pb and Ag isotopic analysis of ancient silver coins and ores. Chemical Geology 564:120028. <https://doi.org/10.1016/j.chemgeo.2020.120028>
+
+### Equipment {-}
+
+* Etching solution (a 1:1:1 mixture of H~2~O~2~, NH~4~OH, H~2~O to which SiC can be added to increase abrasion)
+* felt-covered pliers
+* chromatographic paper strips (for coins), cotton buds (for uneven objects)
+
+### Advantages {-}
+If no patina is present (and removed during sampling), the sampling technique does not leave damage visible to the naked eye.
+
+### Typical disadvantages {-}
+
+* Surficial sampling: Sample can be affected from post-depositional processes and conservation treatment
+* Not all components might be equally well dissolved, and the solution therefore might not be representative of the object
+* Currently existing protocols are tailored for sampling of silver objects
+
+### Exemplary publication {-}
+Gentelli L, Blichert-Toft J, Davis G, Gitler H, Albarède F (2021) Metal provenance of Iron Age Hacksilber hoards in the southern Levant. Journal of Archaeological Science 134:105472. <https://doi.org/10.1016/j.jas.2021.105472>
+
+## Abrasion {-}
+
+### Description {-}
+Material is abraded from the surface of an object with roughened ultrapure pre-cleaned quartz glass rods. The rods must be weighed pre- and post-sampling to determine the weight of the sample. 
+
+The rods with adhering sample material are stored in centrifuge tubes. The tubes are transported to the laboratory and then filled with a suitable acid to dissolve the adhering material.
+
+### Equipment {-}
+
+* Quartz glass rods
+
+### Advantages {-}
+
+* If no patina is present (and removed during sampling), the sampling technique does not leave damage visible to the naked eye
+* Cheap, easily accessible, and transportable equipment
+
+
+### Typical disadvantages {-}
+Surficial sampling: Sample can be affected from post-depositional processes and conservation treatment
+
+## Portable laser ablation {-}
+
+### Description {-}
+Minute quantities of material are removed from objects by laser ablation and collected on Teflon or cotton filters. Corrosion can be removed by pre-ablation. The filters with adhering material are separately stored (e.g., centrifuge tubes) and transported to the laboratory where the adhering material is dissolved using suitable acids.
+
+See also: Glaus R, Dorta L, Zhang Z, Ma Q, Berke H, Günther D (2013) Isotope ratio determination of objects in the field by portable laser ablation sampling and subsequent multicollector ICPMS. Journal of Analytical Atomic Spectrometry 28:801–809. <https://doi.org/10.1039/C3JA30379A>
+
+### Equipment {-}
+
+* Portable laser ablation instrument
+* Teflon or cotton filters
+
+### Advantages {-}
+
+* The sampling technique causes comparatively small ablation craters (120&nbsp;µm diameter) which are barely visible to the naked eye
+* Mobile alternative to stationary LA-ICP-MS instruments
+
+### Typical disadvantages {-}
+
+* Sampling quantity, depth, and location difficult to control
+* Equipment not readily accessible
+
+### Exemplary publication {-}
+Numrich M, Schwall C, Lockhoff N, Nikolentzos K, Konstantinidi-Syvridi E, Cultraro M, Horejs B, Pernicka E (2023) Portable laser ablation sheds light on Early Bronze Age gold treasures in the old world: New insights from Troy, Poliochni, and related finds. Journal of Archaeological Science 149:105694. <https://doi.org/10.1016/j.jas.2022.105694>
+
+:::
+
+The minimum amount of sample necessary for the analysis depends on the type of analysis and the concentration of the metal you want to analyse. For example, analysing a copper-based metal with 0.1&nbsp;wt.% and 90&nbsp;wt.% Cu for its Pb isotope composition will require a larger sample size than an analysis of its copper isotope composition. 
+
+We recommend placing a sampling label with the sampled object. Sampling labels specify the sampling method, purpose of the study and provide details about the sampling person and institution. Exemplary sampling labels are available [in the appendix](appendix.qmd#sample-labels), which you can fill out with your information, date of sampling, and where you can add logos of your institution and, if applicable, funding organisation, in the blank space at the bottom.
+
+### Sample dissolution
+An important prerequisite for work in the laboratory is properly cleaned labware. Otherwise, the Pb isotope signal might be contaminated by remnants from previous samples or other sources such as atmospheric Pb. Examples for cleaning procedures for different types of labware are provided [in the appendix](appendix.qmd##cleaning-procedures-for-labware-pdf-pdf-form-docx). Moreover, all steps are usually carried out in a clean room to avoid contamination of the samples by dust and atmospheric Pb. 
+
+Dissolving a sample completely is often necessary to measure the average chemical or isotopic composition of a sample. It removes any heterogeneity within the sample and at the same time transforms the sample into a liquid. The dissolved sample can be easily adjusted in, e.g., its concentration and therefore can be analysed with a wide-range of instruments to measure its chemical composition. Dissolving the sample also allows to separate in the next step (@sec-IEC) the targeted element for isotope analysis, such as Pb.  
+
+Different acids are used to dissolve a sample, often in combination. Probably most famous is *aqua regia*, a mixture of concentrated HCl and HNO~3~ in the ratio of 3:1, which dissolves Au. The combination of different acids is often necessary because samples cannot be dissolved completely with only one acid. For example, HCl is very efficient in dissolving carbonates but not organic material, while HNO~3~ readily dissolves organic material but not carbonates. 
+
+Acid digestion is a standard procedure for dissolving samples and well-established protocols exist, which can deviate between laboratories in their details. The samples are usually heated to accelerate the dissolution reaction. You can learn more about which exemplary acid combinations are used for which samples in the following game.
+
+<iframe src="/H5P/Sample_digestion.html" width="100%" height="415px"></iframe>
+
+### Pb separation {#sec-IEC}
+If Pb is not the main element in your sample, you must separate it from all other elements (e.g., copper, silver), now that your sample is completely dissolved. Otherwise, a reliable measurement of its isotopic composition won’t be possible. 
+
+For the separation of Pb we use a technique called ion-exchange chromatography (IEC). In a nutshell, an organic polymer (resin) is treated (conditioned) with different acids of variable concentrations. Depending on the acid and its concentration, the resin binds ions of some elements more efficiently than others. This behaviour can be utilised to separate elements from each other by treating the resin with suitably concentrated acids in a useful order. When put into a column, gravity lets the acids flow through the resin, allowing collection of the different fractions (eluates) by changing beakers. 
+
+IEC is a very efficient method because the resin can principally be re-used multiple times. However, it is often also a time-consuming method. The video below is a time-lapse for the Pb separation protocol, which in real time took about 4 hours per sample. However, multiple samples can be handled in parallel. By experience, 10 to 15 samples are a good compromise between efficiency and quality. 
+
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+
+The time-lapse features a standard protocol for Pb separation. It uses the resin AG1x8. For archaeometallurgical samples (e.g. slag, metals, metal alloys), only Pb binds to this resin when treated with 0.6&nbsp;M HBr. When treated with 6&nbsp;M HCl, Pb and the other elements are not retained by the resin and washed out completely. You might have noticed the strong colour change of the resin caused by the Cu in the sample and how quickly it was washed out again. And that beakers were changed in between to separately collect the matrix and Pb. The matrix is usually discarded if no other analyses are planned for this sample. However, if further analyses are planned, the matrix will be kept and treated further for these additional analyses. 
+
+Using this information, you can now reconstruct the IEC protocol shown in the video.
+
+<iframe src="/H5P/IEC.html" width="100%" height="1200px" ></iframe>
+
+You can also find print templates for this protocol [in the appendix](appendix.qmd#iec-protocol-for-the-separation-of-pb-according-to-milot.2021). @Milot.2021 present another protocol for the separation of lead. 
+
+:::{.callout-note collapse="true" title="Separation of Pb from Au- and Ag-rich samples"}
+Another protocol is designed for the chromatographic separation of Pb (and Cu) from Au-Ag rich samples. This protocol was developed and published by @Bendall.2003 [p. 43]: 
+
+> Gold and silver seem to restrict the amount of lead recovered from the usual one-step HBr/HCl method. The recovery rates are still not perfect but do allow enough lead to be recovered for analysis. The first HCl-only separation is designed to remove the Au and Ag from the matrix. Firstly, AgCl precipitates and is easily removed by centrifuge, it is necessary to remove the liquid and add fresh HCl before centrifuging again so that as much of the Pb and Cu as possible is removed. Secondly, the Dowex resin holds onto the AuCl anions very strongly and efficiently removes the gold while allowing the lead and copper to pass through. The copper elution is actually more complicated and in fact the method is not optimised for sufficient recovery of copper ... The second chromatographic step produces two solutions. Firstly, the Cu is collected in 0.6M HBr and then the lead is washed through with 6M HCl.
+
+A print template for this protocol is included [in the appendix](appendix.qmd#preparation-and-ion-exchange-protocol-for-separating-pb-and-cu-from-au-ag-matrices-according-to-bendall.2003).
+
+:::
+
+## Self check
+
+* When asking for sampling the coin collection of a museum, what are the key aspects you should discuss with the curator? * Can lead isotope signatures be obtained by non-invasive techniques? 
+* Which acid combination can dissolve an ore? Which one can dissolve a silver coin?
+* How do you call the procedure in which you separate and concentrate lead in a solution?
+* What are the columns filled with prior to taking up the sample solution? 
+* Which chemicals are used to separate lead from the matrix?
+
+## Further reading
+### Basics of IEC
+
+* <https://en.wikipedia.org/wiki/Ion_chromatography>
+* <https://www.youtube.com/watch?v=2R2iq_XR1IY> 
+* Milot J, Malod-Dognin C, Blichert-Toft J, Télouk P, Albarède F (2021) Sampling and combined Pb and Ag isotopic analysis of ancient silver coins and ores. Chemical Geology 564:120028. <https://doi.org/10.1016/j.chemgeo.2020.120028>
+* Strelow FWE, Toerien FVS (1966) Separation of Lead(II), from Bismuth(III), Thallium(III), Cadmium(II), Mercury(II), Gold(III), Platinum(IV), Palladium(II), and Other Elements by Anion Exchange Chromatography. Analytical Chemistry 38:545–548.
+
+### Variations in IEC protocol
+
+#### Specifically in Au-Ag matrices
+* Bendall C (2003) The Application of Trace Element and Isotopic Analyses to the Study of Celtic Gold Coins and their Metal Sources. PhD thesis, Goethe-Universität Frankfurt. [read online](https://d-nb.info/970728999/34)
+
+#### Specifically for alloys
+* Iliev I, Kuleff I, Adam J, Pernicka E (2003) Electrochemical lead separation from copper, copper alloy, silver and silver alloy for isotope ratio determination in archaeometric investigations. Analytica Chimica Acta 497:227–233. <https://doi.org/10.1016/j.aca.2003.07.008>

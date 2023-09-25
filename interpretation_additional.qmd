@@ -1,0 +1,57 @@
+---
+title: Sources of complimentary information
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will learn about the importance of additional sources for lead isotope interpretation.
+
+## Prior knowledge
+... building upon what you already know ... 
+
+None
+
+## Material
+... by doing these things: 
+
+Expert interview (N. Anfinset?)
+Case studies: news article style, extraction information additional to lead isotope data by drag and drop
+
+## Learning content
+
+* Archaeological sources (e.g., excavations, inscriptions)
+* Written sources (e.g. chronicles, alchemist recipes)
+* Scientific sources (e.g., trace elements, Cu isotopes?, sediment cores)
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Jézégou, M.-P., Klein, S., Rico, C., and Domergue, C., 2011, Les lingots de cuivre de l’épave romaine Plage de la Corniche 6 à Sète et le commerce du cuivre hispanique en Méditerranée occidentale, Revue archéologique de Narbonnaise, 44(1), 57–69.
+* Domergue, C., Quarati, P., and Nesta, A., Les isotopes du plomb et l’identification des lingots de plomb romains des mines de Sierra Morena. Questions de méthode : l’exemple des lingots de l’épave Cabrera 4, 14.
+* Trincherini, P. R., Domergue, C., Manteca, I., Nesta, A., and Quarati, P., The identification of lead ingots from the Roman mines of Cartagena (Murcia, Spain): the role of lead isotope analysis, 26.
+* Baron, S., Rico, C., and Antolinos Marín, J. A., 2017, Le complexe d’ateliers du Cabezo del Pino (Sierra Minera de Cartagena-La Unión, Murcia) et l’organisation de l’activité minière à Carthago Noua à la fin de la République romaine. Apports croisés de l’archéologie et de la géochimie, Archivo Español de Arqueología, 90, 147–69.
+* Pernicka, E., 2014, Provenance Determination of Archaeological Metal Objects, In Archaeometallurgy in Global Perspective (eds. B. W. Roberts, and C. P. Thornton), 239–68, Springer New York, New York, NY.
+* Rosman, K. J. R., Chisholm, W., Hong, S., Candelone, J.-P., and Boutron, C. F., 1997, Lead from Carthaginian and Roman Spanish Mines Isotopically Identified in Greenland Ice Dated from 600 B.C. to 300 A.D., Environmental Science & Technology, 31(12), 3413–6.
+*Hauptmann, A., Klein, S., Paoletti, P., Zettler, R. L., and Jansen, M., 2018, Types of Gold, Types of Silver: The Composition of Precious Metal Artifacts Found in the Royal Tombs of Ur, Mesopotamia, Zeitschrift für Assyriologie und vorderasiatische Archäologie, 108(1), 100–31.
+* Rihll, T. E., and Tucker, J. V., 2002, Practice Makes Perfect: Knowledge of Materials in Classical Athens, In Science and Mathematics in Ancient Greek Culture (L. Wolpert; eds. C. J. Tuplin, and T. E. Rihll), 274–305, Oxford University Press.
+* Anguilano, L., 2012, Roman lead silver smelting at Rio Tinto - A case study of Corta Lago, , University College London, London.
+* Artioli, G., Baumgarten, B., Morelli, M., Gussani, B., Recchia, S., Nimis, P., Giunti, I., Angelini, I., and Omenetto, P., 2008, Chemical and Isotopic Tracers in Alpine Copper Deposits: Geochemical Links Between Mines and Metals, Geo.Alp, 5, 139–48.
+*Berger, D., Brügmann, G., Bunnefeld, J., and Pernicka, E., 2022, Identifying mixtures of metals by multi‐isotope analysis: Disentangling the relationships of the Early Bronze Age swords of the Apa–Hajdúsámson type and associated objects, Archaeometry, 64(S1), 44–74.
+* Vaxevanopoulos, M., Blichert-Toft, J., Davis, G., and Albarède, F., 2021, New Findings of Ancient Greek Silver Sources, SSRN Electronic Journal.
+
+Historical sources:
+* Agricola, G., 1556, De re metallica, Dover Publications, New York.
+* Herodotus, The Histories 1920th ed., Harvard University Press, Cambridge.
+* Strabo, 1917, Geography, Loeb Classical Library, Harvard University Press, Cambridge.
+* Pliny the Elder, The Natural History, Book 33, The Natural History of Metals

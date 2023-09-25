@@ -1,0 +1,46 @@
+---
+title: Copper metallurgy
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will gain understanding of copper smelting process.
+
+## Prior knowledge
+... building upon what you already know ... 
+
+* about general metallurgical processes
+
+## Material
+Expert interview (S. Klein?)
+summary slide of general process
+
+
+## Learning content
+
+* understanding of copper smelting processes
+
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Bamberger, M., and Wincierz, P., 1987, Ancient Smelting of Oxide Copper Ore, In The Ancient Metallurgy of Copper, 123 ff.* Lechtman, H., and Klein, S., 1999, The Production of Copper–Arsenic Alloys (Arsenic Bronze) by Cosmelting: Modern Experiment, Ancient Practice, Journal of Archaeological Science, 26(5), 497–526.
+* Tylecote, R. F., 1974, Can Copper be smelted in a crucible, Journal of Historical Metallurgy Society, 8, 54–7.
+* Doonan, R. C. P., 1994, Sweat, Fire and Brimstone: Pre-Treatment of Copper Ore and the Effects on Smelting Techniques, The Journal of the Historical Metallurgy Society, 28(2), 84–98.
+* Kądziołka, K., Pietranik, A., Kierczak, J., Potysz, A., and Stolarczyk, T., 2020, Towards better reconstruction of smelting temperatures: Methodological review and the case of historical K-rich Cu-slags from the Old Copper Basin, Poland, Journal of Archaeological Science, 118, 105142.
+* Böhne, C., 1968, Über die Kupferverhüttung der Bronzezeit - Schmelzversuche mit Kupferkieserzen, Archaeologica Austraica(44), 49–60.
+* Bachmann, H.-G., 1997, Zementation: Ein mehrdeutiger Begriff in der Metallurgie, Metalla.
+* L’héritier, M., and Téreygeol, F., 2010, From copper to silver: understanding the saigerprozess through experimental liquation and drying, Historical metallurgy, 44(2), 136–52.
+
+

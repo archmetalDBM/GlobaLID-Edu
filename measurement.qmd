@@ -1,0 +1,230 @@
+---
+title: Measurement
+author: 
+  - name: Katrin Westner
+    corresponding: true
+    orcid: 0000-0001-5529-1165
+    email: Katrin.Westner@bergbaumuseum.de
+  - name: Sabine Klein
+    orcid: 0000-0002-3939-4428
+  - name: Thomas Rose
+    orcid: 0000-0002-8186-3566
+    url: https://copper-smelting.com/
+---
+
+## Learning objective
+By the end of this unit, you will be able to describe the basics of mass spectrometry, their basic components and the different instrument types commonly used for the measurement for Pb isotopes. You will also be able to name the key analytical challenges for the measurement of Pb isotopes.
+
+## Prior knowledge
+This unit expects that you already know: 
+
+* [What are isotopes?](https://www.youtube.com/watch?v=xGGelFHCNYo)
+* [What does the term isotope fractionation describe?](https://www.youtube.com/watch?v=5hlcFIPCs1U)
+* The basics of electromagnetism
+
+## Material
+The unit combines text with a video and an interactive figure. 
+
+## Learning content
+
+### Basics of mass spectrometry
+Pb isotope ratios are analysed using a mass spectrometer. These instruments measure the ratios of masses (m) to electrical charge (z) of ionised sample components. Different types of mass spectrometers exist but they all consist of four major consecutive units: 
+
+* Sample introduction system: Introduces the sample in a suitable state as required by the type of mass spectrometer used.
+* Ion source: The sample is vaporised, ionised, focused and transported/accelerated. 
+* Analyser: The ions are sorted electrically and/or magnetically according to their m/z ratio.
+* Detector: The separated ions (isotopes) are detected.
+
+Depending on the constellation of the four units, different types of mass spectrometers are distinguished. 
+
+### Instrumentation
+Nowadays, most laboratories use multi-collector mass spectrometers with inductively coupled plasma (MC-ICP-MS) for the analysis of Pb isotope ratios. They provide reliable and fast analysis by simultaneous detection of isotopes and therefore greatly reduce measurement errors caused by internal instability of the instrument. The following video provides a brief introduction of the principal components and functions.
+
+{{< video https://www.youtube.com/embed/QY6h68zth64 >}}
+
+Quadrupole-ICP-MS instruments use an electric quadrupole consisting of four metal rods. Only ions with a specific mass-to-charge ratio can pass through the quadrupole. By varying the parameters of these electric fields, the ion beam can be filtered and different masses are successively detected. Due to its lower resolution, quadrupole ICP-MS instruments cannot reliably precisely determine isotope ratios but are routinely applied for compositional trace element analysis. 
+Single-collector detection systems also are prone to instrumental instabilities (due to the time passed during analysis of the elemental masses), resulting in comparatively high analytical errors and a lower sensitivity which is insufficient for isotopic measurements but well suitable for trace element analysis.
+
+Thermal ionisation mass spectrometry (TIMS) was the predominantly used instrument prior to the advent of MC-ICP-MS in the 2000s. For this technique, a chemically purified solid sample is loaded on one to three filaments (a thin metal strip). The filaments are heated to vaporise the sample for introduction into the instrument. Isotopic fractionation can be very well controlled with TIMS since it is exclusively caused by well-known thermal fractionation effects. Therefore, isotopic ratios can be very precisely determined with this technique. However, TIMS requires an elaborate sample preparation prior to analysis and measurements cannot be fully automatised since the heating voltage has to be manually adjusted for every sample deposited on the filaments. Furthermore, Pb is difficult to efficiently ionise thermally due to its high mass. Therefore, MC-ICP-MS has largely superseded TIMS for Pb isotope analysis.
+
+they key characteristics of the different instrument types and their most common use cases for inorganic materials are summarised below. 
+
+::: {.panel-tabset}
+
+## TIMS {-}
+
+### Instrument type {-}
+Thermal ionisation mass spectrometer
+
+### Sample introduction {-}
+Chemically purified sample is deposited on one to three filaments
+
+### Ion source {-}
+Heating of the filaments
+
+### Analyser {-}
+Electrostatically and by magnetic field (double-focusing magnetic sector technology)
+
+### Detection unit {-}
+Faraday cups or electron multipliers
+
+### Key characteristics {-}
+
+* Elaborate laboratory preparation
+* Measurements cannot be fully automatised
+* Heavy elements (including Pb) difficult to ionise efficiently
+* Well-controllable thermal mass fractionation
+* Reliable and fast analysis by simultaneous detection of isotopes (measurement errors caused by internal instability of the instrument are greatly reduced)
+* Very high precision
+
+### Typical usage {-}
+Sr isotopes, e.g. for the reconstruction of mobility patterns
+
+## SB-MC-ICP-MS {-}
+
+### Instrument type {-}
+Solution-based multi-collector inductively coupled plasma mass spectrometry
+
+### Sample introduction {-}
+Generating an aerosol from a liquid sample using a nebuliser
+
+### Ion source {-}
+Inductively coupled plasma
+
+### Analyser {-}
+Electrostatically and by magnetic field (double-focusing magnetic sector technology)
+
+### Detection unit {-}
+Faraday cups or electron multipliers
+
+### Key characteristics {-}
+
+* Measurements can be fully automatised
+* Strong ionisation power of plasma
+* Mass fractionation has to be tightly controlled due to fluctuations in the plasma
+* Reliable and fast analysis by simultaneous detection of isotopes (measurement errors caused by internal instability of the instrument are greatly reduced)
+* High precision
+* Sample solution as a homogeneous medium (bulk analysis), matrix effects are greatly reduced.
+
+### Typical usage {-}
+General isotope analyses
+
+## LA-MC-ICP-MS {-}
+
+### Instrument type {-}
+Laser ablation multi-collector inductively coupled plasma mass spectrometry
+
+### Sample introduction {-}
+Vaporisation of solid sample by laser ablation
+
+### Ion source {-}
+Inductively coupled plasma
+
+### Analyser {-}
+Electrostatically and by magnetic field (double-focusing magnetic sector technology)
+
+### Detection unit {-}
+Faraday cups or electron multipliers
+
+### Key characteristics {-}
+
+* Measurements can be fully automatised
+* Strong ionisation power of plasma
+* Mass fractionation has to be tightly controlled due to fluctuations in the plasma
+* Reliable and fast analysis by simultaneous detection of isotopes (measurement errors caused by internal instability of the instrument are greatly reduced)
+* High precision
+* Spatially resolved analysis
+* Direct analysis with special sample holders possible (eliminates sample preparation, saving time, money, expertise)
+* Archaeological objects can be investigated without invasive sampling which is often not possible
+
+### Typical usage {-}
+Spatially resolved general isotope analysis
+
+## SC-ICP-MS {-}
+
+### Instrument type {-}
+Single collectior inductively couples mass spectrometry, with or without laser ablation
+
+### Sample introduction {-}
+
+* Generating an aerosol from a liquid sample using a nebuliser
+* Vaporisation of solid sample by laser ablation
+
+### Ion source {-}
+Inductively coupled plasma
+
+### Analyser {-}
+Magnetic field and electrostatically (double-focusing magnetic sector technology)
+
+### Detection unit {-}
+Electron multiplier
+
+### Key characteristics {-}
+
+* Measurements can be fully automatised
+* Strong ionisation power of plasma
+* Mass fractionation has to be tightly controlled due to fluctuations in the plasma
+* Reliable and fast analysis 
+* Prone to instrumental instabilities due to sequential measurement of isotopes and reduced mass separation, resulting in higher analytical errors and lower sensitivity
+* Insufficient for isotopic analysis
+* Solution-based: Sample solution as a homogeneous medium (bulk analysis), matrix effects are greatly reduced
+* Laser Ablation: 
+  - Spatially resolved analysis
+  - Direct analysis with special sample holders possible (eliminates sample preparation, saving time, money, expertise)
+  - Archaeological objects can be investigated without invasive sampling which is often not possible
+
+### Typical usage {-}
+(Spatially resolved) trace element analysis
+
+## Q-ICP-MS {-}
+
+### Instrument type {-}
+Quadrupole inductively coupled plasma mass spectrometry, with or without laser ablation
+
+### Sample introduction {-}
+
+* Generating an aerosol from a liquid sample using a nebuliser
+* Vaporisation of solid sample by laser ablation
+
+### Ion source {-}
+Inductively coupled plasma
+
+### Analyser {-}
+Quadrupole
+
+### Detection unit {-}
+Electron multiplier
+
+### Key characteristics {-}
+* Comparatively lower resolution and mass separation
+* Unsuitable for isotopic analysis 
+
+### Typical usage {-}
+(Spatially resolved) Trace element analysis
+
+:::
+
+In the interactive figure below, the photos show, if not otherwise mentioned, components of a ThermoScientific NeptunePlus MC-ICP-MS instrument hosted at the Frankfurt Isotope and Element Research Center (FIERCE) of the Goethe University Frankfurt. The sample introduction system shown in the photos is adsjusted for handling liquid sample solutions but other configurations exist. The NeptunePlus is a double-focusing magnetic sector instrument. That means, it consists of two analyzers – an electromagnet and an electrostatic analyzer, which are combined in a specific geometric constellation and whose order can be different in the setup of specific instruments.
+
+<iframe src="/H5P/MC-ICP-MS_scheme.html" width="100%" height="525px" ></iframe>
+
+### Ensuring high quality measurements of Pb isotopes
+A major shortcoming of MC-ICP-MS in comparison to TIMS is the inherent instability of the plasma source which renders instrumental isotopic fractionation difficult to predict. This fractionation effect can be assessed by analysing the isotopic composition of an element which behaves similar to the target element; in case of Pb, thallium (Tl) is used due to the similar masses of its two isotopes (^205^Tl and ^203^Tl). In practice, a known amount of Tl elemental or isotopic (NIST SRM 997) standard is added  to the measurement solution (“spiking”) and ^205^Tl and ^203^Tl are analysed alongside the Pb isotopes. Fractionation is generally assumed to follow an exponential law and fractionation factors are calculated based on the natural ^205^Tl/^203^Tl ratio. Since the 2000s, several different ^205^Tl/^203^Tl ratios have been used in analytical studies which often have been determined by empirical adjustment during the measurement sessions [e.g., @Rehkamper.2000; @Collerson.2002; @Taylor.2015; @White.2000; @Thirlwall.2002; @Yuan.2016]. Apart from the two Tl isotopes, the masses ^204^Hg and ^202^Hg are typically analysed together with the four stable Pb isotopes to account for isobaric interferences potentially affecting ^204^Pb.
+
+The certified Pb isotope reference material NIST SRM 981 is routinely analysed throughout the measurement sessions. The purpose is to further compensate for instrumental instabilities by normalising sample analyses “bracketed” by standard analyses to the fixed values of the standard. Furthermore, analysis of a material with known isotopic composition allows to consistently monitor the precision and accuracy of the measurements. Several different values have been determined for the NIST SRM 981; an overview is provided by @Yuan.2016.
+ 
+## Self check
+
+* What is the basic principle of mass spectrometry analysis?
+* Which are the basic components of all types of mass spectrometers?
+* Which kinds of ICP-MS instrument setups are best suitable for trace elemental and isotopic analyses, respectively, and what are the differences between the instrument types?
+* For which research questions and sample types might a laser-ablation sample introduction system be better suited than a solution-based setup?
+* Which different fractionation mechanisms affect TIMS and ICP-MS instruments and how are they corrected for?
+
+## Further reading
+
+* Hirata T, Vlasceanu M, Coman A (2018) Laser Ablation – Inductively Coupled Plasma Mass Spectrometry. In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 801–810. <https://doi.org/10.1007/978-3-319-39312-4_307>
+* Lassiter JC (2018) Thermal Ionization Mass Spectrometry. In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 1433–1435. <https://doi.org/10.1007/978-3-319-39312-4_299>
+* Rehkämper M, Schönbächler M, Stirling CH (2001) Multiple Collector ICP-MS: Introduction to Instrumentation, Measurement Techniques and Analytical Capabilities. Geostandards and Geoanalytical Research 25:23–40. <https://doi.org/10.1111/j.1751-908X.2001.tb00785.x>
+* Ridley WI (2005) Plumbo-Isotopy: The Measurement of Lead Isotopes by Multi-Collector Inductively Coupled Mass Spectrometry. Open File Report, 2005–1393. U.S. Geological Survey, Reston, Virginia. [(read online)](https://pubs.usgs.gov/of/2005/1393/pdf/OFR-2005-1393.pdf)
+* Schönbächler M (2018) Inductively Coupled Plasma Mass Spectrometry (ICP-MS). In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 723–727. <https://doi.org/10.1007/978-3-319-39312-4_111>

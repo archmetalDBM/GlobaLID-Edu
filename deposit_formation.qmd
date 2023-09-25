@@ -1,0 +1,47 @@
+---
+title: Formation of ore deposits
+author: 
+  - name: xxx
+    corresponding: true
+    orcid: 0000-0001-2345-6789
+    email: a@b.c
+  - name: xxx
+    orcid: 0000-0001-2345-6789
+---
+
+## Learning objective
+In this unit you will learn about the general understanding of important ore formation processes.
+
+## Prior knowledge
+... building upon what you already know ... 
+
+* plate tectonics
+* general geology
+
+## Material
+This unit combines text with interactive figures and an animation. 
+
+## Learning content
+
+<iframe src="/H5P/Tectonic_Settings.html" width="100%" height="380px" ></iframe>
+
+* Interactive graphic: (tectonic) settings of ore deposits
+* animation: formation of hydrothermal deposits
+* animation of VHMS deposit formation
+
+
+
+## Self check
+Now you can provide answers to the following questions: 
+
+* ... 
+
+## Further reading
+To delve deeper into this topic, we recommend the following resources... 
+
+* Robb, L., 2020, Introduction to ore-forming processes, John Wiley & Sons.
+* Fontboté, L., Kouzmanov, K., Chiaradia, M., and Pokrovski, G. S., 2017, Sulfide Minerals in Hydrothermal Deposits, Elements, 13(2), 97–103.
+* Hannington, M. D., 2014, 13.18 - Volcanogenic Massive Sulfide Deposits, In Treatise on Geochemistry (Second Edition) (eds. H. D. Holland, and K. K. Turekian), 463–88, Elsevier, Oxford.
+* Kissin, S. A., and Mango, H., 2014, 13.16 - Silver Vein Deposits, In Treatise on Geochemistry (Second Edition) (eds. H. D. Holland, and K. K. Turekian), 425–32, Elsevier, Oxford.
+* Leach, D. L., Bradley, D. C., Huston, D., Pisarevsky, S. A., Taylor, R. D., and Gardoll, S. J., 2010, Sediment-Hosted Lead-Zinc Deposits in Earth History, Economic Geology, 105(3), 593–625.
+
