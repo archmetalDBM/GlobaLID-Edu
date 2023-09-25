@@ -10,20 +10,220 @@ author:
 ---
 
 ## Learning objective
-In this unit you will receive training combining evidence from multiple sources.
+::: {style="text-align: justify"}
+In this session we will utilise a variety of visualisation and statistic tools to examine whether given artefact data can be assigned to referenced ore deposits. The main task will include how to define an ore field,how to discriminate one dataset from another, and how to evaluate the provenance, recylcing, and mixing of Pb isotope data.  
+:::
 
 ## Prior knowledge
-... building upon what you already know ... 
+::: {style="text-align: justify"}
+We will continue use the plotting methods from previous chapter on the visualisation of Pb isotope data.
+:::
 
-all of the above
+## Outline
+::: {style="text-align: justify"}
+The "eyeballing" technique is the most straightforward way to determine the match or mismatch between artefact and ore data. However, this approach would become unreliable or sometimes subjective when a large and heterogeneous database is involved. The use of some statistic tools could provide another lens to investigate the pattern of data. Moreover, Pb isotope data often follow a linear array which can imply both natural or anthropogenic processes. 
+:::
 
-## Material
-... by doing these things: 
-Puzzles + Multiple choice
-
+<ul>
+  <li>Linearity of data</li>
+  <li>Statistics: euclidean and mahalanobis distance</li>
+  <li>Statistics: principal component analysis</li>
+  <li>Statistics: cluster analysis</li>
+  <li>Kernel density estimation</li>
+  <li>Mixing model</li>
+</ul>
 
 ## Learning content
-Case studies of advances lead isotope studies
+
+
+Let's start with loading the required R packages:
+
+```{r}
+#| label: load-pkgs
+#| code-summary: "Packages"
+#| message: false
+
+library(plotly) # for interactive plots
+library(ggtern) # for ternary kernel density plots
+library(downlit)# code linking
+library(xml2)   # code linking
+library(sfsmisc) # kde probabilities 
+```
+
+@fig-KDEmatching displays KDE probabilities of a sample derived from potential mining regions
+
+
+```{r}
+#| label: fig-KDEmatching
+#| fig-cap: "KDE probabilities of the potential mining regions "
+
+
+##load dataset
+Roman_case <- read.csv("D:/RStudio/R_script/Pb_tools/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+
+## select column names X204.206,207/206,208/206,208/204,207/204,206/204,Region 
+data <- subset(Roman_case, select=c('X208.204','X207.204','X206.204','Region','Country') )
+
+
+## dataframe for each mining region
+data <- subset(Roman_case, select=c('X208.204','X207.204','X206.204','Region','Country') )
+
+Northern_Eifel <- subset(data,Region %in% c('Northern Eifel') )
+Sauerland <- subset(data,Region %in% c('Sauerland') )
+Bergische_Land <- subset(data,Region %in% c('Bergische Land') )
+Laurion <- subset(data,Region %in% c('Laurion') )
+Cevennes <- subset(data,Region %in% c('Cevennes') )
+Cartagena <- subset(data,Region %in% c('Cartagena') )
+SM_Linares <- subset(data,Region %in% c('SM-Linares') )
+Sardinia <- subset(data,Country %in% c('Sardinia') )
+Tuscany <- subset(data,Country %in% c('Tuscany') )
+
+## select a random Roman lead object D-121/1 from Bode et al. 2009 (18.412 sd=0.02),(15.657 sd=0.01),(38.497 sd=0.035) 
+## and produce the upper and lower bound of 206, 207, 208 using 10xsd. 
+## possible improvement: pull out random point from dataset or enter own value
+object_206_lower <- 18.412-10*0.02
+object_206_upper <- 18.412+10*0.02
+object_207_lower <- 15.657-10*0.01
+object_207_upper <- 15.657+10*0.01
+object_208_lower <- 38.497-10*0.035
+object_208_upper <- 38.497+10*0.035
+
+## calculate the KDE probability 
+#for 206/204
+KDE_Northern_Eifel_206=density(Northern_Eifel$X206.204,bw=0.03)
+a206 <- try(integrate.xy(KDE_Northern_Eifel_206$x,KDE_Northern_Eifel_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(a206)) a206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Sauerland_206=density(Sauerland$X206.204,bw=0.03)
+b206 <- try(integrate.xy(KDE_Sauerland_206$x,KDE_Sauerland_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(b206)) b206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Bergische_Land_206=density(Bergische_Land$X206.204,bw=0.03)
+c206 <- try(integrate.xy(KDE_Bergische_Land_206$x,KDE_Bergische_Land_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(c206)) c206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Laurion_206=density(Laurion$X206.204,bw=0.03)
+d206 <- try(integrate.xy(KDE_Laurion_206$x,KDE_Laurion_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(d206)) d206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Cevennes_206=density(Cevennes$X206.204,bw=0.03)
+e206 <- try(integrate.xy(KDE_Cevennes_206$x,KDE_Cevennes_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(e206)) e206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Cartagena_206=density(Cartagena$X206.204,bw=0.03)
+f206 <- try(integrate.xy(KDE_Cartagena_206$x,KDE_Cartagena_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(f206)) f206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_SM_Linares_206=density(SM_Linares$X206.204,bw=0.03)
+g206 <- try(integrate.xy(KDE_SM_Linares_206$x,KDE_SM_Linares_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(g206)) g206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Sardinia_206=density(Sardinia$X206.204,bw=0.03)
+h206 <- try(integrate.xy(KDE_Sardinia_206$x,KDE_Sardinia_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(h206)) h206 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Tuscany_206=density(Tuscany$X206.204,bw=0.03)
+i206 <- try(integrate.xy(KDE_Tuscany_206$x,KDE_Tuscany_206$y, object_206_lower, object_206_upper),silent=TRUE)
+if("try-error" %in% class(i206)) i206 <- 0 #make sure if there is no match, the probability will be zero
+
+percentages206 <- c(a206,b206,c206,d206,e206,f206,g206,h206,i206)
+names_districts <- c("Northern_Eifel","Sauerland","Bergische_Land","Laurion","Cevennes","Cartagena","SM_Linares","Sardinia","Tuscany")
+
+#for 207/204
+KDE_Northern_Eifel_207=density(Northern_Eifel$X207.204,bw=0.03)
+a207 <- try(integrate.xy(KDE_Northern_Eifel_207$x,KDE_Northern_Eifel_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(a207)) a207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Sauerland_207=density(Sauerland$X207.204,bw=0.03)
+b207 <- try(integrate.xy(KDE_Sauerland_207$x,KDE_Sauerland_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(b207)) b207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Bergische_Land_207=density(Bergische_Land$X207.204,bw=0.03)
+c207 <- try(integrate.xy(KDE_Bergische_Land_207$x,KDE_Bergische_Land_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(c207)) c207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Laurion_207=density(Laurion$X207.204,bw=0.03)
+d207 <- try(integrate.xy(KDE_Laurion_207$x,KDE_Laurion_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(d207)) d207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Cevennes_207=density(Cevennes$X207.204,bw=0.03)
+e207 <- try(integrate.xy(KDE_Cevennes_207$x,KDE_Cevennes_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(e207)) e207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Cartagena_207=density(Cartagena$X207.204,bw=0.03)
+f207 <- try(integrate.xy(KDE_Cartagena_207$x,KDE_Cartagena_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(f207)) f207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_SM_Linares_207=density(SM_Linares$X207.204,bw=0.03)
+g207 <- try(integrate.xy(KDE_SM_Linares_207$x,KDE_SM_Linares_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(g207)) g207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Sardinia_207=density(Sardinia$X207.204,bw=0.03)
+h207 <- try(integrate.xy(KDE_Sardinia_207$x,KDE_Sardinia_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(h207)) h207 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Tuscany_207=density(Tuscany$X207.204,bw=0.03)
+i207 <- try(integrate.xy(KDE_Tuscany_207$x,KDE_Tuscany_207$y, object_207_lower, object_207_upper),silent=TRUE)
+if("try-error" %in% class(i207)) i207 <- 0 #make sure if there is no match, the probability will be zero
+
+
+percentages207 <- c(a207,b207,c207,d207,e207,f207,g207,h207,i207)
+names_districts <- c("Northern_Eifel","Sauerland","Bergische_Land","Laurion","Cevennes","Cartagena","SM_Linares","Sardinia","Tuscany")
+
+#for 208/204
+KDE_Northern_Eifel_208=density(Northern_Eifel$X208.204,bw=0.03)
+a208 <- try(integrate.xy(KDE_Northern_Eifel_208$x,KDE_Northern_Eifel_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(a208)) a208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Sauerland_208=density(Sauerland$X208.204,bw=0.03)
+b208 <- try(integrate.xy(KDE_Sauerland_208$x,KDE_Sauerland_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(b208)) b208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Bergische_Land_208=density(Bergische_Land$X208.204,bw=0.03)
+c208 <- try(integrate.xy(KDE_Bergische_Land_208$x,KDE_Bergische_Land_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(c208)) c208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Laurion_208=density(Laurion$X208.204,bw=0.03)
+d208 <- try(integrate.xy(KDE_Laurion_208$x,KDE_Laurion_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(d208)) d208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Cevennes_208=density(Cevennes$X208.204,bw=0.03)
+e208 <- try(integrate.xy(KDE_Cevennes_208$x,KDE_Cevennes_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(e208)) e208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Cartagena_208=density(Cartagena$X208.204,bw=0.03)
+f208 <- try(integrate.xy(KDE_Cartagena_208$x,KDE_Cartagena_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(f208)) f208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_SM_Linares_208=density(SM_Linares$X208.204,bw=0.03)
+g208 <- try(integrate.xy(KDE_SM_Linares_208$x,KDE_SM_Linares_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(g208)) g208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Sardinia_208=density(Sardinia$X208.204,bw=0.03)
+h208 <- try(integrate.xy(KDE_Sardinia_208$x,KDE_Sardinia_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(h208)) h208 <- 0 #make sure if there is no match, the probability will be zero
+
+KDE_Tuscany_208=density(Tuscany$X208.204,bw=0.03)
+i208 <- try(integrate.xy(KDE_Tuscany_208$x,KDE_Tuscany_208$y, object_208_lower, object_208_upper),silent=TRUE)
+if("try-error" %in% class(i208)) i208 <- 0 #make sure if there is no match, the probability will be zero
+
+percentages208 <- c(a208,b208,c208,d208,e208,f208,g208,h208,i208)
+names_districts <- c("Northern_Eifel","Sauerland","Bergische_Land","Laurion","Cevennes","Cartagena","SM_Linares","Sardinia","Tuscany")
+
+
+
+#graph
+library(plotly)
+
+
+fig <- plot_ly(data, x = ~names_districts, y = ~percentages206, type = 'bar', name = 'percentages206')
+fig <- fig %>% add_trace(y = ~percentages207, name = 'percentages207')
+fig <- fig %>% add_trace(y = ~percentages208, name = 'percentages208')
+fig <- fig %>% layout(yaxis = list(title = '%'), barmode = 'group')
+fig
+
+```
+
 
 
 ## Self check
@@ -33,3 +233,12 @@ Now you can provide answers to the following questions:
 
 ## Further reading
 To delve deeper into this topic, we recommend the following resources... 
+
+* Pollard, A. M., and Bray, P. J., 2015, A New Method For Combining Lead Isotope and Lead Abundance Data to Characterize Archaeological Copper Alloys*: Combining lead isotope and lead abundance data, Archaeometry, 57(6), 996–1008.
+* De Ceuster, S., and Degryse, P., 2020, A ‘match–no match‘ numerical and graphical kernel density approach to interpreting lead isotope signatures of ancient artefacts, Archaeometry, 62(S1), 107–16.
+* Tomczyk, C., and Żabiński, G., 2023, A PCA-AHC Approach to Provenance Studies of Non-Ferrous Metals with Combined Pb Isotope and Chemistry Data, Journal of Archaeological Method and Theory, 1–51.
+* Gentelli, L., Blichert-Toft, J., Davis, G., Gitler, H., and Albarède, F., 2021, Metal provenance of Iron Age Hacksilber hoards in the southern Levant, Journal of Archaeological Science, 134, 105472.
+* Hsu, Y.-K., Rawson, J., Pollard, A. M., Ma, Q., Luo, F., Yao, P.-H., and Shen, C.-C., 2018, Application of Kernel Density Estimates to Lead Isotope Compositions of Bronzes from Ningxia, North-West China: Application of KDEs to lead isotope compositions, Archaeometry, 60(1), 128–43.
+* Birch, T., Westner, K. J., Kemmers, F., Klein, S., Höfer, H. E., and Seitz, H. ‐M., 2019, Retracing Magna Graecia’s silver: coupling lead isotopes with a multi‐standard trace element procedure, Archaeometry, arcm.12499.
+* Delile, H., Blichert-Toft, J., Goiran, J.-P., Keay, S., and Albarède, F., 2014, Lead in ancient Rome’s city waters, Proceedings of the National Academy of Sciences, 111(18), 6594–9.
+* Baxter, M. J., Beardah, C. C., and Westwood, S., 2000, Sample Size and Related Issues in the Analysis of Lead Isotope Data, Journal of Archaeological Science, 27(10), 973–80.
