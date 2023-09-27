@@ -186,7 +186,7 @@ For the separation of Pb we use a technique called ion-exchange chromatography (
 
 IEC is a very efficient method because the resin can principally be re-used multiple times. However, it is often also a time-consuming method. The video below is a time-lapse for the Pb separation protocol, which in real time took about 4 hours per sample. However, multiple samples can be handled in parallel. By experience, 10 to 15 samples are a good compromise between efficiency and quality. 
 
-{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+{{< video https://www.youtube-nocookie.com/embed/Dgg9iYQriWQ >}}
 
 The time-lapse features a standard protocol for Pb separation. It uses the resin AG1x8. For archaeometallurgical samples (e.g. slag, metals, metal alloys), only Pb binds to this resin when treated with 0.6&nbsp;M HBr. When treated with 6&nbsp;M HCl, Pb and the other elements are not retained by the resin and washed out completely. You might have noticed the strong colour change of the resin caused by the Cu in the sample and how quickly it was washed out again. And that beakers were changed in between to separately collect the matrix and Pb. The matrix is usually discarded if no other analyses are planned for this sample. However, if further analyses are planned, the matrix will be kept and treated further for these additional analyses. 
 

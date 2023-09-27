@@ -46,7 +46,7 @@ Therefore, different geological environments (e.g., mantle, crust) and tectonic 
 
 Pb isotope ratios are applied in ore deposit geology to reconstruct the metal sources and formation processes of ore mineralisations. @Grogler.1966 and @Brill.1967 first analysed Pb isotope ratios of archaeological metal objects to determine from which ore deposits the raw material might have potentially been sourced. The direct comparison between the isotope signatures of archaeological objects and ore mineralisations is possible since the effect of pyrometallurgical and weathering processes on Pb isotope ratios is typically negligible. Nowadays, Pb isotopes are therefore a key method for assessing the potential raw material provenance of various Pb-bearing archaeological materials such as metals and alloys, glass, glazes, pigments and ceramics.
 
-{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+{{< video https://www.youtube-nocookie.com/embed/Bj50SvNOVrw >}}
 
 ## Self check
 Now you can provide answers to the following questions: 

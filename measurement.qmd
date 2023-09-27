@@ -40,7 +40,7 @@ Depending on the constellation of the four units, different types of mass spectr
 ### Instrumentation
 Nowadays, most laboratories use multi-collector mass spectrometers with inductively coupled plasma (MC-ICP-MS) for the analysis of Pb isotope ratios. They provide reliable and fast analysis by simultaneous detection of isotopes and therefore greatly reduce measurement errors caused by internal instability of the instrument. The following video provides a brief introduction of the principal components and functions.
 
-{{< video https://www.youtube.com/embed/QY6h68zth64 >}}
+{{< video https://www.youtube-nocookie.com/embed/QY6h68zth64 >}}
 
 Quadrupole-ICP-MS instruments use an electric quadrupole consisting of four metal rods. Only ions with a specific mass-to-charge ratio can pass through the quadrupole. By varying the parameters of these electric fields, the ion beam can be filtered and different masses are successively detected. Due to its lower resolution, quadrupole ICP-MS instruments cannot reliably precisely determine isotope ratios but are routinely applied for compositional trace element analysis. 
 Single-collector detection systems also are prone to instrumental instabilities (due to the time passed during analysis of the elemental masses), resulting in comparatively high analytical errors and a lower sensitivity which is insufficient for isotopic measurements but well suitable for trace element analysis.
