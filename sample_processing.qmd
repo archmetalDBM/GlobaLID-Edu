@@ -15,7 +15,7 @@ author:
 ---
 
 ## Learning objective
-By the end of this unit, you will be able to describe how a sample is processed, from the taking the sample to the preparation of a pure Pb solution ready for isotope analysis from it. You will further be able to judge which sampling techniques and lab protocols are appropriate in which context and for which material. 
+By the end of this unit, you will be able to describe how a sample is processed, from taking the sample to the preparation of a pure Pb solution ready to analyse for its isotopic composition. You will further be able to judge which sampling techniques and lab protocols are appropriate in which context and for which material. 
 
 ## Prior knowledge
 This unit expects that you have 
@@ -102,8 +102,8 @@ See also: Milot J, Malod-Dognin C, Blichert-Toft J, Télouk P, Albarède F (2021
 ### Equipment {-}
 
 * Etching solution (a 1:1:1 mixture of H~2~O~2~, NH~4~OH, H~2~O to which SiC can be added to increase abrasion)
-* felt-covered pliers
-* chromatographic paper strips (for coins), cotton buds (for uneven objects)
+* Felt-covered pliers
+* Chromatographic paper strips (for coins), cotton buds (for uneven objects)
 
 ### Advantages {-}
 If no patina is present (and removed during sampling), the sampling technique does not leave damage visible to the naked eye.
@@ -171,7 +171,7 @@ We recommend placing a sampling label with the sampled object. Sampling labels s
 ### Sample dissolution
 An important prerequisite for work in the laboratory is properly cleaned labware. Otherwise, the Pb isotope signal might be contaminated by remnants from previous samples or other sources such as atmospheric Pb. Examples for cleaning procedures for different types of labware are provided [in the appendix](appendix.qmd##cleaning-procedures-for-labware-pdf-pdf-form-docx). Moreover, all steps are usually carried out in a clean room to avoid contamination of the samples by dust and atmospheric Pb. 
 
-Dissolving a sample completely is often necessary to measure the average chemical or isotopic composition of a sample. It removes any heterogeneity within the sample and at the same time transforms the sample into a liquid. The dissolved sample can be easily adjusted in, e.g., its concentration and therefore can be analysed with a wide-range of instruments to measure its chemical composition. Dissolving the sample also allows to separate in the next step (@sec-IEC) the targeted element for isotope analysis, such as Pb.  
+Dissolving a sample completely is often necessary to measure the average chemical or isotopic composition of a sample. It removes any heterogeneity within the sample and at the same time transforms the sample into a liquid. The dissolved sample can be easily adjusted in, e.g., its concentration and therefore can be analysed with a wide range of instruments to measure its chemical composition. Dissolving the sample also allows to separate in the next step (@sec-IEC) the targeted element for isotope analysis, such as Pb.  
 
 Different acids are used to dissolve a sample, often in combination. Probably most famous is *aqua regia*, a mixture of concentrated HCl and HNO~3~ in the ratio of 3:1, which dissolves Au. The combination of different acids is often necessary because samples cannot be dissolved completely with only one acid. For example, HCl is very efficient in dissolving carbonates but not organic material, while HNO~3~ readily dissolves organic material but not carbonates. 
 
@@ -180,7 +180,7 @@ Acid digestion is a standard procedure for dissolving samples and well-establish
 <iframe src="/H5P/Sample_digestion.html" width="100%" height="415px"></iframe>
 
 ### Pb separation {#sec-IEC}
-If Pb is not the main element in your sample, you must separate it from all other elements (e.g., copper, silver), now that your sample is completely dissolved. Otherwise, a reliable measurement of its isotopic composition won’t be possible. 
+If Pb is not the main element in your sample, you must separate it from all other elements (e.g., Cu, Ag), now that your sample is completely dissolved. Otherwise, a reliable measurement of its isotopic composition won’t be possible. 
 
 For the separation of Pb we use a technique called ion-exchange chromatography (IEC). In a nutshell, an organic polymer (resin) is treated (conditioned) with different acids of variable concentrations. Depending on the acid and its concentration, the resin binds ions of some elements more efficiently than others. This behaviour can be utilised to separate elements from each other by treating the resin with suitably concentrated acids in a useful order. When put into a column, gravity lets the acids flow through the resin, allowing collection of the different fractions (eluates) by changing beakers. 
 
@@ -197,17 +197,22 @@ Using this information, you can now reconstruct the IEC protocol shown in the vi
 You can also find print templates for this protocol [in the appendix](appendix.qmd#iec-protocol-for-the-separation-of-pb-according-to-milot.2021). @Milot.2021 present another protocol for the separation of lead. 
 
 :::{.callout-note collapse="true" title="Separation of Pb from Au- and Ag-rich samples"}
-Another protocol is designed for the chromatographic separation of Pb (and Cu) from Au-Ag rich samples. This protocol was developed and published by @Bendall.2003 [p. 43]: 
+Separation of Pb from Au-Ag-rich samples requires a modified two-step protocol for IEC due to reaction of Ag with HCl (precipitation of AgCl) and of Au with HBr. The protocol was developed by @Bendall.2003 and tested and slightly modified by @Standish.2013. It comprises the following main steps:
 
-> Gold and silver seem to restrict the amount of lead recovered from the usual one-step HBr/HCl method. The recovery rates are still not perfect but do allow enough lead to be recovered for analysis. The first HCl-only separation is designed to remove the Au and Ag from the matrix. Firstly, AgCl precipitates and is easily removed by centrifuge, it is necessary to remove the liquid and add fresh HCl before centrifuging again so that as much of the Pb and Cu as possible is removed. Secondly, the Dowex resin holds onto the AuCl anions very strongly and efficiently removes the gold while allowing the lead and copper to pass through. The copper elution is actually more complicated and in fact the method is not optimised for sufficient recovery of copper ... The second chromatographic step produces two solutions. Firstly, the Cu is collected in 0.6M HBr and then the lead is washed through with 6M HCl.
+1. Digestion of the sample in aqua regia, precipitated AgCl is separated by decanting the solution after centrifuging. The liquid is evaporated and re-dissolved in HCl.
+2. First column separation: Removal of Au by elution with HCl (Au is fixated on the resin). The liquid is evaporated and re-dissolved in HBr. When handling particularly Ag-rich samples, remaining Ag will precipitate as AgCl when evaporating the eluted liquid. In this case, the sample should be taken up in 7M HNO~3~ and the insoluble AgCl removed by decanting the solution after centrifuging. The liquid subsequently is evaporated and taken up with HBr.
+3. Second column separation: Removal of the remaining Cu-rich matrix with HBr or a HBr-HNO~3~ mixture @Standish.2013 and elution of Pb with HCl. This last step is equivalent to the classic Pb separation protocol.
 
-A print template for this protocol is included [in the appendix](appendix.qmd#preparation-and-ion-exchange-protocol-for-separating-pb-and-cu-from-au-ag-matrices-according-to-bendall.2003).
+Precipitation of AgCl during digestion and IEC has the potential to fractionate Pb. Tests of the slightly modified protocol by @Standish.2013 showed a Pb yield of c. 95% with a maximum deviation of ±502&nbsp;ppm for the ^206^Pb/^204^Pb ratio. @Jansen.11052019 used the protocol from @Bendall.2003 and found no significant fractionation of Pb isotope values within the 2σ standard errors of the analyses. Users should keep in mind that fractionation effects might become relevant (i.e. measurable) with increasing instrumental sensitivity.
+
+A print template for this protocol is included in the [appendix](appendix.qmd#preparation-and-ion-exchange-protocol-for-separating-pb-and-cu-from-au-ag-matrices-according-to-bendall.2003).
 
 :::
 
 ## Self check
 
-* When asking for sampling the coin collection of a museum, what are the key aspects you should discuss with the curator? * Can lead isotope signatures be obtained by non-invasive techniques? 
+* When asking for sampling the coin collection of a museum, what are the key aspects you should discuss with the curator?
+* Can lead isotope signatures be obtained by non-invasive techniques? 
 * Which acid combination can dissolve an ore? Which one can dissolve a silver coin?
 * How do you call the procedure in which you separate and concentrate lead in a solution?
 * What are the columns filled with prior to taking up the sample solution? 
@@ -218,13 +223,7 @@ A print template for this protocol is included [in the appendix](appendix.qmd#pr
 
 * <https://en.wikipedia.org/wiki/Ion_chromatography>
 * <https://www.youtube.com/watch?v=2R2iq_XR1IY> 
-* Milot J, Malod-Dognin C, Blichert-Toft J, Télouk P, Albarède F (2021) Sampling and combined Pb and Ag isotopic analysis of ancient silver coins and ores. Chemical Geology 564:120028. <https://doi.org/10.1016/j.chemgeo.2020.120028>
-* Strelow FWE, Toerien FVS (1966) Separation of Lead(II), from Bismuth(III), Thallium(III), Cadmium(II), Mercury(II), Gold(III), Platinum(IV), Palladium(II), and Other Elements by Anion Exchange Chromatography. Analytical Chemistry 38:545–548.
+* Strelow FWE, Toerien FVS (1966) Separation of Lead(II), from Bismuth(III), Thallium(III), Cadmium(II), Mercury(II), Gold(III), Platinum(IV), Palladium(II), and Other Elements by Anion Exchange Chromatography. Analytical Chemistry 38:545–548. <https://doi.org/10.1021/ac60236a006>
 
-### Variations in IEC protocol
-
-#### Specifically in Au-Ag matrices
-* Bendall C (2003) The Application of Trace Element and Isotopic Analyses to the Study of Celtic Gold Coins and their Metal Sources. PhD thesis, Goethe-Universität Frankfurt. [read online](https://d-nb.info/970728999/34)
-
-#### Specifically for alloys
+### Specifically for alloys
 * Iliev I, Kuleff I, Adam J, Pernicka E (2003) Electrochemical lead separation from copper, copper alloy, silver and silver alloy for isotope ratio determination in archaeometric investigations. Analytica Chimica Acta 497:227–233. <https://doi.org/10.1016/j.aca.2003.07.008>
