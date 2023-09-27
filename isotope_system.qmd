@@ -61,16 +61,12 @@ Now you can provide answers to the following questions:
 
 ## Further reading
 ### General
-* Brill RH, Wampler JM (1967) Isotope Studies of Ancient Lead. American Journal of Archaeology 71:63–77. <https://doi.org/10.2307/501589>
 * Faure G (1986) Principles of isotope geology, 2nd edn. Wiley, New York, Chichester.
-* Grögler N, Geiss J, Grünenfelder M, Houtermans FG (1966) Isotopenuntersuchungen zur Bestimmung der Herkunft römischer Bleirohre und Bleibarren. Zeitschrift für Naturforschung A 21:1167–1172. <https://doi.org/10.1515/zna-1966-0744>
 * Huston DL, Champion DC (2023) Applications of Lead Isotopes to Ore Geology, Metallogenesis and Exploration. In: Huston D, Gutzmer J (eds) Isotopes in Economic Geology, Metallogenesis and Exploration. Springer, Cham, 155-187. <https://doi.org/10.1007/978-3-031-27897-6_6>
 * Köppel V, Grünenfelder M (1979) Isotope geochemistry of lead. In: Jäger E, Hunziker JC (eds) Lectures in isotope geology. Springer, Berlin, pp 134–153. <https://doi.org/10.1007/978-3-642-67161-6_9>
-* Schoene B (2014) 4.10 - U–Th–Pb Geochronology. In: Holland HD, Turekian KK (eds) Treatise on geochemistry, 2nd edn., vol 4. Elsevier, Amsterdam, pp 341–378. [(read online)](https://timslab.princeton.edu/sites/g/files/toruqf2276/files/schoene-treatisegeochemistry-2014.pdf) 
-* Tosdal RM, Wooden JL, Bouse RM (1999) Pb Isotopes, Ore Deposits, and Metallogenic Terranes. In: Lambert DD, Ruiz J (eds) Application of Radiogenic Isotopes to Ore Deposit Research and Exploration. Society of Economic Geologists, Littleton, pp 2–28.
+* Schoene B (2014) 4.10 - U–Th–Pb Geochronology. In: Holland HD, Turekian KK (eds) Treatise on geochemistry, 2nd edn., vol 4. Elsevier, Amsterdam, pp 341–378. <https://doi.org/10.1016/B978-0-08-095975-7.00310-7> [(read online)](https://timslab.princeton.edu/sites/g/files/toruqf2276/files/schoene-treatisegeochemistry-2014.pdf) 
+* Tosdal RM, Wooden JL, Bouse RM (1999) Pb Isotopes, Ore Deposits, and Metallogenic Terranes. In: Lambert DD, Ruiz J (eds) Application of Radiogenic Isotopes to Ore Deposit Research and Exploration. Society of Economic Geologists, Littleton, pp 2–28. <https://doi.org/10.5382/Rev.12.01>
 * Weis D (2018) Lead Isotopes. In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 1–5. <https://doi.org/10.1007/978-3-319-39312-4_293>
 
 ### Age models
-* Albarède F, Juteau M (1984) Unscrambling the lead model ages. Geochimica et Cosmochimica Acta 48:207–212. <https://doi.org/10.1016/0016-7037(84)90364-8>
 * Cumming GL, Richards JR (1975) Ore lead isotope ratios in a continuously changing earth. Earth and Planetary Science Letters 28:155–171. <https://doi.org/10.1016/0012-821X(75)90223-X>
-* Stacey JS, Kramers JD (1975) Approximation of terrestrial lead isotope evolution by a two-stage model. Earth and Planetary Science Letters 26:207–221. <https://doi.org/10.1016/0012-821X(75)90088-6>
