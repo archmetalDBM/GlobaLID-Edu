@@ -21,7 +21,7 @@ This section discusses different types of plots. Interactive examples of these p
 Because lead isotopes are represented by three independent ratios, e.g., ^206^Pb/^204^Pb, ^207^Pb/^204^Pb, and ^208^Pb/^204^Pb, they can be visualised in a three dimensional geometric space. However, often only two dimensions can be represented in one plot. In addition, different ways of optically grouping and highlighting groups within the Pb isotope space exist. Published real archaeological datasets will be used as examples to demonstrate how these data can be treated in different ways. They are available in [the GitHub repository of this book](https://github.com/archmetalDBM/GlobaLID-Edu/tree/main/example_dataset). 
 It is important to keep in mind that every plot has its pros and cons and there is no general consensus which is the best presentation.
 
-All plots were created in [R](https://cran.r-project.org) with support of different packages. The respective scripts are embedded in the [unrendered version of this chapter](https://github.com/archmetalDBM/GlobaLID-Edu/blob/main/visualisation.qmd).
+All plots were created in [R](https://www.r-project.org) with support of different packages. The respective scripts are embedded in the [unrendered version of this chapter](https://github.com/archmetalDBM/GlobaLID-Edu/blob/main/visualisation.qmd).
 
 <!--
 Let's start with loading the required R packages:
