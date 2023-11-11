@@ -9,6 +9,12 @@ author:
     orcid: 0000-0001-2345-6789
 ---
 
+::: {.callout-caution title="In preparation"}
+This chapter is in preparation. You are welcome to contribute!  
+If you are interested to contribute, please get in contact with Thomas Rose, the editor of this interactive textbook, by [mail](mailto:thomas.rose@bergbaumuseum.de?subject=LIA%20textbook) or on [GitHub](https://github.com/archmetalDBM/GlobaLID-Edu). 
+:::
+
+<!--
 ## Learning objective
 In this unit you will gain understanding of the changes of Pb isotope signatures in the metallurgical process.
 
@@ -49,4 +55,4 @@ on during metallurgical processes, Archaeometry, 53(1), 205–14.
 * Sun, Z., Liu, S., Zhang, J., Chen, K., and Kaufman, B., 2023, Resolving the complex mixing history of ancient Chinese bronzes by Manifold Learning and a Bayesian Mixing Model, Journal of Archaeological Science, 151, 105728.
 * Bray, P., 2020, Modelling Roman Concepts of Copper-Alloy Recycling and Mutability: The Chemical Characterization Hypothesis and Roman Britain, In Recycling and Reuse in the Roman Economy (P. Bray), 237–64, Oxford University Press.
 
-
+-->

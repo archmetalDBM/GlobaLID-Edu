@@ -9,8 +9,7 @@ author:
     orcid: 0000-0001-2345-6789
 ---
 
-In summary, this book has no content whatsoever.
-
-```{r}
-1 + 1
-```
+::: {.callout-caution title="In preparation"}
+This chapter is in preparation. You are welcome to contribute!  
+If you are interested to contribute, please get in contact with Thomas Rose, the editor of this interactive textbook, by [mail](mailto:thomas.rose@bergbaumuseum.de?subject=LIA%20textbook) or on [GitHub](https://github.com/archmetalDBM/GlobaLID-Edu). 
+:::

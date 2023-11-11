@@ -9,6 +9,12 @@ author:
     orcid: 0000-0001-2345-6789
 ---
 
+::: {.callout-caution title="In preparation"}
+This chapter is in preparation. You are welcome to contribute!  
+If you are interested to contribute, please get in contact with Thomas Rose, the editor of this interactive textbook, by [mail](mailto:thomas.rose@bergbaumuseum.de?subject=LIA%20textbook) or on [GitHub](https://github.com/archmetalDBM/GlobaLID-Edu). 
+:::
+
+<!--
 ## Learning objective
 In this unit you will receive training combining evidence from multiple sources.
 
@@ -38,4 +44,4 @@ To delve deeper into this topic, we recommend the following resources...
 * Butcher, K. E. T., and Ponting, M., 2005, The Roman denarius under the Julio-Claudian emperors: mints, metallurgy and Technology, Oxford Journal of Archaeology, 24, 163–97.
 * Eshel, T., Erel, Y., Yahalom-Mack, N., Tirosh, O., and Gilboa, A., 2019, Lead isotopes in silver reveal earliest Phoenician quest for metals in the west Mediterranean, Proceedings of the National Academy of Sciences, 116(13), 6007.
 * Eshel, T., Erel, Y., Yahalom-Mack, N., Tirosh, O., and Gilboa, A., 2022, From Iberia to Laurion: Interpreting Changes in Silver Supply to the Levant in the Late Iron Age Based on Lead Isotope Analysis, Archaeological and Anthropological Sciences, 14(6), 120.
-
+-->

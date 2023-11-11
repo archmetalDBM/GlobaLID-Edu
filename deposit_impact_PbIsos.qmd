@@ -9,6 +9,12 @@ author:
     orcid: 0000-0001-2345-6789
 ---
 
+::: {.callout-caution title="In preparation"}
+This chapter is in preparation. You are welcome to contribute!  
+If you are interested to contribute, please get in contact with Thomas Rose, the editor of this interactive textbook, by [mail](mailto:thomas.rose@bergbaumuseum.de?subject=LIA%20textbook) or on [GitHub](https://github.com/archmetalDBM/GlobaLID-Edu). 
+:::
+
+<!--
 ## Learning objective
 In this unit you will learn about the Pb-Isotope specific aspects of ores.
 
@@ -60,3 +66,4 @@ Now you can provide answers to the following questions:
 To delve deeper into this topic, we recommend the following resources... 
 
 * Tosdal, R. M., Wooden, J. L., and Bouse, R. M., 1999, Pb Isotopes, Ore Deposits, and Metallogenic Terranes., In D. D. Lambert & J. Ruiz (Eds.): Application of Radiogenic Isotopes to Ore Deposit Research and Exploration, 1–28, Society of Economic Geologists.
+-->

@@ -9,6 +9,12 @@ author:
     orcid: 0000-0001-2345-6789
 ---
 
+::: {.callout-caution title="In preparation"}
+This chapter is in preparation. You are welcome to contribute!  
+If you are interested to contribute, please get in contact with Thomas Rose, the editor of this interactive textbook, by [mail](mailto:thomas.rose@bergbaumuseum.de?subject=LIA%20textbook) or on [GitHub](https://github.com/archmetalDBM/GlobaLID-Edu). 
+:::
+
+<!--
 ## Learning objective
 In this unit you will learn about lead smelting process and cupellation process.
 
@@ -40,3 +46,5 @@ To delve deeper into this topic, we recommend the following resources...
 * Nriagu, J. O., 1985, Cupellation: The oldest quantitative chemical process, Journal of Chemical Education, 62(8), 668.
 * Swinbourne, D., Yan, S., Hoang, G., and Higgins, D., 2003, Thermodynamic modelling of cupellation: activity of AgO0· 5 in molten PbO at 1000ºC, Mineral Processing and Extractive Metallurgy, 112(2), 69–74.
 * Merkel, S. W., 2021, Evidence for the widespread use of dry silver ore in the early Islamic period and its implications for the history of silver metallurgy, Journal of Archaeological Science, 135, 105478.
+
+-->

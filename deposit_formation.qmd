@@ -9,6 +9,12 @@ author:
     orcid: 0000-0001-2345-6789
 ---
 
+::: {.callout-caution title="In preparation"}
+This chapter is in preparation. You are welcome to contribute!  
+If you are interested to contribute, please get in contact with Thomas Rose, the editor of this interactive textbook, by [mail](mailto:thomas.rose@bergbaumuseum.de?subject=LIA%20textbook) or on [GitHub](https://github.com/archmetalDBM/GlobaLID-Edu). 
+:::
+
+<!--
 ## Learning objective
 In this unit you will learn about the general understanding of important ore formation processes.
 
@@ -45,3 +51,4 @@ To delve deeper into this topic, we recommend the following resources...
 * Kissin, S. A., and Mango, H., 2014, 13.16 - Silver Vein Deposits, In Treatise on Geochemistry (Second Edition) (eds. H. D. Holland, and K. K. Turekian), 425–32, Elsevier, Oxford.
 * Leach, D. L., Bradley, D. C., Huston, D., Pisarevsky, S. A., Taylor, R. D., and Gardoll, S. J., 2010, Sediment-Hosted Lead-Zinc Deposits in Earth History, Economic Geology, 105(3), 593–625.
 
+-->

@@ -9,6 +9,12 @@ author:
     orcid: 0000-0001-2345-6789
 ---
 
+::: {.callout-caution title="In preparation"}
+This chapter is in preparation. You are welcome to contribute!  
+If you are interested to contribute, please get in contact with Thomas Rose, the editor of this interactive textbook, by [mail](mailto:thomas.rose@bergbaumuseum.de?subject=LIA%20textbook) or on [GitHub](https://github.com/archmetalDBM/GlobaLID-Edu). 
+:::
+
+<!--
 ## Learning objective
 In this unit you will learn the potential of lead isotopes in archaeological research.
 
@@ -43,3 +49,5 @@ To delve deeper into this topic, we recommend the following resources...
 * Artioli, G., Angelini, I., Kaufmann, G., Canovaro, C., Dal Sasso, G., and Villa, I. M., 2017, Long-distance connections in the Copper Age: New evidence from the Alpine Iceman’s copper axe, PLOS ONE, 12(7), e0179263.
 * Pollard, A. M., 2009, What a long, strange trip it’s been: lead isotopes and archaeology, In From Mine to Microscope. Advances in the Study of Ancient Technology (eds. A. J. Shortland, I. C. Freestone, and T. Rehren), 181–90, Oxbow Books.
 * Gale, N. H., 2009, A response to the paper of A.M. Pollard: What a long, strange trip it’s been: lead isotopes and archaeology, In From Mine to Microscope. Advances in the Study of Ancient Technology (eds. A. J. Shortland, I. C. Freestone, and T. Rehren), 191–6, Oxbow Books.
+
+-->
