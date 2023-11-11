@@ -18,8 +18,8 @@ By the end of this unit, you will be able to describe the basics of mass spectro
 ## Prior knowledge
 This unit expects that you already know: 
 
-* [What are isotopes?](https://www.youtube.com/watch?v=xGGelFHCNYo)
-* [What does the term isotope fractionation describe?](https://www.youtube.com/watch?v=5hlcFIPCs1U)
+* [What are isotopes?](https://www.youtube.com/watch?v=xGGelFHCNYo) (Video on YouTube)
+* [What does the term isotope fractionation describe?](https://www.youtube.com/watch?v=5hlcFIPCs1U) (Video on YouTube)
 * The basics of electromagnetism
 
 ## Material

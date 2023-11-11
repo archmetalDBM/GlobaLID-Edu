@@ -15,8 +15,8 @@ By the end of the unit, you will understand the origins of the different lead is
 ## Prior knowledge
 This unit expects that you already know: 
 
-* [What are isotopes?](https://www.youtube.com/watch?v=xGGelFHCNYo)
-* [Basics of radioactive decay](https://www.youtube.com/watch?v=UtZw9jfIxXM)
+* [What are isotopes?](https://www.youtube.com/watch?v=xGGelFHCNYo) (Video on YouTube)
+* [Basics of radioactive decay](https://www.youtube.com/watch?v=UtZw9jfIxXM) (Video on YouTube)
 * General concepts of geology and the creation of mountain ranges (orogenesis)
 
 ## Material
