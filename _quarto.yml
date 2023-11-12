@@ -51,7 +51,7 @@ book:
   repo-url: https://github.com/archmetalDBM/GlobaLID-Edu
   repo-branch: main
   repo-actions: [edit, issue]
-  sharing: [twitter, facebook, linkedin]
+#  sharing: [twitter, facebook, linkedin]
   twitter-card: true
   open-graph: true
   
