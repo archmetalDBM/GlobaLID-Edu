@@ -1,6 +1,6 @@
 # Lead Isotopes in Archaeology: An Interactive Textbook
 
-This repository holds the code and text of "Lead Isotopes in Archaeology: An Interactive Textbook". 
+This repository holds the code and text of "[Lead Isotopes in Archaeology: An Interactive Textbook](https://archmetaldbm.github.io/GlobaLID-Edu/)". 
 
 This interactive textbook provides learning content for all aspects related to the use of lead isotopes in archaeological research, particularly the reconstruction of the raw material provenance. It combines aspects of geochemistry, archaeology and data science into a holistic approach to this topic. It is an open educational resources, meaning that its content is free and you are invited to participate in its creation. 
 
