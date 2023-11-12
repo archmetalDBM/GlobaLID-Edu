@@ -39,7 +39,7 @@ cc.run({
         'en': {
             consent_modal: {
                 title: 'We use cookies!',
-                description: 'This website contains third-party content that uses cookies, such as Youtube videos. Some of the cookies are necessary to ensure that these elements work properly, others are used for analytics and tracking you. Your interaction and IP address is sent to the servers of the analytics providers in this case. <br> <a href="/about.html#privacy">Read the Privacy Policy</a>', // <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>
+                description: 'This website contains third-party content that uses cookies, such as Youtube videos. Some of the cookies are necessary to ensure that these elements work properly, others are used for analytics and tracking you. the latter will only be set with your consent. Your interaction and IP address is sent to the servers of the analytics providers in this case. <br> <a href="/about.html#privacy">Read the Privacy Policy</a>', // <button type="button" data-cc="c-settings" class="cc-link">Let me choose</button>
                 primary_btn: {
                     text: 'Accept necessary',
                     role: 'accept_necessary'  // 'accept_selected' or 'accept_all'
@@ -64,7 +64,7 @@ cc.run({
                 blocks: [
                     {
                         title: 'Cookie usage',
-                        description: 'This site contains third-party contents that use cookies, such as Youtube videos. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="about.html#privacy" class="cc-link">privacy policy</a>.'
+                        description: 'This site contains third-party content that uses cookies, such as Youtube videos. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="about.html#privacy" class="cc-link">privacy policy</a>.'
                     }, {
                         title: 'Strictly necessary cookies',
                         description: 'These cookies are essential for the proper functioning of the website. Without these cookies, the website would not work properly',
@@ -106,7 +106,7 @@ cc.run({
                         }
                     }, {
                         title: 'More information',
-                        description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="#yourcontactpage">contact us</a>.',
+                        description: 'For any queries in relation to our policy on cookies and your choices, please <a class="cc-link" href="about.html#privacy">contact us</a>.',
                     }
                 ]
             }
