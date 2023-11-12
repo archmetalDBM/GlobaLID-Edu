@@ -44,6 +44,7 @@ library(ggplot2)
 library(purrr)# for kernel density calculation
 library(downlit)# code linking
 library(xml2)   # code linking
+library(rmarkdown)
 ```
 
 
