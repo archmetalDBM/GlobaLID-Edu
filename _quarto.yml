@@ -116,4 +116,6 @@ format:
       - text: |
           <script defer src="resources/cookieconsent-2.9.2/cookieconsent.js"></script>
           <script defer src="resources/cookieconsent-init.js"></script>
-          
+
+execute: 
+  freeze: auto
