@@ -2,6 +2,7 @@ project:
   type: book
 
 book:
+  version: 0.1
   title: "Lead Isotopes in Archaeology: An Interactive Textbook"
   abstract: |
     This interactive textbook provides learning content for all aspects related 
@@ -28,14 +29,18 @@ book:
           city: Bochum
           country: Germany
           url: https://www.bergbaumuseum.de/
-  date: "today"
+
   reader-mode: true
+  license: CC-BY 4.0
   language: en
   cover-image: cover.png
   
   page-footer: 
     left: 
       - text: Built with <a href="https://quarto.org/">Quarto</a>.
+    center: 
+      - text: |
+          <a type=button type="button" data-cc="c-settings" class="cc-link">Manage cookie preferences</button>
     right: 
       - text: "Legal information"
         href: about.qmd
@@ -99,5 +104,16 @@ format:
       - theme-light.scss
     smooth-scroll: true
     link-external-newwindow: true
+    date: today
     code-link: true
     code-fold: true
+    
+    # cookie banner
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="resources/cookieconsent-2.9.2/cookieconsent.css" media="print" onload="this.media='all'">
+    include-after-body: 
+      - text: |
+          <script defer src="resources/cookieconsent-2.9.2/cookieconsent.js"></script>
+          <script defer src="resources/cookieconsent-init.js"></script>
+          

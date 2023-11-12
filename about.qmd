@@ -20,7 +20,31 @@ Nordrhein Westfalen
 
 ## Privacy
 
-This webpage does not use any cookies. It does not collect, store or process personal data. The website is hosted by [GitHub Inc.](https://github.com/) using [GitHub pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). The privacy statement of Github is available [here](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement). 
+The website is hosted by [GitHub Inc.](https://github.com/) using [GitHub pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages). The privacy statement of Github is available [here](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement). 
+
+This webpage embeds third-party content that uses cookies. The respective providers are listed below. 
+
+### Youtube
+The website uses plugins from YouTube operated by Google. The operator of the plug-ins is YouTube, LLC, 901 Cherry Ave, San Bruno, CA 94066, USA.
+
+When you visit one of our pages equipped with a YouTube plugin, a connection to the YouTube servers is established. The YouTube server is informed which of our pages you have visited.
+
+If you are logged into your YouTube account, you enable YouTube to assign your surfing behaviour directly to your personal profile. You can prevent this by logging out of your YouTube account.
+
+The use of YouTube is in the interest of an appealing presentation of our online offers. This constitutes a legitimate interest within the meaning of Art. 6 para. 1 lit. f GDPR. 
+
+Further information on the handling of user data can be found in YouTube's privacy policy at: <https://www.google.de/intl/de/policies/privacy>.
+
+
+### GoogleFonts
+
+Some elements on this website, such as the YouTube plugins, uses Google Fonts. When you load a page containing such elements, your browser connects to Google Fonts and loads the required web fonts into your browser cache in order to display texts and fonts correctly.
+
+For this purpose, the browser you are using must connect to Google's servers. This informs Google that the website has been accessed via your IP address. The use of Google Web Fonts is in the interest of a uniform and appealing presentation of our online offers. This constitutes a legitimate interest within the meaning of Art. 6 para. 1 lit. f GDPR.
+
+If your browser does not support web fonts, a standard font will be used by your computer.
+
+Further information on Google Web Fonts can be found at <https://developers.google.com/fonts/faq> and in Google's privacy policy: <https://www.google.com/policies/privacy/>.
 
 ## License
 
