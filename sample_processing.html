@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Katrin Westner">
+<meta name="author" content="Thomas Rose">
+<meta name="author" content="Sabine Klein">
+<meta name="author" content="Tim Greifelt">
+<meta name="dcterms.date" content="2023-11-12">
+
+<title>Lead Isotopes in Archaeology: An Interactive Textbook - 4&nbsp; Sample processing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./measurement.html" rel="next">
+<link href="./isotope_system.html" rel="prev">
+<link href="./assets/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="resources/cookieconsent-2.9.2/cookieconsent.css" media="print" onload="this.media='all'">
+
+
+<meta property="og:title" content="Lead Isotopes in Archaeology: An Interactive Textbook - 4&nbsp; Sample processing">
+<meta property="og:description" content="">
+<meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta property="og:site-name" content="Lead Isotopes in Archaeology: An Interactive Textbook">
+<meta name="twitter:title" content="Lead Isotopes in Archaeology: An Interactive Textbook - 4&nbsp; Sample processing">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basics.html">Basics of lead isotope geochemistry, metallogenic processes, and metallurgical processes</a></li><li class="breadcrumb-item"><a href="./sample_processing.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sample processing</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Lead Isotopes in Archaeology: An Interactive Textbook</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/archmetalDBM/GlobaLID-Edu" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics of lead isotope geochemistry, metallogenic processes, and metallurgical processes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./isotope_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The U–Th–Pb isotope system</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sample_processing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sample processing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measurement.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Learning progress – Pb isotope geochemistry</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deposit_formation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Formation of ore deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deposit_impact_PbIsos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Evolution of Pb isotope signatures in ore deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Learning progress – Ore deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Metallurgical processes – basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_Pb-Ag.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lead/Silver smelting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_Cu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Copper metallurgy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_impact_PbIsos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Evolution of Pb isotopes during (s)melting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Learning progress – Metallurgical processes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary_bascis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Wrap up – Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application of lead isotopes for the reconstruction of raw material provenances</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correction_QA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Correction and quality assessment of Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data storage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reference_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Collecting reference data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Learning progress – Handling and storage of Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Visualisation of lead isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Matching of Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Learning progress – Evaluating Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Wrap up – Application</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interpretation of lead isotope data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interpretation_additional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sources of complimentary information</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interpretation_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">What can Pb isotopes tell us?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interpretation_combined.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Bringing the evidences together</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary_interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Wrap up – Interpretation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objective" id="toc-learning-objective" class="nav-link active" data-scroll-target="#learning-objective"><span class="header-section-number">4.1</span> Learning objective</a></li>
+  <li><a href="#prior-knowledge" id="toc-prior-knowledge" class="nav-link" data-scroll-target="#prior-knowledge"><span class="header-section-number">4.2</span> Prior knowledge</a></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material"><span class="header-section-number">4.3</span> Material</a></li>
+  <li><a href="#learning-content" id="toc-learning-content" class="nav-link" data-scroll-target="#learning-content"><span class="header-section-number">4.4</span> Learning content</a>
+  <ul class="collapse">
+  <li><a href="#sampling-techniques" id="toc-sampling-techniques" class="nav-link" data-scroll-target="#sampling-techniques"><span class="header-section-number">4.4.1</span> Sampling techniques</a></li>
+  <li><a href="#sample-dissolution" id="toc-sample-dissolution" class="nav-link" data-scroll-target="#sample-dissolution"><span class="header-section-number">4.4.2</span> Sample dissolution</a></li>
+  <li><a href="#sec-IEC" id="toc-sec-IEC" class="nav-link" data-scroll-target="#sec-IEC"><span class="header-section-number">4.4.3</span> Pb separation</a></li>
+  </ul></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">4.5</span> Self check</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">4.6</span> Further reading</a>
+  <ul class="collapse">
+  <li><a href="#basics-of-iec" id="toc-basics-of-iec" class="nav-link" data-scroll-target="#basics-of-iec"><span class="header-section-number">4.6.1</span> Basics of IEC</a></li>
+  <li><a href="#specifically-for-alloys" id="toc-specifically-for-alloys" class="nav-link" data-scroll-target="#specifically-for-alloys"><span class="header-section-number">4.6.2</span> Specifically for alloys</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/archmetalDBM/GlobaLID-Edu/edit/main/sample_processing.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/archmetalDBM/GlobaLID-Edu/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sample processing</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katrin Westner <a href="https://orcid.org/0000-0001-5529-1165" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+             <p><a href="https://copper-smelting.com/">Thomas Rose</a> <a href="https://orcid.org/0000-0002-8186-3566" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+             <p>Sabine Klein <a href="https://orcid.org/0000-0002-3939-4428" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+             <p>Tim Greifelt </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 12, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="learning-objective" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="learning-objective"><span class="header-section-number">4.1</span> Learning objective</h2>
+<p>By the end of this unit, you will be able to describe how a sample is processed, from taking the sample to the preparation of a pure Pb solution ready to analyse for its isotopic composition. You will further be able to judge which sampling techniques and lab protocols are appropriate in which context and for which material.</p>
+</section>
+<section id="prior-knowledge" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="prior-knowledge"><span class="header-section-number">4.2</span> Prior knowledge</h2>
+<p>This unit expects that you have</p>
+<ul>
+<li>General basics in chemistry</li>
+<li>General understanding of the properties of a material (e.g., phase composition, microstructure) and how they determine the material’s interaction with the environment (weathering, corrosion, post-depositional processes)</li>
+</ul>
+</section>
+<section id="material" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="material"><span class="header-section-number">4.3</span> Material</h2>
+<p>This unit combines text with a small serious game, a video, and a puzzle.</p>
+</section>
+<section id="learning-content" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="learning-content"><span class="header-section-number">4.4</span> Learning content</h2>
+<section id="sampling-techniques" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="sampling-techniques"><span class="header-section-number">4.4.1</span> Sampling techniques</h3>
+<p>Before deciding which method to use for sampling, some general points have to be considered:</p>
+<ul>
+<li>Permission of persons responsible for the materials to be sampled</li>
+<li>Health and safety restrictions at the sampling site</li>
+<li>Specific requirements of the institutions</li>
+<li>Focus of analysis (weathered/corroded vs.&nbsp;unaltered material and their potential thickness, ancient surface treatments, conservation treatments)</li>
+<li>Contamination sources during sampling and (pre-)cleaning of equipment</li>
+<li>Check for availability of power supply and need for potential additional equipment at sampling site (e.g., lighting, magnifier, extensional power cord and converters, chemicals for cleaning)</li>
+<li>Transportability of instruments (e.g., laser sampling unit) and chemicals (e.g., H<sub>2</sub>O<sub>2</sub> and NH<sub>4</sub>OH are necessary for the etching solution but forbidden to transport on passenger planes and can be difficult to obtain in laboratory grade purity at the sampling location)</li>
+</ul>
+<p>All sampling campaigns have to be individually prepared with consideration of the necessary information and restrictions. In the appendix, we provide an <a href="./appendix.html#packing-list-pdf-pdf-form-docx">exemplary packlist</a>.</p>
+<p>Below we listed the most common sampling methods with their advantages and disadvantages.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Drilling</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Tweaking/clipping/cutting</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Etching</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Abrasion</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Portable laser ablation</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="description" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="description">Description</h3>
+<p>A small quantity of material is removed by drilling the object at one or several locations. Surficial material is separated or given to the curators for restoration of the objects after sampling. Material for analysis is stored in centrifuge tubes and then further processed in the laboratory.</p>
+</section>
+<section id="equipment" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="equipment">Equipment</h3>
+<ul>
+<li>Handheld or stationary rotary drills</li>
+<li>Drill bits. HSS (high-speed steel) drill bits are the material of choice due to their high hardness and resistance towards abrasion. Typical drill bit sizes used for sampling of silver coins or other small artefacts are in the range of 0.5 to 0.8&nbsp;mm, while for bigger objects larger drill bit sizes may be used. Obtaining a representative and sufficient amount of material for analyses generally has to be weighed up against curatorial requirements. HSS drill bits are particularly available from shops specialising in goldsmith’s supplies.</li>
+</ul>
+</section>
+<section id="advantages" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="advantages">Advantages</h3>
+<ul>
+<li>Excellent control over sampling depth, allows to access unaltered material from the interior</li>
+<li>Different drill bit sizes and materials available for adjustment to object types, shapes, and dimensions</li>
+<li>Comparatively cheap and easily accessible equipment, handheld drills can be easily transported to the sampling site</li>
+</ul>
+</section>
+<section id="typical-disadvantages" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-disadvantages">Typical disadvantages</h3>
+<p>Sampling technique causes visual deterioration of the objects (= (minimally) invasive), therefore sometimes not accepted by institutions</p>
+</section>
+<section id="exemplary-publication" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exemplary-publication">Exemplary publication</h3>
+<p>Birch T, Westner KJ, Kemmers F, Klein S, Höfer HE, Seitz H-M (2020) Retracing Magna Graecia’s silver: Coupling lead isotopes with a multi‐standard trace element procedure. Archaeometry 62:81–108. <a href="https://doi.org/10.1111/arcm.12499" class="uri">https://doi.org/10.1111/arcm.12499</a></p>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="description-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="description-1">Description</h3>
+<p>A piece of the object is removed by tweaking, clipping or cutting.</p>
+</section>
+<section id="equipment-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="equipment-1">Equipment</h3>
+<ul>
+<li>Tong</li>
+<li>Scalpel</li>
+<li>Jeweller’s saw</li>
+<li>Other suitable equipment</li>
+</ul>
+</section>
+<section id="advantages-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="advantages-1">Advantages</h3>
+<ul>
+<li>Allows to access unaltered material from the interior</li>
+<li>Information on the texture and internal structure is preserved, i.e.&nbsp;metallographic studies possible</li>
+<li>Cheap, easily accessible, and transportable equipment</li>
+</ul>
+</section>
+<section id="typical-disadvantages-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-disadvantages-1">Typical disadvantages</h3>
+<p>Sampling technique causes visual deterioration of the objects (= (minimally) invasive), therefore sometimes not accepted by institutions</p>
+</section>
+<section id="exemplary-publication-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exemplary-publication-1">Exemplary publication</h3>
+<p>Pászthory E (1980) Investigations of the early electrum coins of the Alyattes type. In: Metcalf DM, Oddy WA (eds) Metallurgy in numismatics. Royal Numismatic Society, London</p>
+</section>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<section id="description-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="description-2">Description</h3>
+<p>A minute quantity of material is extracted from the surface of objects using an etching solution. Round objects such as coins can be rolled on paper strips soaked with etching solution while uneven objects are sampled with cotton buds soaked with etching solution. The loaded strips or cotton buds are stored in centrifuge tubes and adhering material is leached by using suitable acids.</p>
+<p>See also: Milot J, Malod-Dognin C, Blichert-Toft J, Télouk P, Albarède F (2021) Sampling and combined Pb and Ag isotopic analysis of ancient silver coins and ores. Chemical Geology 564:120028. <a href="https://doi.org/10.1016/j.chemgeo.2020.120028" class="uri">https://doi.org/10.1016/j.chemgeo.2020.120028</a></p>
+</section>
+<section id="equipment-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="equipment-2">Equipment</h3>
+<ul>
+<li>Etching solution (a 1:1:1 mixture of H<sub>2</sub>O<sub>2</sub>, NH<sub>4</sub>OH, H<sub>2</sub>O to which SiC can be added to increase abrasion)</li>
+<li>Felt-covered pliers</li>
+<li>Chromatographic paper strips (for coins), cotton buds (for uneven objects)</li>
+</ul>
+</section>
+<section id="advantages-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="advantages-2">Advantages</h3>
+<p>If no patina is present (and removed during sampling), the sampling technique does not leave damage visible to the naked eye.</p>
+</section>
+<section id="typical-disadvantages-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-disadvantages-2">Typical disadvantages</h3>
+<ul>
+<li>Surficial sampling: Sample can be affected from post-depositional processes and conservation treatment</li>
+<li>Not all components might be equally well dissolved, and the solution therefore might not be representative of the object</li>
+<li>Currently existing protocols are tailored for sampling of silver objects</li>
+</ul>
+</section>
+<section id="exemplary-publication-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exemplary-publication-2">Exemplary publication</h3>
+<p>Gentelli L, Blichert-Toft J, Davis G, Gitler H, Albarède F (2021) Metal provenance of Iron Age Hacksilber hoards in the southern Levant. Journal of Archaeological Science 134:105472. <a href="https://doi.org/10.1016/j.jas.2021.105472" class="uri">https://doi.org/10.1016/j.jas.2021.105472</a></p>
+</section>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<section id="description-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="description-3">Description</h3>
+<p>Material is abraded from the surface of an object with roughened ultrapure pre-cleaned quartz glass rods. The rods must be weighed pre- and post-sampling to determine the weight of the sample.</p>
+<p>The rods with adhering sample material are stored in centrifuge tubes. The tubes are transported to the laboratory and then filled with a suitable acid to dissolve the adhering material.</p>
+</section>
+<section id="equipment-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="equipment-3">Equipment</h3>
+<ul>
+<li>Quartz glass rods</li>
+</ul>
+</section>
+<section id="advantages-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="advantages-3">Advantages</h3>
+<ul>
+<li>If no patina is present (and removed during sampling), the sampling technique does not leave damage visible to the naked eye</li>
+<li>Cheap, easily accessible, and transportable equipment</li>
+</ul>
+</section>
+<section id="typical-disadvantages-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-disadvantages-3">Typical disadvantages</h3>
+<p>Surficial sampling: Sample can be affected from post-depositional processes and conservation treatment</p>
+</section>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<section id="description-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="description-4">Description</h3>
+<p>Minute quantities of material are removed from objects by laser ablation and collected on Teflon or cotton filters. Corrosion can be removed by pre-ablation. The filters with adhering material are separately stored (e.g., centrifuge tubes) and transported to the laboratory where the adhering material is dissolved using suitable acids.</p>
+<p>See also: Glaus R, Dorta L, Zhang Z, Ma Q, Berke H, Günther D (2013) Isotope ratio determination of objects in the field by portable laser ablation sampling and subsequent multicollector ICPMS. Journal of Analytical Atomic Spectrometry 28:801–809. <a href="https://doi.org/10.1039/C3JA30379A" class="uri">https://doi.org/10.1039/C3JA30379A</a></p>
+</section>
+<section id="equipment-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="equipment-4">Equipment</h3>
+<ul>
+<li>Portable laser ablation instrument</li>
+<li>Teflon or cotton filters</li>
+</ul>
+</section>
+<section id="advantages-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="advantages-4">Advantages</h3>
+<ul>
+<li>The sampling technique causes comparatively small ablation craters (120&nbsp;µm diameter) which are barely visible to the naked eye</li>
+<li>Mobile alternative to stationary LA-ICP-MS instruments</li>
+</ul>
+</section>
+<section id="typical-disadvantages-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-disadvantages-4">Typical disadvantages</h3>
+<ul>
+<li>Sampling quantity, depth, and location difficult to control</li>
+<li>Equipment not readily accessible</li>
+</ul>
+</section>
+<section id="exemplary-publication-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="exemplary-publication-3">Exemplary publication</h3>
+<p>Numrich M, Schwall C, Lockhoff N, Nikolentzos K, Konstantinidi-Syvridi E, Cultraro M, Horejs B, Pernicka E (2023) Portable laser ablation sheds light on Early Bronze Age gold treasures in the old world: New insights from Troy, Poliochni, and related finds. Journal of Archaeological Science 149:105694. <a href="https://doi.org/10.1016/j.jas.2022.105694" class="uri">https://doi.org/10.1016/j.jas.2022.105694</a></p>
+</section>
+</div>
+</div>
+</div>
+<p>The minimum amount of sample necessary for the analysis depends on the type of analysis and the concentration of the metal you want to analyse. For example, analysing a copper-based metal with 0.1&nbsp;wt.% and 90&nbsp;wt.% Cu for its Pb isotope composition will require a larger sample size than an analysis of its copper isotope composition.</p>
+<p>We recommend placing a sampling label with the sampled object. Sampling labels specify the sampling method, purpose of the study and provide details about the sampling person and institution. Exemplary sampling labels are available <a href="./appendix.html#sample-labels">in the appendix</a>, which you can fill out with your information, date of sampling, and where you can add logos of your institution and, if applicable, funding organisation, in the blank space at the bottom.</p>
+</section>
+<section id="sample-dissolution" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="sample-dissolution"><span class="header-section-number">4.4.2</span> Sample dissolution</h3>
+<p>An important prerequisite for work in the laboratory is properly cleaned labware. Otherwise, the Pb isotope signal might be contaminated by remnants from previous samples or other sources such as atmospheric Pb. Examples for cleaning procedures for different types of labware are provided <a href="./appendix.html##cleaning-procedures-for-labware-pdf-pdf-form-docx">in the appendix</a>. Moreover, all steps are usually carried out in a clean room to avoid contamination of the samples by dust and atmospheric Pb.</p>
+<p>Dissolving a sample completely is often necessary to measure the average chemical or isotopic composition of a sample. It removes any heterogeneity within the sample and at the same time transforms the sample into a liquid. The dissolved sample can be easily adjusted in, e.g., its concentration and therefore can be analysed with a wide range of instruments to measure its chemical composition. Dissolving the sample also allows to separate in the next step (<a href="#sec-IEC"><span>Section&nbsp;4.4.3</span></a>) the targeted element for isotope analysis, such as Pb.</p>
+<p>Different acids are used to dissolve a sample, often in combination. Probably most famous is <em>aqua regia</em>, a mixture of concentrated HCl and HNO<sub>3</sub> in the ratio of 3:1, which dissolves Au. The combination of different acids is often necessary because samples cannot be dissolved completely with only one acid. For example, HCl is very efficient in dissolving carbonates but not organic material, while HNO<sub>3</sub> readily dissolves organic material but not carbonates.</p>
+<p>Acid digestion is a standard procedure for dissolving samples and well-established protocols exist, which can deviate between laboratories in their details. The samples are usually heated to accelerate the dissolution reaction. You can learn more about which exemplary acid combinations are used for which samples in the following game.</p>
+<iframe src="./H5P/Sample_digestion.html" width="100%" height="415px">
+</iframe>
+</section>
+<section id="sec-IEC" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="sec-IEC"><span class="header-section-number">4.4.3</span> Pb separation</h3>
+<p>If Pb is not the main element in your sample, you must separate it from all other elements (e.g., Cu, Ag), now that your sample is completely dissolved. Otherwise, a reliable measurement of its isotopic composition won’t be possible.</p>
+<p>For the separation of Pb we use a technique called ion-exchange chromatography (IEC). In a nutshell, an organic polymer (resin) is treated (conditioned) with different acids of variable concentrations. Depending on the acid and its concentration, the resin binds ions of some elements more efficiently than others. This behaviour can be utilised to separate elements from each other by treating the resin with suitably concentrated acids in a useful order. When put into a column, gravity lets the acids flow through the resin, allowing collection of the different fractions (eluates) by changing beakers.</p>
+<p>IEC is a very efficient method because the resin can principally be re-used multiple times. However, it is often also a time-consuming method. The video below is a time-lapse for the Pb separation protocol, which in real time took about 4 hours per sample. However, multiple samples can be handled in parallel. By experience, 10 to 15 samples are a good compromise between efficiency and quality.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Dgg9iYQriWQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>The time-lapse features a standard protocol for Pb separation. It uses the resin AG1x8. For archaeometallurgical samples (e.g.&nbsp;slag, metals, metal alloys), only Pb binds to this resin when treated with 0.6&nbsp;M HBr. When treated with 6&nbsp;M HCl, Pb and the other elements are not retained by the resin and washed out completely. You might have noticed the strong colour change of the resin caused by the Cu in the sample and how quickly it was washed out again. And that beakers were changed in between to separately collect the matrix and Pb. The matrix is usually discarded if no other analyses are planned for this sample. However, if further analyses are planned, the matrix will be kept and treated further for these additional analyses.</p>
+<p>Using this information, you can now reconstruct the IEC protocol shown in the video.</p>
+<iframe src="./H5P/IEC.html" width="100%" height="1200px">
+</iframe>
+<p>You can also find print templates for this protocol <a href="./appendix.html#iec-protocol-for-the-separation-of-pb-according-to-milot.2021">in the appendix</a>. <span class="citation" data-cites="Milot.2021">Milot et al. (<a href="references.html#ref-Milot.2021" role="doc-biblioref">2021</a>)</span> present another protocol for the separation of lead.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Separation of Pb from Au- and Ag-rich samples">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Separation of Pb from Au- and Ag-rich samples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Separation of Pb from Au-Ag-rich samples requires a modified two-step protocol for IEC due to reaction of Ag with HCl (precipitation of AgCl) and of Au with HBr. The protocol was developed by <span class="citation" data-cites="Bendall.2003">Bendall (<a href="references.html#ref-Bendall.2003" role="doc-biblioref">2003</a>)</span> and tested and slightly modified by <span class="citation" data-cites="Standish.2013">Standish et al. (<a href="references.html#ref-Standish.2013" role="doc-biblioref">2013</a>)</span>. It comprises the following main steps:</p>
+<ol type="1">
+<li>Digestion of the sample in aqua regia, precipitated AgCl is separated by decanting the solution after centrifuging. The liquid is evaporated and re-dissolved in HCl.</li>
+<li>First column separation: Removal of Au by elution with HCl (Au is fixated on the resin). The liquid is evaporated and re-dissolved in HBr. When handling particularly Ag-rich samples, remaining Ag will precipitate as AgCl when evaporating the eluted liquid. In this case, the sample should be taken up in 7M HNO<sub>3</sub> and the insoluble AgCl removed by decanting the solution after centrifuging. The liquid subsequently is evaporated and taken up with HBr.</li>
+<li>Second column separation: Removal of the remaining Cu-rich matrix with HBr or a HBr-HNO<sub>3</sub> mixture <span class="citation" data-cites="Standish.2013">Standish et al. (<a href="references.html#ref-Standish.2013" role="doc-biblioref">2013</a>)</span> and elution of Pb with HCl. This last step is equivalent to the classic Pb separation protocol.</li>
+</ol>
+<p>Precipitation of AgCl during digestion and IEC has the potential to fractionate Pb. Tests of the slightly modified protocol by <span class="citation" data-cites="Standish.2013">Standish et al. (<a href="references.html#ref-Standish.2013" role="doc-biblioref">2013</a>)</span> showed a Pb yield of c.&nbsp;95% with a maximum deviation of ±502&nbsp;ppm for the <sup>206</sup>Pb/<sup>204</sup>Pb ratio. <span class="citation" data-cites="Jansen.11052019">Jansen (<a href="references.html#ref-Jansen.11052019" role="doc-biblioref">2019</a>)</span> used the protocol from <span class="citation" data-cites="Bendall.2003">Bendall (<a href="references.html#ref-Bendall.2003" role="doc-biblioref">2003</a>)</span> and found no significant fractionation of Pb isotope values within the 2σ standard errors of the analyses. Users should keep in mind that fractionation effects might become relevant (i.e.&nbsp;measurable) with increasing instrumental sensitivity.</p>
+<p>A print template for this protocol is included in the <a href="./appendix.html#preparation-and-ion-exchange-protocol-for-separating-pb-and-cu-from-au-ag-matrices-according-to-bendall.2003">appendix</a>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="self-check" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="self-check"><span class="header-section-number">4.5</span> Self check</h2>
+<ul>
+<li>When asking for sampling the coin collection of a museum, what are the key aspects you should discuss with the curator?</li>
+<li>Can lead isotope signatures be obtained by non-invasive techniques?</li>
+<li>Which acid combination can dissolve an ore? Which one can dissolve a silver coin?</li>
+<li>How do you call the procedure in which you separate and concentrate lead in a solution?</li>
+<li>What are the columns filled with prior to taking up the sample solution?</li>
+<li>Which chemicals are used to separate lead from the matrix?</li>
+</ul>
+</section>
+<section id="further-reading" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">4.6</span> Further reading</h2>
+<section id="basics-of-iec" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="basics-of-iec"><span class="header-section-number">4.6.1</span> Basics of IEC</h3>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ion_chromatography" class="uri">https://en.wikipedia.org/wiki/Ion_chromatography</a></li>
+<li><a href="https://www.youtube.com/watch?v=2R2iq_XR1IY" class="uri">https://www.youtube.com/watch?v=2R2iq_XR1IY</a></li>
+<li>Strelow FWE, Toerien FVS (1966) Separation of Lead(II), from Bismuth(III), Thallium(III), Cadmium(II), Mercury(II), Gold(III), Platinum(IV), Palladium(II), and Other Elements by Anion Exchange Chromatography. Analytical Chemistry 38:545–548. <a href="https://doi.org/10.1021/ac60236a006" class="uri">https://doi.org/10.1021/ac60236a006</a></li>
+</ul>
+</section>
+<section id="specifically-for-alloys" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="specifically-for-alloys"><span class="header-section-number">4.6.2</span> Specifically for alloys</h3>
+<ul>
+<li>Iliev I, Kuleff I, Adam J, Pernicka E (2003) Electrochemical lead separation from copper, copper alloy, silver and silver alloy for isotope ratio determination in archaeometric investigations. Analytica Chimica Acta 497:227–233. <a href="https://doi.org/10.1016/j.aca.2003.07.008" class="uri">https://doi.org/10.1016/j.aca.2003.07.008</a></li>
+</ul>
+<a type="button" data-cc="c-settings" class="cc-link">
+
+</a><div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none"><a type="button" data-cc="c-settings" class="cc-link">
+</a><div id="ref-Bendall.2003" class="csl-entry" role="listitem"><a type="button" data-cc="c-settings" class="cc-link">
+Bendall Ch (2003) </a><a href="https://d-nb.info/970728999"><span class="nocase">The Application of Trace Element and Isotopic Analyses to the Study of Celtic Gold Coins and their Metal Sources</span></a>. PhD thesis, <span>Goethe-Universit<span>ä</span>t Frankfurt</span>; Fachbereich Geowissenschaften
+</div>
+<div id="ref-Jansen.11052019" class="csl-entry" role="listitem">
+Jansen M (2019) <a href="https://doi.org/10.13154/294-6686"><span class="nocase">Geochemie und Arch<span class="nocase">ä</span>ometallurgie des Goldes der Bronzezeit in Vorderasien [Geochemistry and archaeometallurgy of Bronze Age gold in Middle Asia], in German</span></a>. PhD thesis, <span>Ruhr-Universit<span>ä</span>t Bochum</span>; Fakult<span>ä</span>t f<span>ü</span>r Geowissenschaften
+</div>
+<div id="ref-Milot.2021" class="csl-entry" role="listitem">
+Milot J, Malod-Dognin C, Blichert-Toft J, et al (2021) <span class="nocase">Sampling and combined Pb and Ag isotopic analysis of ancient silver coins and ores</span>. <span>Chemical Geology</span> 564:120028. <a href="https://doi.org/10.1016/j.chemgeo.2020.120028">https://doi.org/10.1016/j.chemgeo.2020.120028</a>
+</div>
+<div id="ref-Standish.2013" class="csl-entry" role="listitem">
+Standish C, Dhuime B, Chapman R, et al (2013) <span class="nocase">Solution and laser ablationMC-ICP-MS lead isotope analysis of gold</span>. <span>Journal of Analytical Atomic Spectrometry</span> 28:217–225. <a href="https://doi.org/10.1039/C2JA30277B">https://doi.org/10.1039/C2JA30277B</a>
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./isotope_system.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The U–Th–Pb isotope system</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./measurement.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Built with <a href="https://quarto.org/">Quarto</a>.
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ <a type="button" data-cc="c-settings" class="cc-link">Manage cookie preferences
+  </a></li><a type="button" data-cc="c-settings" class="cc-link">  
+</a></ul><a type="button" data-cc="c-settings" class="cc-link">
+    </a></div><a type="button" data-cc="c-settings" class="cc-link">
+    </a><div class="nav-footer-right"><a type="button" data-cc="c-settings" class="cc-link">
+      </a><ul class="footer-items list-unstyled"><a type="button" data-cc="c-settings" class="cc-link">
+    </a><li class="nav-item"><a type="button" data-cc="c-settings" class="cc-link">
+    </a><a class="nav-link" href="./about.html">Legal information</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script defer="" src="resources/cookieconsent-2.9.2/cookieconsent.js"></script>
+<script defer="" src="resources/cookieconsent-init.js"></script>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

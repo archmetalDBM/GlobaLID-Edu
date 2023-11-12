@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Katrin Westner">
+<meta name="author" content="Sabine Klein">
+<meta name="author" content="Thomas Rose">
+<meta name="dcterms.date" content="2023-11-12">
+
+<title>Lead Isotopes in Archaeology: An Interactive Textbook - 5&nbsp; Measurement</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./exam1.html" rel="next">
+<link href="./sample_processing.html" rel="prev">
+<link href="./assets/favicon.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+<link rel="stylesheet" href="resources/cookieconsent-2.9.2/cookieconsent.css" media="print" onload="this.media='all'">
+
+
+<meta property="og:title" content="Lead Isotopes in Archaeology: An Interactive Textbook - 5&nbsp; Measurement">
+<meta property="og:description" content="">
+<meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta property="og:site-name" content="Lead Isotopes in Archaeology: An Interactive Textbook">
+<meta name="twitter:title" content="Lead Isotopes in Archaeology: An Interactive Textbook - 5&nbsp; Measurement">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basics.html">Basics of lead isotope geochemistry, metallogenic processes, and metallurgical processes</a></li><li class="breadcrumb-item"><a href="./measurement.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Lead Isotopes in Archaeology: An Interactive Textbook</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/archmetalDBM/GlobaLID-Edu" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Welcome</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics of lead isotope geochemistry, metallogenic processes, and metallurgical processes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./isotope_system.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The U–Th–Pb isotope system</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./sample_processing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sample processing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./measurement.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Learning progress – Pb isotope geochemistry</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deposit_formation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Formation of ore deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deposit_impact_PbIsos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Evolution of Pb isotope signatures in ore deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Learning progress – Ore deposits</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Metallurgical processes – basics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_Pb-Ag.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Lead/Silver smelting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_Cu.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Copper metallurgy</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metallurgy_impact_PbIsos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Evolution of Pb isotopes during (s)melting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Learning progress – Metallurgical processes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary_bascis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Wrap up – Basics</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Application of lead isotopes for the reconstruction of raw material provenances</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./correction_QA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Correction and quality assessment of Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./storage.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Data storage</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./reference_data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Collecting reference data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Learning progress – Handling and storage of Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./visualisation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Visualisation of lead isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./matching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Matching of Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exam5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Learning progress – Evaluating Pb isotope data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary_application.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Wrap up – Application</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="./interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interpretation of lead isotope data</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interpretation_additional.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Sources of complimentary information</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interpretation_potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">What can Pb isotopes tell us?</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./interpretation_combined.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Bringing the evidences together</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary_interpretation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Wrap up – Interpretation</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./appendix.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Appendix</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#learning-objective" id="toc-learning-objective" class="nav-link active" data-scroll-target="#learning-objective"><span class="header-section-number">5.1</span> Learning objective</a></li>
+  <li><a href="#prior-knowledge" id="toc-prior-knowledge" class="nav-link" data-scroll-target="#prior-knowledge"><span class="header-section-number">5.2</span> Prior knowledge</a></li>
+  <li><a href="#material" id="toc-material" class="nav-link" data-scroll-target="#material"><span class="header-section-number">5.3</span> Material</a></li>
+  <li><a href="#learning-content" id="toc-learning-content" class="nav-link" data-scroll-target="#learning-content"><span class="header-section-number">5.4</span> Learning content</a>
+  <ul class="collapse">
+  <li><a href="#basics-of-mass-spectrometry" id="toc-basics-of-mass-spectrometry" class="nav-link" data-scroll-target="#basics-of-mass-spectrometry"><span class="header-section-number">5.4.1</span> Basics of mass spectrometry</a></li>
+  <li><a href="#instrumentation" id="toc-instrumentation" class="nav-link" data-scroll-target="#instrumentation"><span class="header-section-number">5.4.2</span> Instrumentation</a></li>
+  <li><a href="#ensuring-high-quality-measurements-of-pb-isotopes" id="toc-ensuring-high-quality-measurements-of-pb-isotopes" class="nav-link" data-scroll-target="#ensuring-high-quality-measurements-of-pb-isotopes"><span class="header-section-number">5.4.3</span> Ensuring high quality measurements of Pb isotopes</a></li>
+  </ul></li>
+  <li><a href="#self-check" id="toc-self-check" class="nav-link" data-scroll-target="#self-check"><span class="header-section-number">5.5</span> Self check</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">5.6</span> Further reading</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/archmetalDBM/GlobaLID-Edu/edit/main/measurement.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/archmetalDBM/GlobaLID-Edu/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Measurement</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Katrin Westner <a href="https://orcid.org/0000-0001-5529-1165" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+             <p>Sabine Klein <a href="https://orcid.org/0000-0002-3939-4428" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+             <p><a href="https://copper-smelting.com/">Thomas Rose</a> <a href="https://orcid.org/0000-0002-8186-3566" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a></p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">November 12, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="learning-objective" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="learning-objective"><span class="header-section-number">5.1</span> Learning objective</h2>
+<p>By the end of this unit, you will be able to describe the basics of mass spectrometry, their basic components and the different instrument types commonly used for the measurement for Pb isotopes. You will also be able to name the key analytical challenges for the measurement of Pb isotopes.</p>
+</section>
+<section id="prior-knowledge" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="prior-knowledge"><span class="header-section-number">5.2</span> Prior knowledge</h2>
+<p>This unit expects that you already know:</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=xGGelFHCNYo">What are isotopes?</a> (Video on YouTube)</li>
+<li><a href="https://www.youtube.com/watch?v=5hlcFIPCs1U">What does the term isotope fractionation describe?</a> (Video on YouTube)</li>
+<li>The basics of electromagnetism</li>
+</ul>
+</section>
+<section id="material" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="material"><span class="header-section-number">5.3</span> Material</h2>
+<p>The unit combines text with a video and an interactive figure.</p>
+</section>
+<section id="learning-content" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="learning-content"><span class="header-section-number">5.4</span> Learning content</h2>
+<section id="basics-of-mass-spectrometry" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="basics-of-mass-spectrometry"><span class="header-section-number">5.4.1</span> Basics of mass spectrometry</h3>
+<p>Pb isotope ratios are analysed using a mass spectrometer. These instruments measure the ratios of masses (m) to electrical charge (z) of ionised sample components. Different types of mass spectrometers exist but they all consist of four major consecutive units:</p>
+<ul>
+<li>Sample introduction system: Introduces the sample in a suitable state as required by the type of mass spectrometer used.</li>
+<li>Ion source: The sample is vaporised, ionised, focused and transported/accelerated.</li>
+<li>Analyser: The ions are sorted electrically and/or magnetically according to their m/z ratio.</li>
+<li>Detector: The separated ions (isotopes) are detected.</li>
+</ul>
+<p>Depending on the constellation of the four units, different types of mass spectrometers are distinguished.</p>
+</section>
+<section id="instrumentation" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="instrumentation"><span class="header-section-number">5.4.2</span> Instrumentation</h3>
+<p>Nowadays, most laboratories use multi-collector mass spectrometers with inductively coupled plasma (MC-ICP-MS) for the analysis of Pb isotope ratios. They provide reliable and fast analysis by simultaneous detection of isotopes and therefore greatly reduce measurement errors caused by internal instability of the instrument. The following video provides a brief introduction of the principal components and functions.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/QY6h68zth64" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Quadrupole-ICP-MS instruments use an electric quadrupole consisting of four metal rods. Only ions with a specific mass-to-charge ratio can pass through the quadrupole. By varying the parameters of these electric fields, the ion beam can be filtered and different masses are successively detected. Due to its lower resolution, quadrupole ICP-MS instruments cannot reliably precisely determine isotope ratios but are routinely applied for compositional trace element analysis. Single-collector detection systems also are prone to instrumental instabilities (due to the time passed during analysis of the elemental masses), resulting in comparatively high analytical errors and a lower sensitivity which is insufficient for isotopic measurements but well suitable for trace element analysis.</p>
+<p>Thermal ionisation mass spectrometry (TIMS) was the predominantly used instrument prior to the advent of MC-ICP-MS in the 2000s. For this technique, a chemically purified solid sample is loaded on one to three filaments (a thin metal strip). The filaments are heated to vaporise the sample for introduction into the instrument. Isotopic fractionation can be very well controlled with TIMS since it is exclusively caused by well-known thermal fractionation effects. Therefore, isotopic ratios can be very precisely determined with this technique. However, TIMS requires an elaborate sample preparation prior to analysis and measurements cannot be fully automatised since the heating voltage has to be manually adjusted for every sample deposited on the filaments. Furthermore, Pb is difficult to efficiently ionise thermally due to its high mass. Therefore, MC-ICP-MS has largely superseded TIMS for Pb isotope analysis.</p>
+<p>they key characteristics of the different instrument types and their most common use cases for inorganic materials are summarised below.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">TIMS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">SB-MC-ICP-MS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">LA-MC-ICP-MS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">SC-ICP-MS</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false">Q-ICP-MS</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<section id="instrument-type" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="instrument-type">Instrument type</h3>
+<p>Thermal ionisation mass spectrometer</p>
+</section>
+<section id="sample-introduction" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sample-introduction">Sample introduction</h3>
+<p>Chemically purified sample is deposited on one to three filaments</p>
+</section>
+<section id="ion-source" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ion-source">Ion source</h3>
+<p>Heating of the filaments</p>
+</section>
+<section id="analyser" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="analyser">Analyser</h3>
+<p>Electrostatically and by magnetic field (double-focusing magnetic sector technology)</p>
+</section>
+<section id="detection-unit" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="detection-unit">Detection unit</h3>
+<p>Faraday cups or electron multipliers</p>
+</section>
+<section id="key-characteristics" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="key-characteristics">Key characteristics</h3>
+<ul>
+<li>Elaborate laboratory preparation</li>
+<li>Measurements cannot be fully automatised</li>
+<li>Heavy elements (including Pb) difficult to ionise efficiently</li>
+<li>Well-controllable thermal mass fractionation</li>
+<li>Reliable and fast analysis by simultaneous detection of isotopes (measurement errors caused by internal instability of the instrument are greatly reduced)</li>
+<li>Very high precision</li>
+</ul>
+</section>
+<section id="typical-usage" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-usage">Typical usage</h3>
+<p>Sr isotopes, e.g.&nbsp;for the reconstruction of mobility patterns</p>
+</section>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<section id="instrument-type-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="instrument-type-1">Instrument type</h3>
+<p>Solution-based multi-collector inductively coupled plasma mass spectrometry</p>
+</section>
+<section id="sample-introduction-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sample-introduction-1">Sample introduction</h3>
+<p>Generating an aerosol from a liquid sample using a nebuliser</p>
+</section>
+<section id="ion-source-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ion-source-1">Ion source</h3>
+<p>Inductively coupled plasma</p>
+</section>
+<section id="analyser-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="analyser-1">Analyser</h3>
+<p>Electrostatically and by magnetic field (double-focusing magnetic sector technology)</p>
+</section>
+<section id="detection-unit-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="detection-unit-1">Detection unit</h3>
+<p>Faraday cups or electron multipliers</p>
+</section>
+<section id="key-characteristics-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="key-characteristics-1">Key characteristics</h3>
+<ul>
+<li>Measurements can be fully automatised</li>
+<li>Strong ionisation power of plasma</li>
+<li>Mass fractionation has to be tightly controlled due to fluctuations in the plasma</li>
+<li>Reliable and fast analysis by simultaneous detection of isotopes (measurement errors caused by internal instability of the instrument are greatly reduced)</li>
+<li>High precision</li>
+<li>Sample solution as a homogeneous medium (bulk analysis), matrix effects are greatly reduced.</li>
+</ul>
+</section>
+<section id="typical-usage-1" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-usage-1">Typical usage</h3>
+<p>General isotope analyses</p>
+</section>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<section id="instrument-type-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="instrument-type-2">Instrument type</h3>
+<p>Laser ablation multi-collector inductively coupled plasma mass spectrometry</p>
+</section>
+<section id="sample-introduction-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sample-introduction-2">Sample introduction</h3>
+<p>Vaporisation of solid sample by laser ablation</p>
+</section>
+<section id="ion-source-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ion-source-2">Ion source</h3>
+<p>Inductively coupled plasma</p>
+</section>
+<section id="analyser-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="analyser-2">Analyser</h3>
+<p>Electrostatically and by magnetic field (double-focusing magnetic sector technology)</p>
+</section>
+<section id="detection-unit-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="detection-unit-2">Detection unit</h3>
+<p>Faraday cups or electron multipliers</p>
+</section>
+<section id="key-characteristics-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="key-characteristics-2">Key characteristics</h3>
+<ul>
+<li>Measurements can be fully automatised</li>
+<li>Strong ionisation power of plasma</li>
+<li>Mass fractionation has to be tightly controlled due to fluctuations in the plasma</li>
+<li>Reliable and fast analysis by simultaneous detection of isotopes (measurement errors caused by internal instability of the instrument are greatly reduced)</li>
+<li>High precision</li>
+<li>Spatially resolved analysis</li>
+<li>Direct analysis with special sample holders possible (eliminates sample preparation, saving time, money, expertise)</li>
+<li>Archaeological objects can be investigated without invasive sampling which is often not possible</li>
+</ul>
+</section>
+<section id="typical-usage-2" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-usage-2">Typical usage</h3>
+<p>Spatially resolved general isotope analysis</p>
+</section>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<section id="instrument-type-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="instrument-type-3">Instrument type</h3>
+<p>Single collectior inductively couples mass spectrometry, with or without laser ablation</p>
+</section>
+<section id="sample-introduction-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sample-introduction-3">Sample introduction</h3>
+<ul>
+<li>Generating an aerosol from a liquid sample using a nebuliser</li>
+<li>Vaporisation of solid sample by laser ablation</li>
+</ul>
+</section>
+<section id="ion-source-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ion-source-3">Ion source</h3>
+<p>Inductively coupled plasma</p>
+</section>
+<section id="analyser-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="analyser-3">Analyser</h3>
+<p>Magnetic field and electrostatically (double-focusing magnetic sector technology)</p>
+</section>
+<section id="detection-unit-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="detection-unit-3">Detection unit</h3>
+<p>Electron multiplier</p>
+</section>
+<section id="key-characteristics-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="key-characteristics-3">Key characteristics</h3>
+<ul>
+<li>Measurements can be fully automatised</li>
+<li>Strong ionisation power of plasma</li>
+<li>Mass fractionation has to be tightly controlled due to fluctuations in the plasma</li>
+<li>Reliable and fast analysis</li>
+<li>Prone to instrumental instabilities due to sequential measurement of isotopes and reduced mass separation, resulting in higher analytical errors and lower sensitivity</li>
+<li>Insufficient for isotopic analysis</li>
+<li>Solution-based: Sample solution as a homogeneous medium (bulk analysis), matrix effects are greatly reduced</li>
+<li>Laser Ablation:
+<ul>
+<li>Spatially resolved analysis</li>
+<li>Direct analysis with special sample holders possible (eliminates sample preparation, saving time, money, expertise)</li>
+<li>Archaeological objects can be investigated without invasive sampling which is often not possible</li>
+</ul></li>
+</ul>
+</section>
+<section id="typical-usage-3" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-usage-3">Typical usage</h3>
+<p>(Spatially resolved) trace element analysis</p>
+</section>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<section id="instrument-type-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="instrument-type-4">Instrument type</h3>
+<p>Quadrupole inductively coupled plasma mass spectrometry, with or without laser ablation</p>
+</section>
+<section id="sample-introduction-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sample-introduction-4">Sample introduction</h3>
+<ul>
+<li>Generating an aerosol from a liquid sample using a nebuliser</li>
+<li>Vaporisation of solid sample by laser ablation</li>
+</ul>
+</section>
+<section id="ion-source-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="ion-source-4">Ion source</h3>
+<p>Inductively coupled plasma</p>
+</section>
+<section id="analyser-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="analyser-4">Analyser</h3>
+<p>Quadrupole</p>
+</section>
+<section id="detection-unit-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="detection-unit-4">Detection unit</h3>
+<p>Electron multiplier</p>
+</section>
+<section id="key-characteristics-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="key-characteristics-4">Key characteristics</h3>
+<ul>
+<li>Comparatively lower resolution and mass separation</li>
+<li>Unsuitable for isotopic analysis</li>
+</ul>
+</section>
+<section id="typical-usage-4" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="typical-usage-4">Typical usage</h3>
+<p>(Spatially resolved) Trace element analysis</p>
+</section>
+</div>
+</div>
+</div>
+<p>In the interactive figure below, the photos show, if not otherwise mentioned, components of a ThermoScientific NeptunePlus MC-ICP-MS instrument hosted at the Frankfurt Isotope and Element Research Center (FIERCE) of the Goethe University Frankfurt. The sample introduction system shown in the photos is adjusted for handling liquid sample solutions but other configurations exist. The NeptunePlus is a double-focusing magnetic sector instrument. That means, it consists of two analyzers – an electromagnet and an electrostatic analyzer, which are combined in a specific geometric constellation and whose order can be different in the setup of specific instruments.</p>
+<iframe src="./H5P/MC-ICP-MS_scheme.html" width="100%" height="525px">
+</iframe>
+</section>
+<section id="ensuring-high-quality-measurements-of-pb-isotopes" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="ensuring-high-quality-measurements-of-pb-isotopes"><span class="header-section-number">5.4.3</span> Ensuring high quality measurements of Pb isotopes</h3>
+<p>A major shortcoming of MC-ICP-MS in comparison to TIMS is the inherent instability of the plasma source which renders instrumental isotopic fractionation difficult to predict. This fractionation effect can be assessed by analysing the isotopic composition of an element which behaves similar to the target element; in case of Pb, thallium (Tl) is used due to the similar masses of its two isotopes (<sup>205</sup>Tl and <sup>203</sup>Tl). In practice, a known amount of Tl elemental or isotopic (NIST SRM 997) standard is added to the measurement solution (“spiking”) and <sup>205</sup>Tl and <sup>203</sup>Tl are analysed alongside the Pb isotopes. Fractionation is generally assumed to follow an exponential law and fractionation factors are calculated based on the natural <sup>205</sup>Tl/<sup>203</sup>Tl ratio. Since the 2000s, several different <sup>205</sup>Tl/<sup>203</sup>Tl ratios have been used in analytical studies which often have been determined by empirical adjustment during the measurement sessions <span class="citation" data-cites="Rehkamper.2000 Collerson.2002 Taylor.2015 White.2000 Thirlwall.2002 Yuan.2016">(e.g., <a href="references.html#ref-Rehkamper.2000" role="doc-biblioref">Rehkämper and Mezger 2000</a>; <a href="references.html#ref-White.2000" role="doc-biblioref">White et al. 2000</a>; <a href="references.html#ref-Collerson.2002" role="doc-biblioref">Collerson et al. 2002</a>; <a href="references.html#ref-Thirlwall.2002" role="doc-biblioref">Thirlwall 2002</a>; <a href="references.html#ref-Taylor.2015" role="doc-biblioref">Taylor et al. 2015</a>; <a href="references.html#ref-Yuan.2016" role="doc-biblioref">Yuan et al. 2016</a>)</span>. Apart from the two Tl isotopes, the masses <sup>204</sup>Hg and <sup>202</sup>Hg are typically analysed together with the four stable Pb isotopes to account for isobaric interferences potentially affecting <sup>204</sup>Pb.</p>
+<p>The certified Pb isotope reference material NIST SRM 981 is routinely analysed throughout the measurement sessions. The purpose is to further compensate for instrumental instabilities by normalising sample analyses “bracketed” by standard analyses to the fixed values of the standard. Furthermore, analysis of a material with known isotopic composition allows to consistently monitor the precision and accuracy of the measurements. Several different values have been determined for the NIST SRM 981; an overview is provided by <span class="citation" data-cites="Yuan.2016">Yuan et al. (<a href="references.html#ref-Yuan.2016" role="doc-biblioref">2016</a>)</span>.</p>
+</section>
+</section>
+<section id="self-check" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="self-check"><span class="header-section-number">5.5</span> Self check</h2>
+<ul>
+<li>What is the basic principle of mass spectrometry analysis?</li>
+<li>Which are the basic components of all types of mass spectrometers?</li>
+<li>Which kinds of ICP-MS instrument setups are best suitable for trace elemental and isotopic analyses, respectively, and what are the differences between the instrument types?</li>
+<li>For which research questions and sample types might a laser-ablation sample introduction system be better suited than a solution-based setup?</li>
+<li>Which different fractionation mechanisms affect TIMS and ICP-MS instruments and how are they corrected for?</li>
+</ul>
+</section>
+<section id="further-reading" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">5.6</span> Further reading</h2>
+<ul>
+<li>Hirata T, Vlasceanu M, Coman A (2018) Laser Ablation – Inductively Coupled Plasma Mass Spectrometry. In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 801–810. <a href="https://doi.org/10.1007/978-3-319-39312-4_307" class="uri">https://doi.org/10.1007/978-3-319-39312-4_307</a></li>
+<li>Lassiter JC (2018) Thermal Ionization Mass Spectrometry. In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 1433–1435. <a href="https://doi.org/10.1007/978-3-319-39312-4_299" class="uri">https://doi.org/10.1007/978-3-319-39312-4_299</a></li>
+<li>Rehkämper M, Schönbächler M, Stirling CH (2001) Multiple Collector ICP-MS: Introduction to Instrumentation, Measurement Techniques and Analytical Capabilities. Geostandards and Geoanalytical Research 25:23–40. <a href="https://doi.org/10.1111/j.1751-908X.2001.tb00785.x" class="uri">https://doi.org/10.1111/j.1751-908X.2001.tb00785.x</a></li>
+<li>Ridley WI (2005) Plumbo-Isotopy: The Measurement of Lead Isotopes by Multi-Collector Inductively Coupled Mass Spectrometry. Open File Report, 2005–1393. U.S. Geological Survey, Reston, Virginia. <a href="https://doi.org/10.3133/ofr20051393" class="uri">https://doi.org/10.3133/ofr20051393</a> <a href="https://pubs.usgs.gov/of/2005/1393/pdf/OFR-2005-1393.pdf">(read online)</a></li>
+<li>Schönbächler M (2018) Inductively Coupled Plasma Mass Spectrometry (ICP-MS). In: White WM (ed) Encyclopedia of Geochemistry: A Comprehensive Reference Source on the Chemistry of the Earth. Springer, Cham, pp 723–727. <a href="https://doi.org/10.1007/978-3-319-39312-4_111" class="uri">https://doi.org/10.1007/978-3-319-39312-4_111</a></li>
+</ul>
+<a type="button" data-cc="c-settings" class="cc-link">
+
+</a><div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none"><a type="button" data-cc="c-settings" class="cc-link">
+</a><div id="ref-Collerson.2002" class="csl-entry" role="listitem"><a type="button" data-cc="c-settings" class="cc-link">
+Collerson KD, Kamber BS, Schoenberg R (2002) <span class="nocase">Applications of accurate, high-precision Pb isotope ratio measurement by multi-collector ICP-MS</span>. <span>Chemical Geology</span> 188:65–83. </a><a href="https://doi.org/10.1016/S0009-2541(02)00059-1">https://doi.org/10.1016/S0009-2541(02)00059-1</a>
+</div>
+<div id="ref-Rehkamper.2000" class="csl-entry" role="listitem">
+Rehkämper M, Mezger K (2000) <span class="nocase">Investigation of matrix effects for Pb isotope ratio measurements by multiple collector ICP-MS: Verification and application of optimized analytical protocols</span>. <span>Journal of Analytical Atomic Spectrometry</span> 15:1451–1460. <a href="https://doi.org/10.1039/B005262K">https://doi.org/10.1039/B005262K</a>
+</div>
+<div id="ref-Taylor.2015" class="csl-entry" role="listitem">
+Taylor RN, Ishizuka O, Michalik A, et al (2015) <span class="nocase">Evaluating the precision of Pb isotope measurement by mass spectrometry</span>. <span>Journal of Analytical Atomic Spectrometry</span> 30:198–213. <a href="https://doi.org/10.1039/C4JA00279B">https://doi.org/10.1039/C4JA00279B</a>
+</div>
+<div id="ref-Thirlwall.2002" class="csl-entry" role="listitem">
+Thirlwall MF (2002) <span class="nocase">Multicollector ICP-MS analysis of Pb isotopes using a 207pb-204pb double spike demonstrates up to 400 ppm/amu systematic errors in Tl-normalization</span>. <span>Chemical Geology</span> 184:255–279. <a href="https://doi.org/10.1016/S0009-2541(01)00365-5">https://doi.org/10.1016/S0009-2541(01)00365-5</a>
+</div>
+<div id="ref-White.2000" class="csl-entry" role="listitem">
+White WM, Albarède F, Télouk P (2000) <span class="nocase">High-precision analysis of Pb isotope ratios by multi-collector ICP-MS</span>. <span>Chemical Geology</span> 167:257–270. <a href="https://doi.org/10.1016/S0009-2541(99)00182-5">https://doi.org/10.1016/S0009-2541(99)00182-5</a>
+</div>
+<div id="ref-Yuan.2016" class="csl-entry" role="listitem">
+Yuan H, Yuan W, Cheng C, et al (2016) <span class="nocase">Evaluation of lead isotope compositions of NIST NBS 981 measured by thermal ionization mass spectrometer and multiple-collector inductively coupled plasma mass spectrometer</span>. <span>Solid Earth Sciences</span> 1:74–78. <a href="https://doi.org/10.1016/j.sesci.2016.04.001">https://doi.org/10.1016/j.sesci.2016.04.001</a>
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+      }
+    }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./sample_processing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Sample processing</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./exam1.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Learning progress – Pb isotope geochemistry</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ Built with <a href="https://quarto.org/">Quarto</a>.
+  </li>  
+</ul>
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ <a type="button" data-cc="c-settings" class="cc-link">Manage cookie preferences
+  </a></li><a type="button" data-cc="c-settings" class="cc-link">  
+</a></ul><a type="button" data-cc="c-settings" class="cc-link">
+    </a></div><a type="button" data-cc="c-settings" class="cc-link">
+    </a><div class="nav-footer-right"><a type="button" data-cc="c-settings" class="cc-link">
+      </a><ul class="footer-items list-unstyled"><a type="button" data-cc="c-settings" class="cc-link">
+    </a><li class="nav-item"><a type="button" data-cc="c-settings" class="cc-link">
+    </a><a class="nav-link" href="./about.html">Legal information</a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+<script defer="" src="resources/cookieconsent-2.9.2/cookieconsent.js"></script>
+<script defer="" src="resources/cookieconsent-init.js"></script>
+
+
+
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>
