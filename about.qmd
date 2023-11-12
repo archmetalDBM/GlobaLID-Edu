@@ -1,5 +1,16 @@
-## Legal Notice
+# Legal information
 
+## Provider according to § 5 TMG  
+
+Thomas Rose  
+Am Satz 8  
+60437 Frankfurt  
+Germany  
+
+Phone +49 1522 3176524  
+E-Mail: thomas.rose [at] daad-alumni.de
+
+<!--
 The Deutsche Bergbau-Museum Bochum is a dependent facility of the
 DMT-Gesellschaft für Lehre und Bildung mbH.
 
@@ -17,6 +28,7 @@ VAT identification number according to § 27 UStG: DE124091698
 
 Regulatory body: Ministerium für Kultur und Wissenschaft des Landes
 Nordrhein Westfalen
+-->
 
 ## Privacy
 
@@ -27,7 +39,7 @@ This webpage embeds third-party content that uses cookies. The respective provid
 ### Youtube
 The website uses plugins from YouTube operated by Google. The operator of the plug-ins is YouTube, LLC, 901 Cherry Ave, San Bruno, CA 94066, USA.
 
-When you visit one of our pages equipped with a YouTube plugin, a connection to the YouTube servers is established. The YouTube server is informed which of our pages you have visited.
+When you visit one of our pages equipped with a YouTube plugin, a connection to the YouTube servers is established. All videos are embedded with the privacy-enhanced mode of Youtube enabled to minimise tracking. 
 
 If you are logged into your YouTube account, you enable YouTube to assign your surfing behaviour directly to your personal profile. You can prevent this by logging out of your YouTube account.
 
@@ -37,8 +49,7 @@ Further information on the handling of user data can be found in YouTube's priva
 
 
 ### GoogleFonts
-
-Some elements on this website, such as the YouTube plugins, uses Google Fonts. When you load a page containing such elements, your browser connects to Google Fonts and loads the required web fonts into your browser cache in order to display texts and fonts correctly.
+Some third-party elements on this website, such as the YouTube plugin, uses Google Fonts. When you load a page containing such elements, your browser connects to Google Fonts and loads the required web fonts into your browser cache in order to display texts and fonts correctly.
 
 For this purpose, the browser you are using must connect to Google's servers. This informs Google that the website has been accessed via your IP address. The use of Google Web Fonts is in the interest of a uniform and appealing presentation of our online offers. This constitutes a legitimate interest within the meaning of Art. 6 para. 1 lit. f GDPR.
 
@@ -51,7 +62,7 @@ Further information on Google Web Fonts can be found at <https://developers.goog
 ::: {layout="[ 75 , 25 ]"}
 
 ::: {#column-text}
-Unless otherwise stated, material on this website is licensed under a [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/). 
+Unless otherwise stated, material on this website is licensed under a [Creative Commons Attribution 4.0 International (CC-BY 4.0)](https://creativecommons.org/licenses/by/4.0/) license. 
 ::: 
 
 ::: {#column-image}
@@ -60,7 +71,7 @@ Unless otherwise stated, material on this website is licensed under a [Creative 
 
 :::
 
-This licence allows you to:
+This license allows you to:
 
 * **Share** — copy and redistribute the material in any medium or format
 * **Adapt** — remix, transform, and build upon the material

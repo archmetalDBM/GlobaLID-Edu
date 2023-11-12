@@ -104,7 +104,7 @@ format:
       - theme-light.scss
     smooth-scroll: true
     link-external-newwindow: true
-    date: today
+    date: last-modified
     code-link: true
     code-fold: true
     
