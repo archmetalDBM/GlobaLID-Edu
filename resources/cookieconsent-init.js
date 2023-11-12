@@ -67,7 +67,7 @@ cc.run({
                         description: 'This site contains third-party content that uses cookies, such as Youtube videos. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="about.html#privacy" class="cc-link">privacy policy</a>.'
                     }, {
                         title: 'Strictly necessary cookies',
-                        description: 'These cookies are essential for the proper functioning of the website. Without these cookies, the website would not work properly',
+                        description: 'These cookies are essential for the proper functioning of the third-party content on this website. Without these cookies, these parts of the website would not work properly.',
                         toggle: {
                             value: 'necessary',
                             enabled: true,
@@ -75,30 +75,30 @@ cc.run({
                         }
                     }, {
                         title: 'Performance and Analytics cookies',
-                        description: 'These cookies allow the website to remember the choices you have made in the past',
+                        description: 'These cookies allow providers of third-party content to remember the choices you have made in the past.',
                         toggle: {
                             value: 'analytics',     // your cookie category
                             enabled: false,
                             readonly: false
                         },
-                        cookie_table: [             // list of all expected cookies
-                            {
-                                col1: '^_ga',       // match all cookies starting with "_ga"
-                                col2: 'google.com',
-                                col3: '2 years',
-                                col4: 'description ...',
-                                is_regex: true
-                            },
-                            {
-                                col1: '_gid',
-                                col2: 'google.com',
-                                col3: '1 day',
-                                col4: 'description ...',
-                            }
-                        ]
+//                         cookie_table: [             // list of all expected cookies
+//                            {
+//                                col1: '^_ga',       // match all cookies starting with "_ga"
+//                                col2: 'google.com',
+//                                col3: '2 years',
+//                                col4: 'description ...',
+//                                is_regex: true
+//                            },
+//                            {
+//                                col1: '_gid',
+//                                col2: 'google.com',
+//                                col3: '1 day',
+//                                col4: 'description ...',
+//                            }
+//                        ]
                     }, {
                         title: 'Advertisement and Targeting cookies',
-                        description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+                        description: 'These cookies allow providers of third-party content to remember how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you.',
                         toggle: {
                             value: 'targeting',
                             enabled: false,
