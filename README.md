@@ -1,7 +1,7 @@
 
 <!-- badges: start -->
 ![Quarto publish status](https://github.com/archmetalDBM/GlobaLID-Edu/actions/workflows/publish.yml/badge.svg)
-[![Release](https://img.shields.io/github/v/release/archmetalDBM/GlobaLID-Edu.svg)](https://github.com/archmetalDBM/GlobaLID-database)
+[![Release](https://img.shields.io/github/v/release/archmetalDBM/GlobaLID-Edu.svg)](https://github.com/archmetalDBM/GlobaLID-Edu)
 [![License](https://img.shields.io/github/license/archmetalDBM/GlobaLID-Edu.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10205820.svg)](https://doi.org/10.5281/zenodo.10205820)
 <!-- badges: end -->
