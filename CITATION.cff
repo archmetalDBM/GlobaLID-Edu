@@ -3,36 +3,13 @@ cff-version: 1.2.0
 title: 'Lead Isotopes in Archaeology: An Interactive Textbook'
 
 message: |
-  "This textbook works like an edited volume, i.e., it has an editor and each chapter has separate authors. 
-  If you are citing the textbook as a whole, please cite it as: 
-    Rose, Thomas (ed) (2023), Lead Isotopes in Archaeology: An Interactive Textbook, Zenodo. https://doi.org/10.5281/zenodo.10205820
-
-      @book{Rose.2023,
-        year = {2023},
-        title = {{Lead Isotopes in Archaeology: An Interactive Textbook}},
-        url = {https://archmetaldbm.github.io/GlobaLID-Edu/},
-        address = {online},
-        publisher = {Zenodo},
-        editor = {Rose, Thomas},
-        doi = {10.5281/zenodo.10205820}
-      }
-
-   If you are citing an individual chapter, please cite according to this example. You can find the authors in the header of the respective chapters: 
-     Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, Thomas (ed) Lead Isotopes in Archaeology: An Interactive Textbook, Zenodo. https://doi.org/10.5281/zenodo.10205820
-
-      @incollection{Westner.2023,
-        author = {Westner, Katrin J. and Klein, Sabine and Rose, Thomas},
-        title = {{Measurement}},
-        url = {https://archmetaldbm.github.io/GlobaLID-Edu/},
-        publisher = {Zenodo},
-        editor = {Rose, Thomas},
-        booktitle = {{Lead Isotopes in Archaeology: an interactive textbook}},
-        year = {2023},
-        address = {online},
-        doi = {10.5281/zenodo.10205820}
-      }
-  Please note that some elements of this book, such as the H5P content, come with their own attribution information. Please use them if citing or reusing these elements specifically. " 
-abstract: 'This interactive textbook provides learning content for all aspects related to the use of lead isotopes in archaeological research, particularly the reconstruction of the raw material provenance. It combines aspects of geochemistry, archaeology and data science into a holistic approach to this topic. It is an open educational resource, meaning that its content is free and the community is invited to participate in its creation. Read it at <https://archmetaldbm.github.io/GlobaLID-Edu/>'
+  <p>This textbook works like an edited volume, i.e., it has an editor and each chapter has separate authors.</p>
+  <p>If you are citing the textbook as a whole, please cite it as:<br>Rose, Thomas (ed) (2023), Lead Isotopes in Archaeology: An Interactive Textbook, Zenodo. <a href=\"https://doi.org/10.5281/zenodo.10205820\">https://doi.org/10.5281/zenodo.10205820&nbsp;</a>&nbsp;</p>
+  <blockquote><p>@book{Rose.2023,<br>&nbsp; year = {2023},<br>&nbsp; title = {{Lead Isotopes in Archaeology: An Interactive Textbook}},<br>&nbsp; url = {https://archmetaldbm.github.io/GlobaLID-Edu/},<br>&nbsp; address = {online},<br>&nbsp; publisher = {Zenodo},<br>&nbsp; editor = {Rose, Thomas},<br>&nbsp; doi = {10.5281/zenodo.10205820}<br>}</p></blockquote>
+  <p>If you are citing an individual chapter, please cite according to this example. You can find the authors in the header of the respective chapters:<br>Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, Thomas (ed) Lead Isotopes in Archaeology: An Interactive Textbook, Zenodo. <a href=\"https://doi.org/10.5281/zenodo.10205820\">https://doi.org/10.5281/zenodo.10205820&nbsp;</a>&nbsp;</p>
+  <blockquote><p>@incollection{Westner.2023,<br>&nbsp; author = {Westner, Katrin J. and Klein, Sabine and Rose, Thomas},<br>&nbsp; title = {{Measurement}},<br>&nbsp; url = {https://archmetaldbm.github.io/GlobaLID-Edu/},<br>&nbsp; publisher = {Zenodo},<br>&nbsp; editor = {Rose, Thomas},<br>&nbsp; booktitle = {{Lead Isotopes in Archaeology: an interactive textbook}},<br>&nbsp; year = {2023},<br>&nbsp; address = {online},<br>&nbsp; doi = {10.5281/zenodo.10205820}<br>}</p></blockquote>
+  <p>Please note that some elements of this book, such as the H5P content, come with their own attribution information. Please use them if citing or reusing these elements specifically.</p>
+abstract: 'This interactive textbook provides learning content for all aspects related to the use of lead isotopes in archaeological research, particularly the reconstruction of the raw material provenance. It combines aspects of geochemistry, archaeology and data science into a holistic approach to this topic. It is an open educational resource, meaning that its content is free and the community is invited to participate in its creation. Read it at <a href=\"https://archmetaldbm.github.io/GlobaLID-Edu/\">https://archmetaldbm.github.io/GlobaLID-Edu/</a>'
 type: software
 authors:
   - family-names: Rose
