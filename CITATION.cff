@@ -31,7 +31,7 @@ message: |
         address = {online},
         doi = {10.5281/zenodo.10205820}
       }
-  Please note that some elements of this book, such as the H5P content, comes with its own attribution information. Please use this if citing or reusing them specifically. " 
+  Please note that some elements of this book, such as the H5P content, come with their own attribution information. Please use them if citing or reusing these elements specifically. " 
 abstract: 'This interactive textbook provides learning content for all aspects related to the use of lead isotopes in archaeological research, particularly the reconstruction of the raw material provenance. It combines aspects of geochemistry, archaeology and data science into a holistic approach to this topic. It is an open educational resource, meaning that its content is free and the community is invited to participate in its creation. Read it at <https://archmetaldbm.github.io/GlobaLID-Edu/>'
 type: software
 authors:
