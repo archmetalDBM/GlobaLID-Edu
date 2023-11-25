@@ -13,7 +13,7 @@ This textbook works like an edited volume, i.e., it has an editor and each chapt
 
 If you are citing the textbook as a whole, please cite it as :  
 
-Rose, Thomas (ed) (2023), Lead Isotopes in Archaeology: An Interactive Textbook (v. 0.1), Zenodo. https://doi.org/###
+Rose, Thomas (ed) (2023), Lead Isotopes in Archaeology: An Interactive Textbook (v. 0.1), Zenodo. https://doi.org/10.5281/zenodo.10205820
 
     @book{Rose.2023,
       year = {2023},
@@ -22,12 +22,12 @@ Rose, Thomas (ed) (2023), Lead Isotopes in Archaeology: An Interactive Textbook 
       address = {online},
       publisher = {Zenodo},
       editor = {Rose, Thomas},
-      doi = {10.1234/567}
+      doi = {10.5281/zenodo.10205820}
     }
 
 If you are citing an individual chapter, please cite according to this example:  
 
-Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, Thomas (ed) Lead Isotopes in Archaeology: An Interactive Textbook (v. 0.1), Zenodo. https://doi.org/###
+Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, Thomas (ed) Lead Isotopes in Archaeology: An Interactive Textbook (v. 0.1), Zenodo. https://doi.org/10.5281/zenodo.10205820
 
     @incollection{Westner.2023,
       author = {Westner, Katrin J. and Klein, Sabine and Rose, Thomas},
@@ -37,7 +37,8 @@ Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, T
       editor = {Rose, Thomas},
       booktitle = {{Lead Isotopes in Archaeology: an interactive textbook}},
       year = {2023},
-      address = {online}
+      address = {online},
+      doi = {10.5281/zenodo.10205820}
     }
 
 ## Acknowledgements 

@@ -11,7 +11,7 @@ book:
     geochemistry, archaeology and data science into a holistic approach to this 
     topic. It is an open educational resources, meaning that its content is free 
     and the community is invited to participate in its creation. 
-#  doi: 10.1234/5678
+  doi: 10.5281/zenodo.10205820
   editor: 
     - name: Thomas Rose
       corresponding: true
@@ -47,7 +47,7 @@ book:
   back-to-top-navigation: true
   
   favicon: assets/favicon.png
-#  site-url:
+  site-url: https://archmetaldbm.github.io/GlobaLID-Edu/
   repo-url: https://github.com/archmetalDBM/GlobaLID-Edu
   repo-branch: main
   repo-actions: [edit, issue]
