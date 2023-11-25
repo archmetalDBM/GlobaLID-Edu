@@ -11,24 +11,22 @@ authors:
     orcid: https://orcid.org/0000-0002-8186-3566
 version: 0.1
 license: CC-BY-4.0
-year: '2023'
+date-released: '2023-11-25'
 # doi: https://doi.org/
- url: https://archmetaldbm.github.io/GlobaLID-Edu/
-
-repository-code: https://github.com/archmetalDBM/GlobaLID-Edu
+url: "https://archmetaldbm.github.io/GlobaLID-Edu/"
+repository-code: "https://github.com/archmetalDBM/GlobaLID-Edu"
 contact:
-- name: Thomas Rose
-  email: thomas.rose@bergbaumuseum.de
-
+  - name: Thomas Rose
+    email: thomas.rose@bergbaumuseum.de
 keywords: 
- - archaeology
- - archaeological-science
- -  archaeometry
- - data-science 
- - geoscience
- - textbook
- - training-materials
- - isotopes
- - educational-project
- - globalid
- - lead-isotopes
+  - archaeology
+  - archaeological-science
+  - archaeometry
+  - data-science 
+  - geoscience
+  - textbook
+  - training-materials
+  - isotopes
+  - educational-project
+  - globalid
+  - lead-isotopes
