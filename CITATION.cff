@@ -5,7 +5,7 @@ title: 'Lead Isotopes in Archaeology: An Interactive Textbook'
 message: |
   "This textbook works like an edited volume, i.e., it has an editor and each chapter has separate authors. 
   If you are citing the textbook as a whole, please cite it as: 
-    Rose, Thomas (ed) (2023), Lead Isotopes in Archaeology: An Interactive Textbook (v. 0.1), Zenodo. https://doi.org/10.5281/zenodo.10205820
+    Rose, Thomas (ed) (2023), Lead Isotopes in Archaeology: An Interactive Textbook, Zenodo. https://doi.org/10.5281/zenodo.10205820
 
       @book{Rose.2023,
         year = {2023},
@@ -18,7 +18,7 @@ message: |
       }
 
    If you are citing an individual chapter, please cite according to this example. You can find the authors in the header of the respective chapters: 
-     Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, Thomas (ed) Lead Isotopes in Archaeology: An Interactive Textbook (v. 0.1), Zenodo. https://doi.org/10.5281/zenodo.10205820
+     Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, Thomas (ed) Lead Isotopes in Archaeology: An Interactive Textbook, Zenodo. https://doi.org/10.5281/zenodo.10205820
 
       @incollection{Westner.2023,
         author = {Westner, Katrin J. and Klein, Sabine and Rose, Thomas},
