@@ -5,7 +5,7 @@ This textbook aims to provide a holistic approach on how lead isotope data are o
 
 The content of this book mixes text with a wide range of media, such as videos, interactive content, serious games and small embedded application. The guiding principles for work on this book are to make its content available and as accessible as possible without requiring specialised infrastructure, including a collection of print templates and other resources that you will hopefully find useful for, e.g., everyday work in the lab.  
 
-This textbook is still work in progress with additional chapters being added over time. We are welcoming any kind of contribution and feedback from our readers and the experts in the field. This being said, the current outline of the book is already presented to show what is yet to come and where we would be particularly happy about contributions of the community. If you want to contribute, either do so by [contacting the editor](mailto:globalid@bergbaumuseum.de) or by forking the [associated Github repository](https://github.com/archmetalDBM/GlobaLID-Edu) and create a push request with your materials. 
+This textbook is still work in progress with additional chapters being added over time. We are welcoming any kind of contribution and feedback from our readers and the experts in the field. The current outline of the book is already presented to show what is yet to come and where we would be particularly happy about contributions by the community. If you want to contribute, please [contact the editor](mailto:globalid@bergbaumuseum.de) or fork the [associated Github repository](https://github.com/archmetalDBM/GlobaLID-Edu) and create a push request with your materials. 
 
 ## The team
 
