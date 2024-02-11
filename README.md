@@ -52,7 +52,7 @@ Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, T
 
 ## Funding
 
-![](assets/dfg_logo.gif){fig-alt="DFG logo" width="50%"}
+<img src="assets/dfg_logo.gif" alt="DFG logo" width="50%">
 
 This work has received funding from the German Research Foundation (DFG) through the grants KL 1259/17-1 and WI 5923/2-1 (project number: 524790825). 
 
