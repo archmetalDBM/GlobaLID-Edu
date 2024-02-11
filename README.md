@@ -50,5 +50,10 @@ Westner, Katrin J.; Klein, Sabine; Rose, Thomas (2023), Measurement. In: Rose, T
       doi = {10.5281/zenodo.10205820}
     }
 
-## Acknowledgements 
+## Funding
+
+![](assets/dfg_logo.gif){fig-alt="DFG logo" width="50%"}
+
+This work has received funding from the German Research Foundation (DFG) through the grants KL 1259/17-1 and WI 5923/2-1 (project number: 524790825). 
+
 This work has been partially funded by the German Research Foundation (DFG) through the project NFDI4Earth (NFDI4Earth Educational Pilot, DFG project no. 460036893, <https://www.nfdi4earth.de/>) within the German National Research Data Infrastructure (NFDI, <https://www.nfdi.de/>). 
