@@ -18,7 +18,7 @@ This textbook is still work in progress with additional chapters being added ove
 :::
 
 ::: {#column-text}
-**Thomas Rose** (Goethe-Universität Frankfurt) <br> Thomas is a coordinator in the NDFI4Earth at Goethe University Frankfurt and visiting scientist of the Deutsches Bergbau-Museum Bochum. He gained expertise in ancient copper metallurgy with focus on the Chalcolithic Southern Levant and various metal isotope systems. In addition, he is member of the GlobaLID Core Team and developer of the R package ChronochRt. More info at <https://copper-smelting.com>.
+**Thomas Rose** (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany) <br> Thomas is a coordinator in the NDFI4Earth at Goethe University Frankfurt and visiting scientist of the Deutsches Bergbau-Museum Bochum. He gained expertise in ancient copper metallurgy with focus on the Chalcolithic Southern Levant and various metal isotope systems. In addition, he is member of the GlobaLID Core Team and developer of the R package ChronochRt. More info at <https://copper-smelting.com>.
 ::: 
 
 :::
