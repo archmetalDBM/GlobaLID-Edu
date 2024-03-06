@@ -177,7 +177,7 @@ Different acids are used to dissolve a sample, often in combination. Probably mo
 
 Acid digestion is a standard procedure for dissolving samples and well-established protocols exist, which can deviate between laboratories in their details. The samples are usually heated to accelerate the dissolution reaction. You can learn more about which exemplary acid combinations are used for which samples in the following game.
 
-<iframe src="/H5P/Sample_digestion.html" width="100%" height="415px"></iframe>
+<iframe src="/H5P/Sample_digestion.html" width="100%" height="550px"></iframe>
 
 ### Pb separation {#sec-IEC}
 If Pb is not the main element in your sample, you must separate it from all other elements (e.g., Cu, Ag), now that your sample is completely dissolved. Otherwise, a reliable measurement of its isotopic composition won’t be possible. 
