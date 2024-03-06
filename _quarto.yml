@@ -19,11 +19,6 @@ book:
       url: https://copper-smelting.com/
       email: globalid@bergbaumuseum.de
       affiliations: 
-        - name: Goethe-Universität Frankfurt
-          department: Institut für Geowissenschaften
-          city: Frankfurt
-          country: Germany
-          url: https://www.uni-frankfurt.de/45741218/Willkommen_am_Institut_f%C3%BCr_Geowissenschaften
         - name: Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum
           department: Forschungsbereich Archäometallurgie
           city: Bochum
@@ -31,7 +26,7 @@ book:
           url: https://www.bergbaumuseum.de/
 
   reader-mode: true
-  license: CC-BY 4.0
+  license: CC-BY-SA 4.0
   language: en
   cover-image: cover.png
   
