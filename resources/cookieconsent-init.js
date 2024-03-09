@@ -64,7 +64,7 @@ cc.run({
                 blocks: [
                     {
                         title: 'Cookie usage',
-                        description: 'This site contains third-party content that uses cookies, such as Youtube videos. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="about.html#privacy" class="cc-link">privacy policy</a>.'
+                        description: 'This site contains third-party content that uses cookies, such as Youtube videos. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="/about.html#privacy" class="cc-link">privacy policy</a>.'
                     }, {
                         title: 'Strictly necessary cookies',
                         description: 'These cookies are essential for the proper functioning of the third-party content on this website. Without these cookies, these parts of the website would not work properly.',
