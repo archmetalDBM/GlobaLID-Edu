@@ -26,7 +26,7 @@ book:
           url: https://www.bergbaumuseum.de/
 
   reader-mode: true
-  license: CC-BY-SA 4.0
+  license: "CC BY-SA"
   language: en
   cover-image: cover.png
   
