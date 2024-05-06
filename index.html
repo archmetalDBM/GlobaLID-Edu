@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2024-01-04">
+<meta name="dcterms.date" content="2024-05-06">
 
 <title>Lead Isotopes in Archaeology: An Interactive Textbook</title>
 <style>
@@ -48,7 +48,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -57,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -69,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <meta property="og:title" content="Lead Isotopes in Archaeology: An Interactive Textbook">
 <meta property="og:description" content="This interactive textbook provides learning content for all aspects related to the use of lead isotopes in archaeological research, particularly the reconstruction of the raw material provenance. It combines aspects of geochemistry, archaeology and data science into a holistic approach to this topic. It is an open educational resources, meaning that its content is free and the community is invited to participate in its creation.">
 <meta property="og:image" content="https://archmetaldbm.github.io/GlobaLID-Edu/cover.png">
-<meta property="og:site-name" content="Lead Isotopes in Archaeology: An Interactive Textbook">
+<meta property="og:site_name" content="Lead Isotopes in Archaeology: An Interactive Textbook">
 <meta property="og:image:height" content="1214">
 <meta property="og:image:width" content="1236">
 <meta name="twitter:title" content="Lead Isotopes in Archaeology: An Interactive Textbook">
@@ -86,12 +93,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Welcome</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -101,12 +108,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Lead Isotopes in Archaeology: An Interactive Textbook</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/archmetalDBM/GlobaLID-Edu" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/archmetalDBM/GlobaLID-Edu" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -344,7 +351,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -357,9 +364,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#editor" id="toc-editor" class="nav-link" data-scroll-target="#editor">Editor</a></li>
   <li><a href="#authors" id="toc-authors" class="nav-link" data-scroll-target="#authors">Authors</a></li>
   </ul></li>
-  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  <li><a href="#funding" id="toc-funding" class="nav-link" data-scroll-target="#funding">Funding</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/archmetalDBM/GlobaLID-Edu/edit/main/index.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/archmetalDBM/GlobaLID-Edu/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/archmetalDBM/GlobaLID-Edu/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/archmetalDBM/GlobaLID-Edu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -377,7 +384,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 4, 2024</p>
+      <p class="date">May 6, 2024</p>
     </div>
   </div>
   
@@ -394,17 +401,19 @@ ul.task-list li input[type="checkbox"] {
   
 <div>
   <div class="abstract">
-    <div class="abstract-title">Abstract</div>
+    <div class="block-title">Abstract</div>
     <p>This interactive textbook provides learning content for all aspects related to the use of lead isotopes in archaeological research, particularly the reconstruction of the raw material provenance. It combines aspects of geochemistry, archaeology and data science into a holistic approach to this topic. It is an open educational resources, meaning that its content is free and the community is invited to participate in its creation.</p>
   </div>
 </div>
 
+
 </header>
+
 
 
 <section id="welcome" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="welcome">Welcome</h2><p><img src="cover.png" title="Lead Isotopes in Archaeology: An Interactive Textbook" class="quarto-cover-image img-fluid"></p>
-<p>This interactive textbook is part of <a href="">GlobaLID</a>, the Global Lead Isotope Database. GlobaLID aims to modernise the handling of lead isotope data in archaeological research by providing an modern infrastructure for handling, storing and accessing these data. While working on this infrastructure, it became quickly obvious that beside the infrastructural aspects, a large demand on training in the lead isotope method exists, too. As a result, the idea of this interactive textbook was born.</p>
+<p>This interactive textbook is part of <a href="https://archmetaldbm.github.io/Globalid/">GlobaLID</a>, the Global Lead Isotope Database. GlobaLID aims to modernise the handling of lead isotope data in archaeological research by providing an modern infrastructure for handling, storing and accessing these data. While working on this infrastructure, it became quickly obvious that beside the infrastructural aspects, a large demand on training in the lead isotope method exists, too. As a result, the idea of this interactive textbook was born.</p>
 <p>This textbook aims to provide a holistic approach on how lead isotope data are obtained, used and interpret in archaeological research by combining aspects from geoscience, archaeology, and data science. The target group are all persons with a general background in science and basic knowledge in geosciences and preferably archaeology.</p>
 <p>The content of this book mixes text with a wide range of media, such as videos, interactive content, serious games and small embedded application. The guiding principles for work on this book are to make its content available and as accessible as possible without requiring specialised infrastructure, including a collection of print templates and other resources that you will hopefully find useful for, e.g., everyday work in the lab.</p>
 <p>This textbook is still work in progress with additional chapters being added over time. We are welcoming any kind of contribution and feedback from our readers and the experts in the field. The current outline of the book is already presented to show what is yet to come and where we would be particularly happy about contributions by the community. If you want to contribute, please <a href="mailto:globalid@bergbaumuseum.de">contact the editor</a> or fork the <a href="https://github.com/archmetalDBM/GlobaLID-Edu">associated Github repository</a> and create a push request with your materials.</p>
@@ -413,65 +422,88 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="the-team">The team</h2>
 <section id="editor" class="level3">
 <h3 class="anchored" data-anchor-id="editor">Editor</h3>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[ 15 , 85 ]">
+<div class="quarto-layout-row">
 <div id="column-image" class="quarto-layout-cell" style="flex-basis: 15.0%;justify-content: center;">
 <p><img src="assets/TRose.png" class="img-fluid"></p>
 </div>
-<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: center;">
-<p><strong>Thomas Rose</strong> (Goethe-Universität Frankfurt) <br> Thomas is a coordinator in the NDFI4Earth at Goethe University Frankfurt and visiting scientist of the Deutsches Bergbau-Museum Bochum. He gained expertise in ancient copper metallurgy with focus on the Chalcolithic Southern Levant and various metal isotope systems. In addition, he is member of the GlobaLID Core Team and developer of the R package ChronochRt. More info at <a href="https://copper-smelting.com" class="uri">https://copper-smelting.com</a>.</p>
+<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: flex-start;">
+<p><strong>Thomas Rose</strong> (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany) <br> Thomas is working in the DFG-funded project “GlobaLID – Building an interface between geochemistry and archaeometry to create a new research infrastructure with a global perspective”. He gained expertise in ancient copper metallurgy with focus on the Chalcolithic Southern Levant and stable metal isotope systems. In addition, he is maintainer of the R package <a href="https://cran.r-project.org/package=chronochrt">ChronochRt</a>. He is executive board member of the <a href="https://www.archaeometrie.de/">Gesellschaft für Naturwissenschaftliche Archäologie ARCHAEOMETRIE e.V</a> and council member of the <a href="https://historicalmetallurgy.org">Historical Metallurgy Society</a>. More info at <a href="https://copper-smelting.com" class="uri">https://copper-smelting.com</a>.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="authors" class="level3">
 <h3 class="anchored" data-anchor-id="authors">Authors</h3>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[ 15 , 85 ]">
+<div class="quarto-layout-row">
 <div id="column-image" class="quarto-layout-cell" style="flex-basis: 15.0%;justify-content: center;">
 <p><img src="cover.png" class="img-fluid"></p>
 </div>
-<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: center;">
+<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: flex-start;">
 <p><strong>Tim Greifelt</strong> (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany)</p>
 </div>
 </div>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[ 15 , 85 ]">
+<div class="quarto-layout-row">
 <div id="column-image" class="quarto-layout-cell" style="flex-basis: 15.0%;justify-content: center;">
 <p><img src="assets/Y-KHsu.png" class="img-fluid"></p>
 </div>
-<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: center;">
+<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: flex-start;">
 <p><strong>Yiu-Kang Hsu</strong> (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany)</p>
 </div>
 </div>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[ 15 , 85 ]">
+<div class="quarto-layout-row">
 <div id="column-image" class="quarto-layout-cell" style="flex-basis: 15.0%;justify-content: center;">
 <p><img src="assets/SKlein.png" class="img-fluid"></p>
 </div>
-<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: center;">
+<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: flex-start;">
 <p><strong>Sabine Klein</strong> (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany; Institut für Archäologische Wissenschaften, Ruhr-Universität Bochum, Bochum, Germany; FIERCE, Frankfurt Isotope &amp; Element Research Centre, Goethe Universität, Frankfurt am Main, Germany)</p>
 </div>
 </div>
 </div>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[ 15 , 85 ]">
+<div class="quarto-layout-row">
 <div id="column-image" class="quarto-layout-cell" style="flex-basis: 15.0%;justify-content: center;">
 <p><img src="assets/KWestner.png" class="img-fluid"></p>
 </div>
-<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: center;">
+<div id="column-text" class="quarto-layout-cell" style="flex-basis: 85.0%;justify-content: flex-start;">
 <p><strong>Katrin J. Westner</strong> (Forschungsbereich Archäometallurgie, Leibniz-Forschungsmuseum für Georessourcen/Deutsches Bergbau-Museum Bochum, Bochum, Germany)</p>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="acknowledgements" class="level2">
-<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>This work has been partially funded by the German Research Foundation (DFG) through the project NFDI4Earth (NFDI4Earth Educational Pilot, DFG project no. 460036893, <a href="https://www.nfdi4earth.de/" class="uri">https://www.nfdi4earth.de/</a>) within the German National Research Data Infrastructure (NFDI, <a href="https://www.nfdi.de/" class="uri">https://www.nfdi.de/</a>).</p>
-<a type="button" data-cc="c-settings" class="cc-link">
+<section id="funding" class="level2">
+<h2 class="anchored" data-anchor-id="funding">Funding</h2>
+<p><img src="assets/dfg_logo.gif" class="img-fluid" style="width:50.0%" alt="DFG logo"></p>
+<p>This work has received funding from the German Research Foundation (DFG) through the grants KL 1259/17-1 and WI 5923/2-1 (project number: 524790825).</p>
+<p>Version 0.1 has been funded by the German Research Foundation (DFG) through the project NFDI4Earth (NFDI4Earth Educational Pilot, DFG project no. 460036893, <a href="https://www.nfdi4earth.de/" class="uri">https://www.nfdi4earth.de/</a>) within the German National Research Data Infrastructure (NFDI, <a href="https://www.nfdi.de/" class="uri">https://www.nfdi.de/</a>).</p>
+
+<p>:::{.hidden render-id=“footer-center-<a type="button" data-cc="c-settings" class="cc-link">Manage cookie preferences”} </a><a type="button" data-cc="c-settings" class="cc-link">Manage cookie preferences</a></p><a type="button" data-cc="c-settings" class="cc-link">
+<p>:::</p>
+<div class="hidden" data-render-id="footer-right-/about.html">
+<p>Legal information</p>
+</div>
+<p>:::</p>
 
 </a></section><a type="button" data-cc="c-settings" class="cc-link">
 
@@ -555,10 +587,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/archmetaldbm\.github\.io\/GlobaLID-Edu\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -568,8 +622,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -581,7 +644,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -625,6 +811,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -650,6 +837,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -707,27 +920,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp("https:\/\/archmetaldbm\.github\.io\/GlobaLID-Edu\/");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-      }
-    }
 });
 </script>
 </a><nav class="page-navigation"><a type="button" data-cc="c-settings" class="cc-link">
   <div class="nav-page nav-page-previous">
   </div>
   </a><div class="nav-page nav-page-next"><a type="button" data-cc="c-settings" class="cc-link">
-      </a><a href="./preface.html" class="pagination-link">
+      </a><a href="./preface.html" class="pagination-link" aria-label="Preface">
         <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -748,11 +947,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
  <a type="button" data-cc="c-settings" class="cc-link">Manage cookie preferences
   </a></li><a type="button" data-cc="c-settings" class="cc-link">  
 </a></ul><a type="button" data-cc="c-settings" class="cc-link">
-    </a></div><a type="button" data-cc="c-settings" class="cc-link">
+    </a><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/archmetalDBM/GlobaLID-Edu/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/archmetalDBM/GlobaLID-Edu/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div><a type="button" data-cc="c-settings" class="cc-link">
     </a><div class="nav-footer-right"><a type="button" data-cc="c-settings" class="cc-link">
       </a><ul class="footer-items list-unstyled"><a type="button" data-cc="c-settings" class="cc-link">
     </a><li class="nav-item"><a type="button" data-cc="c-settings" class="cc-link">
-    </a><a class="nav-link" href="./about.html">Legal information</a>
+    </a><a class="nav-link" href="./about.html">
+ Legal information
+    </a>
   </li>  
 </ul>
     </div>
@@ -760,6 +961,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </footer>
 <script defer="" src="resources/cookieconsent-2.9.2/cookieconsent.js"></script>
 <script defer="" src="resources/cookieconsent-init.js"></script>
+
 
 
 
