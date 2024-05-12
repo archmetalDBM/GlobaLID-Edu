@@ -31,8 +31,7 @@ book:
   cover-image: cover.png
   
   page-footer: 
-    left: 
-      - text: Built with <a href="https://quarto.org/">Quarto</a>.
+    left: Built with <a href="https://quarto.org/">Quarto</a>.
     right: 
       - text: "Legal information"
         href: about.qmd
