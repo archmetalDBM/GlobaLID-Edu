@@ -33,9 +33,6 @@ book:
   page-footer: 
     left: 
       - text: Built with <a href="https://quarto.org/">Quarto</a>.
-    center: 
-      - text: |
-          <a type=button type="button" data-cc="c-settings" class="cc-link">Manage cookie preferences</button>
     right: 
       - text: "Legal information"
         href: about.qmd
@@ -89,6 +86,12 @@ book:
     - references.qmd
     - appendix.qmd
 
+  cookie-consent:
+    type: express
+    style: simple
+    palette: light
+    policy-url: https://archmetaldbm.github.io/GlobaLID-Edu/about.html#privacy
+
 bibliography: references.bib
 csl: https://www.zotero.org/styles/archaeological-and-anthropological-sciences
 
@@ -102,15 +105,6 @@ format:
     date: last-modified
     code-link: true
     code-fold: true
-    
-    # cookie banner
-    include-in-header:
-      - text: |
-          <link rel="stylesheet" href="resources/cookieconsent-2.9.2/cookieconsent.css" media="print" onload="this.media='all'">
-    include-after-body: 
-      - text: |
-          <script defer src="resources/cookieconsent-2.9.2/cookieconsent.js"></script>
-          <script defer src="resources/cookieconsent-init.js"></script>
-
+ 
 execute: 
   freeze: auto
