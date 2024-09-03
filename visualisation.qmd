@@ -21,33 +21,66 @@ This section discusses different types of plots. Interactive examples of these p
 
 ## Learning content
 
-Because lead isotopes are represented by three independent ratios, e.g., ^206^Pb/^204^Pb, ^207^Pb/^204^Pb, and ^208^Pb/^204^Pb, they can be visualised in a three dimensional geometric space. However, often only two dimensions can be represented in one plot. In addition, different ways of optically grouping and highlighting groups within the Pb isotope space exist. Published real archaeological datasets will be used as examples to demonstrate how these data can be treated in different ways. They are available in [the GitHub repository of this book](https://github.com/archmetalDBM/GlobaLID-Edu/tree/main/example_dataset). It is important to keep in mind that every plot has its pros and cons and there is no general consensus which is the best presentation.
+Because lead isotopes are represented by three independent ratios, e.g., ^206^Pb/^204^Pb, ^207^Pb/^204^Pb, and ^208^Pb/^204^Pb, they can be visualised in a three dimensional geometric space. However, often only two dimensions can be represented in one plot. In addition, different ways of optically grouping and highlighting groups within the Pb isotope space exist. It is important to keep in mind that every plot has its pros and cons and there is no general consensus which is the best presentation.
 
-All plots were created in [R](https://www.r-project.org) with support of different packages. The respective scripts are embedded in the [unrendered version of this chapter](https://github.com/archmetalDBM/GlobaLID-Edu/blob/main/visualisation.qmd).
+All plots were created in [R](https://www.r-project.org) with support of different packages. The source of the respective chunks is provided in collapsible sections. The entire source can be copied from the raw version of this chapter through the code tools next to the chapter heading.  
 
-```{=html}
-<!--
-Let's start with loading the required R packages:
--->
-```
 ```{r}
 #| label: load-pkgs
-#| code-summary: "Packages"
+#| code-summary: "Load R packages and datasets"
 #| message: false
-#| echo: false
 #| warning: false
 
-library(plotly) # for interactive plots
-library(ggtern) # for ternary kernel density plots
-library(ks)# for kernel density plots
-library(rgl)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(purrr)# for kernel density calculation
-library(downlit)# code linking
-library(xml2)   # code linking
+library(tidyr)       # general data transformation
+library(dplyr)       # general data transformation
+library(purrr)       # data transformation using functions
+library(ggplot2)     # creating static plots
+library(plotly)      # creating interactive plots
+library(ggtern)      # ternary plots
+library(ks)          # calculation of kernel densities
+library(misc3d)      # tools for 3D plots
+library(rgl)         # creating interactive 3D plots
+library(viridisLite) # colour blind-friendly colour schemes
+
 ```
+
+The same subset of a real archaeological dataset will be used as example to demonstrate how this data can be treated in different ways. The dataset is available in [the GitHub repository of this book](https://github.com/archmetalDBM/GlobaLID-Edu/tree/main/example_dataset) and was originally published by [@Bode.2008]. To avoid overloading of the plots, the subset is restricted to the archaeological objects and reference data from the region "Northern Eifel", "Sauerland", and "Bergisches Land", all located in the West of Germany.   
+
+```{r}
+#| label: load-data
+#| code-summary: "Import and filter data"
+#| message: false
+#| warning: false
+
+Roman_case <- read.csv("example_dataset/Roman.csv", encoding="UTF-8", header = TRUE) |>
+  subset(Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object')) 
+
+Roman_case$Region <- factor(Roman_case$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object')) # defining display order of regions in plots
+
+```
+
+In addition, the plots share several stylistic elements, such as the colour scheme. Therefore, they can be defined for all plots. 
+
+```{r}
+#| label: set-styling
+#| code-summary: "Define common style elements"
+#| message: false
+#| warning: false
+
+# define plotting order of regions
+Roman_case$Region <- factor(Roman_case$Region, levels = c('Northern Eifel', 'Sauerland', 'Bergisches Land', 'Roman object')) 
+
+# define colours 
+colours <- c(viridis(3), "black")|>
+  setNames(c('Northern Eifel', 'Sauerland', 'Bergisches Land', 'Roman object'))
+
+# define symbols
+# in R, symbols are defined by numbers, see e.g., https://cran.r-project.org/web/packages/ggplot2/vignettes/ggplot2-specs.html#point
+symbols <- c(23,24,22,3) |>
+  setNames(c('Northern Eifel', 'Sauerland', 'Bergisches Land', 'Roman object'))
+
+```
+
 
 ### Binary scatter plot
 
@@ -57,76 +90,56 @@ The bi-plot (@fig-plotlybinary) is by far the most common option to display lead
 #| label: fig-plotlybinary
 #| fig-cap: "A binary plot of Roman lead artefacts in comparison with ore districts in Germany."
 #| message: false
-#| echo: false
+#| code-summary: "Show the code"
 
-# R code modifed from https://stackoverflow.com/questions/75596474/add-a-legend-to-a-plotly-plot-with-drop-down-menus-in-r
+# select the region and all columns with isotope ratios (= all columns starting with Pb followed by three characters and a period as replacement character for the slash)  
+data <- subset(Roman_case, select = c('Region', grep("^Pb.{3}\\.", names(Roman_case), value = TRUE)))
 
-##load dataset
-Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+colnames(data) <- c('Region', '204Pb/206Pb', '207Pb/206Pb', '208Pb/206Pb', '206Pb/204Pb', '207Pb/204Pb', '208Pb/204Pb')
 
-## select column names (change it later) X204.206,207/206,208/206,208/204,207/204,206/204,Region 
-data <- subset(Roman_case, select=c('Pb204.Pb206','Pb207.Pb206','Pb208.Pb206','Pb208.Pb204','Pb207.Pb204','Pb206.Pb204','Region') )
+# create plot
+plt <- plot_ly(data = data, x = ~`206Pb/204Pb`, y = ~`207Pb/204Pb`, 
+        split = ~Region,  color = ~Region, symbol = ~Region, text = ~Region,
+        colors = colours, alpha = 0.75, symbols = symbols, 
+        marker = list(line = list(color = 'rgb(0, 0, 0)', width = 1)),
+        hovertemplate = paste('<i>Region</i>: %{text}<br>',
+                              '<b>X</b>: %{x}<br>',
+                              '<b>Y</b>: %{y}')
+        )
 
-## select region of interest for plotting 
-data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
+# set-up drop down menus for the x and y variables 
 
-## reorder the plotting levels
-data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
-
-## change column names to Pb isotopic ratio with superscript
-# 0: \U2070, 2:\U00B2, 4:\U2074, 6:\U02076, 7: \U2077, 8:\U2078
-#colnames(data1) <- c('\U00B2\U2070\U02074Pb/\U00B2\U2070\U2076Pb','\U00B2\U2070\U02077Pb/\U00B2\U2070\U2076Pb',
-#                    '\U00B2\U2070\U02078Pb/\U00B2\U2070\U2076Pb','\U00B2\U2070\U02078Pb/\U00B2\U2070\U2074Pb',
-#                    '\U00B2\U2070\U02077Pb/\U00B2\U2070\U2074Pb','\U00B2\U2070\U02076Pb/\U00B2\U2070\U2074Pb','Region')
-
-
-# initial plot setup
-roman.col <- factor(data1$Region, label = c('red','blue','green', 'black'))
-roman.symbol <- factor(data1$Region, labels = c('diamond', 'triangle-up', 'square','cross-thin'))
-
-
-plt <- plot_ly(data = data1, x = ~data1$Pb206.Pb204, y = ~data1$Pb207.Pb204, 
-                split = ~Region,                                # <- I'm new
-                marker = list(color = alpha(as.character(roman.col), 0.25), 
-                              symbol = ~roman.symbol, size = 10, 
-                              line = list(color = 'rgb(0, 0, 0)', width = 1)),
-                type = "scatter", mode = "markers", text = ~Region,
-                hovertemplate = paste('<i>Region</i>: %{text}',
-                                      '<br><b>X</b>: %{x}<br>',
-                                      '<b>Y</b>: %{y}'))
-# dataframe for each region
-ia <- data1[data1$Region == levels(data1$Region)[1],] 
-ib <- data1[data1$Region == levels(data1$Region)[2],]
-ic <- data1[data1$Region == levels(data1$Region)[3],]
-id <- data1[data1$Region == levels(data1$Region)[4],]
-
-
-##set up drop-down menus for x and y variables 
-btn <- function(xLoc, m, nms, xOry) { # x btn position, method, names, x or y
-  list(type = "list", x = xLoc, xanchor = "left", y = 1.2, 
-       buttons = lapply(
-         nms, function(k) {           # iterate over names
-           if(xOry == "x") { # is this creating x or y btns?
-             args = list(    # a list for each trace (each legend entry)
-               list(x = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
-               list(xaxis = list(title = k)))
-           } else {
-             args = list(    # a list for each trace (each legend 
-               list(y = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
-               list(yaxis = list(title = list(text = k))))
+  # function to create the drop down menu elements
+  # adapted from a function provided on https://stackoverflow.com/questions/75596474/add-a-legend-to-a-plotly-plot-with-drop-down-menus-in-r
+  btn <- function(xLoc, m, data, xOry) { # x btn position, method, names, x or y
+    list(type = "list", x = xLoc, xanchor = "left", y = 1.2, 
+         buttons = lapply(
+           names(data[[1]])[-1], function(k) {           # iterate over names
+             switch (xOry,
+                     x = {args <- list(    # a list for each trace (each legend entry)
+                       list(x = list(data[[1]][, k], data[[1]][, k], data[[1]][, k], data[[1]][, k])),  # 4 lists, 4 traces
+                       list(xaxis = list(title = k)))
+                     }, 
+                     y = {args = list(    # a list for each trace (each legend 
+                       list(x = list(data[[1]][, k], data[[1]][, k], data[[1]][, k], data[[1]][, k])),  # 4 lists, 4 traces
+                       list(yaxis = list(title = list(text = k))))}, 
+                     stop("xOrY must be either 'x' or 'y'.")
+             )
+             list(method = m, label = k, args = args)
            }
-           list(
-             method = m, label = k, args = args)
-         })
-  )
-}
+         )
+    )
+  }
 
-# add layout
-plot2 <- plt %>% layout(
-  xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
-  yaxis = list(title = "<sup>207</sup>Pb/<sup>204</sup>Pb"),
-  updatemenus = list(btn(.2, "update", names(data1)[-7], "x"),
-                     btn(.8, "update", names(data1)[-7], "y")), 
+  # split regions into separate datasets 
+  regions <- split(data, data$Region) 
+
+# add dropdown menus to plot
+plt <- plt %>% layout(
+  xaxis = list(title = "206Pb/204Pb"),
+  yaxis = list(title = "207Pb/204Pb"),
+  updatemenus = list(btn(.2, "update", regions, "x"),
+                     btn(.8, "update", regions, "y")), 
   showlegend = TRUE,
   annotations = list(
     list(
@@ -139,8 +152,10 @@ plot2 <- plt %>% layout(
     )
   )
 )
-#make the plot
-plot2
+
+# draw plot
+plt
+
 ```
 
 ### Bi-plot using geological-informed parameters
@@ -151,75 +166,37 @@ Instead of isotopic ratios, @Albarede.2012 advocate the use of calculated geolog
 #| label: fig-plotlygeobinary
 #| fig-cap: "A binary plot of Roman lead artefacts using geological parameters of model age (T), U/Pb (μ), and Th/U (κ)."
 #| message: false
-#| echo: false
+#| code-summary: "Show the code"
 
-# R code modifed from https://stackoverflow.com/questions/75596474/add-a-legend-to-a-plotly-plot-with-drop-down-menus-in-r
+# select columns Age, Mu, Kappa, Region and rename them 
+data <- subset(Roman_case, select=c('Region', 'Age', 'Mu', 'Kappa')) |>
+  na.omit()
 
-##load dataset
-Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+colnames(data) <- c('Region', 'Age','U/Pb','Th/U')
 
-## select column names Age, Mu, Kappa,Region 
-data <- subset(Roman_case, select=c('Age','Mu','Kappa','Region') )
+# create plot
+plt <- plot_ly(data = data, x = ~Age, y = ~`U/Pb`, 
+        split = ~Region,  color = ~Region, symbol = ~Region, text = ~Region,
+        colors = colours, alpha = 0.75, symbols = symbols, 
+        marker = list(line = list(color = 'rgb(0, 0, 0)', width = 1)),
+        hovertemplate = paste('<i>Region</i>: %{text}<br>',
+                              '<b>X</b>: %{x}<br>',
+                              '<b>Y</b>: %{y}')
+        )
 
-## remove missing values 
-data1<-na.omit(data)
+# set-up drop down menus for the x and y variables. 
 
-## select region of interset for plotting 
-data2 <- subset(data1,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
+  # The function 'btn', defined in the code chunk above, is reused.   
 
-## reorder the plotting levels
-data2$Region <- factor(data2$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
+  # split regions into separate datasets 
+  regions <- split(data, data$Region) 
 
-## column names
-colnames(data2) <- c('Age','U/Pb','Th/U','Region')
-
-# initial plot setup
-roman.col <- factor(data2$Region, label = c('red','blue','green', 'black'))
-roman.symbol <- factor(data2$Region, labels = c('diamond', 'triangle-up', 'square','cross-thin'))
-
-
-plt1 <- plot_ly(data = data2, x = ~data2$Age, y = ~data2$`U/Pb`, 
-               split = ~Region,                                # <- I'm new
-               marker = list(color = alpha(as.character(roman.col), 0.25), 
-                             symbol = ~roman.symbol, size = 10, 
-                             line = list(color = 'rgb(0, 0, 0)', width = 1)),
-               type = "scatter", mode = "markers", text = ~Region,
-               hovertemplate = paste('<i>Region</i>: %{text}',
-                                     '<br><b>X</b>: %{x}<br>',
-                                     '<b>Y</b>: %{y}'))
-# dataframe for each region
-ia <- data2[data2$Region == levels(data2$Region)[1],] 
-ib <- data2[data2$Region == levels(data2$Region)[2],]
-ic <- data2[data2$Region == levels(data2$Region)[3],]
-id <- data2[data2$Region == levels(data2$Region)[4],]
-
-
-##set up drop-down menus for x and y variables 
-btn <- function(xLoc, m, nms, xOry) { # x btn position, method, names, x or y
-  list(type = "list", x = xLoc, xanchor = "left", y = 1.2, 
-       buttons = lapply(
-         nms, function(k) {           # iterate over names
-           if(xOry == "x") { # is this creating x or y btns?
-             args = list(    # a list for each trace (each legend entry)
-               list(x = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
-               list(xaxis = list(title = k)))
-           } else {
-             args = list(    # a list for each trace (each legend 
-               list(y = list(ia[, k], ib[, k], ic[, k], id[, k])),  # 4 lists, 4 traces
-               list(yaxis = list(title = list(text = k))))
-           }
-           list(
-             method = m, label = k, args = args)
-         })
-  )
-}
-
-# add layout
-plot3 <- plt1 %>% layout(
+# add dropdown menus to plot
+plt <- plt %>% layout(
   xaxis = list(title = "Age"),
   yaxis = list(title = "U/Pb"),
-  updatemenus = list(btn(.2, "update", names(data2)[-4], "x"),
-                     btn(.8, "update", names(data2)[-4], "y")), 
+  updatemenus = list(btn(.2, "update", regions, "x"),
+                     btn(.8, "update", regions, "y")), 
   showlegend = TRUE,
   annotations = list(
     list(
@@ -232,8 +209,9 @@ plot3 <- plt1 %>% layout(
     )
   )
 )
-#make the plot
-plot3
+
+# draw plot
+plt
 
 ```
 
@@ -245,54 +223,54 @@ The increasing amount of available Pb isotope analyses resulted in the issue of 
 #| label: fig-ellipse 
 #| fig-cap: "Binary scatter plots with 90% confidence ellipses around data points."
 #| fig-subcap:
-#|   - "Ellipses based on ^206^Pb vs ^207^Pb"
-#|   - "Ellipses based on ^206^Pb vs ^208^Pb" 
+#|   - "Ellipses based on ^206^Pb/^204^Pb vs ^207^Pb/^204^Pb."
+#|   - "Ellipses based on ^206^Pb/^204^Pb vs ^208^Pb/^204^Pb." 
 #| fig-height: 8
 #| fig-width: 10
 #| layout-ncol: 2
 #| message: false
-#| echo: false
+#| code-summary: "Show the code"
 
-##load dataset
-Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+# select the region and all 204Pb-normalised isotope ratios  
+data <- subset(Roman_case, select = c('Region', grep("^Pb.{3}\\.Pb204", names(Roman_case), value = TRUE)))
 
-## select column names (change it later) X204.206,207/206,208/206,208/204,207/204,206/204,Region 
-data <- subset(Roman_case, select=c('Pb204.Pb206','Pb207.Pb206','Pb208.Pb206','Pb208.Pb204','Pb207.Pb204','Pb206.Pb204','Region') )
+colnames(data) <- c('Region', '206Pb/204Pb', '207Pb/204Pb', '208Pb/204Pb')
 
-## select region of interest for plotting 
-data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
-
-## reorder the plotting levels
-data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
-
-p_206 <- ggplot(data1, aes(x=Pb206.Pb204,y= Pb207.Pb204, color = Region,shape = Region, fill = Region)) +
-  geom_point(stroke =0.2,size = 2.5) +
-  scale_shape_manual(name = "",
-                     labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),
-                     values = c(23,24,22,3))+
-  scale_colour_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values = c("black","black","black","black"))+
-  scale_fill_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values =alpha(c("red","blue", "green","black"),0.8))+
-  stat_ellipse(level = 0.9,type = "t",linewidth=0.1,show.legend = NA)+
+# create plot for 207Pb/204Pb vs 206Pb/204Pb
+p_207 <- ggplot(data, aes(x = `206Pb/204Pb`, y = `207Pb/204Pb`, shape = Region, fill = Region)) +
+  geom_point(stroke = 0.2,size = 2.5, color = "black", alpha = 0.75) +
+  scale_shape_manual(values = symbols) + 
+  scale_fill_manual(values = colours) +
+  stat_ellipse(level = 0.9, type = "t", linewidth = 0.1, show.legend = NA) +
+  labs(x = expression(""^"206"*"Pb/"^"204"*"Pb"), 
+       y = expression(""^"207"*"Pb/"^"204"*"Pb")) + 
   theme_bw()
 
-ggplotly(p_206,tooltip = c("x", "y", "fill"))%>% layout( xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
-              yaxis = list(title = "<sup>207</sup>Pb/<sup>204</sup>Pb"),
-              legend = list(font = list(size = 10),orientation = "h",xanchor = "center", x = 0.4, y = 1))
+p_207 <- ggplotly(p_207, tooltip = c("x", "y", "fill")) %>% 
+  layout(xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
+         yaxis = list(title = "<sup>207</sup>Pb/<sup>204</sup>Pb"),
+         legend = list(title = "", font = list(size = 10), orientation = "h", xanchor = "center", x = 0.5, y = 1.15)
+         )
 
-p_208 <- ggplot(data1, aes(x= Pb206.Pb204,y= Pb208.Pb204, color = Region,shape = Region, fill = Region)) +
-  geom_point(stroke =0.2,size = 2.5) +
-  scale_shape_manual(name = "",
-                     labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),
-                     values = c(23,24,22,3))+
-  scale_colour_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values = c("black","black","black","black"))+
-  scale_fill_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values =alpha(c("red","blue", "green","black"),0.8))+
-  stat_ellipse(level = 0.9,type = "t",linewidth=0.1,show.legend = NA)+
+# create plot for 208Pb/204Pb vs 206Pb/204Pb
+p_208 <- ggplot(data, aes(x = `206Pb/204Pb`, y = `208Pb/204Pb`, shape = Region, fill = Region)) +
+  geom_point(stroke = 0.2,size = 2.5, color = "black", alpha = 0.75) +
+  scale_shape_manual(values = symbols) + 
+  scale_fill_manual(values = colours) +
+  stat_ellipse(level = 0.9, type = "t", linewidth = 0.1, show.legend = NA) +
+  labs(x = expression(""^"206"*"Pb/"^"204"*"Pb"), 
+       y = expression(""^"208"*"Pb/"^"204"*"Pb")) + 
   theme_bw()
 
-ggplotly(p_208,tooltip = c("x", "y", "fill")) %>% layout( xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
-                    yaxis = list(title = "<sup>208</sup>Pb/<sup>204</sup>Pb"),
-                    legend = list(font = list(size = 10),orientation = "h",xanchor = "center", x = 0.4,y = 1))
+p_208 <- ggplotly(p_208, tooltip = c("x", "y", "fill")) %>% 
+  layout(xaxis = list(title = "<sup>206</sup>Pb/<sup>204</sup>Pb"),
+         yaxis = list(title = "<sup>207</sup>Pb/<sup>204</sup>Pb"),
+         legend = list(title = "", font = list(size = 10), orientation = "h", xanchor = "center", x = 0.5, y = 1.15)
+         )
 
+# draw plots
+p_207
+p_208
 
 ```
 
@@ -316,10 +294,7 @@ Given these advantages, the KDE method has become popular in recent publications
 #| fig-width: 10
 #| layout-ncol: 2
 #| message: false
-#| echo: false
-
-##load dataset
-Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+#| code-summary: "Show the code"
 
 # select individual regions/assemblages
 N_Eifel<-Roman_case[which(Roman_case$Region=="Northern Eifel"),]
@@ -517,61 +492,57 @@ $$
 
 $$
 ^{208}Pb = \frac{\left(\frac{^{208}Pb}{^{204}Pb}\right) \cdot 100}{\left(\frac{^{206}Pb}{^{204}Pb}\right) + \left(\frac{^{207}Pb}{^{204}Pb}\right) + \left(\frac{^{208}Pb}{^{204}Pb}\right)}
-$$ @fig-ternaryscatter displays a ternary scatter plot.
+$$ 
+
+@fig-ternaryscatter displays a ternary scatter plot.
 
 ```{r}
 #| label: fig-ternaryscatter
 #| fig-cap: "A ternary plot of lead isotope data visualising the same dataset."
 #| message: false
-#| echo: false
-
-##load dataset
-Roman_case <- read.csv("./example_dataset/Roman.csv", encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
-
-## select column names X204.206,207/206,208/206,208/204,207/204,206/204,Region 
-data <- subset(Roman_case, select=c('Pb207','Pb206','Pb208','Region') )
-
-## select region of interest for plotting 
-data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
-
-## reorder the plotting levels
-data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land','Roman object'))
-
-roman.col <- factor(data1$Region, labels = c('red','blue','green', 'black'))
-roman.symbol <- factor(data1$Region, labels = c('diamond', 'triangle-up', 'square','cross-thin'))
+#| code-summary: "Show the code"
 
 
-p1 <- plot_ly(data = data1, a = ~Pb206, b = ~Pb207, c = ~Pb208,
-              color = ~Region, symbol = ~Region, type = "scatterternary",mode ="markers",
-              marker = list(color = alpha(as.character(roman.col), 0.25), 
-                            symbol = ~roman.symbol, size = 8.5, 
-                            line = list(color = 'rgb(0, 0, 0)', width = 1)))
-              
-p2 <- p1 %>% layout(ternary = list(
-              sum = 100,
-              aaxis = list(title = "206",
-                tickfont = list(size = 10),
-                tickangle = 60,
-                ticklen = 10,
-                min = min(data1$Pb206),
-                max = max(data1$Pb206)
-              ),
-              baxis = list(title = "207",
-                tickfont = list(size = 10),
-                tickangle = -60,
-                ticklen = 10,
-                min = min(data1$Pb207),
-                max = max(data1$Pb207)
-              ),
-              caxis = list(title = "208",
-                tickfont = list(size = 10),
-                ticklen = 10,
-                min = min(data1$Pb208),
-                max = max(data1$Pb208)
-              )
-            ))
+## select region and columns with relative abundance of single isotopes 
+data <- subset(Roman_case, select = c('Region', grep("^Pb.{3}$", names(Roman_case), value = TRUE)))
 
-p2
+# create plot 
+plt <- plot_ly(data = data, a = ~Pb206, b = ~Pb207, c = ~Pb208,
+        split = ~Region,  color = ~Region, symbol = ~Region, text = ~Region, 
+        type = "scatterternary", 
+        colors = colours, alpha = 0.75, symbols = symbols, 
+        marker = list(line = list(color = 'rgb(0, 0, 0)', width = 1)),
+        hovertemplate = paste('<i>Region</i>: %{text}<br>',
+                              '<b>X</b>: %{x}<br>',
+                              '<b>Y</b>: %{y}')
+        ) %>% 
+  layout(ternary = list(
+    sum = 100,
+    aaxis = list(title = "206Pb (%)",
+                 tickfont = list(size = 10),
+                 tickangle = 60,
+                 ticklen = 10,
+                 min = min(data$Pb206)-0.05,
+                 max = max(data$Pb206)+0.05
+    ),
+    baxis = list(title = "207Pb (%)",
+                 tickfont = list(size = 10),
+                 tickangle = -60,
+                 ticklen = 10,
+                 min = min(data$Pb207)-0.05,
+                 max = max(data$Pb207)+0.05
+    ),
+    caxis = list(title = "208Pb (%)",
+                 tickfont = list(size = 10),
+                 ticklen = 10,
+                 min = min(data$Pb208)-0.05,
+                 max = max(data$Pb208)+0.05
+    )
+  ))
+
+# draw plot
+plt
+
 ```
 
 ### Ternary diagram with the kernel density estimation
@@ -582,42 +553,29 @@ KDE contour plots like in @fig-2dKDE can also be generated for ternary diagrams 
 #| label: fig-ternaryKDE
 #| fig-cap: "Ternary plot with the KDEs of mining regions. Note that the contours in the KDEs represent different intervals. "
 #| message: false
-#| warning: false
-#| echo: false
+#| code-summary: "Show the code"
 
-##load dataset
-Roman_case <- read.csv("./example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
 
-## select column names X204.206,207/206,208/206,208/204,207/204,206/204,Region 
-data <- subset(Roman_case, select=c('Pb207','Pb206','Pb208','Region') )
-
-## select region of interset for plotting 
-data1 <- subset(data,Region %in% c('Northern Eifel','Sauerland','Bergisches Land') )
-data_object <- subset(data,Region %in% c('Roman object') )
-## reorder the plotting levels
-data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Bergisches Land'))
-
-## ternary contour plot
-plot <- ggtern(data= data1,aes(x=Pb207,y=Pb206,z=Pb208,color = Region))+ 
-  geom_density_tern(n = 1000,bins=10,alpha = 0.5)+
-  geom_point (data = data_object, size = 2, alpha = 0.5)+
-  scale_colour_manual(values = c("green","red","black","blue"))+
-  theme_bw()+
-  labs( x       = expression({}^207*"Pb(%)"),
-        xarrow  = "207",
-        y       = expression({}^206*"Pb(%)"),
-        yarrow  = "206",
-        z       = expression({}^208*"Pb(%)"),
-        zarrow  = "208")  +
-  theme(legend.position      = c(1.01,0.95),
+# create plot
+plt <- ggtern(data = data, aes(x = Pb207, y = Pb206, z = Pb208, color = Region, fill = Region))+
+  geom_density_tern(data = data[data$Region != "Roman object", ], n = 100, bins=10, alpha = 1) +
+  geom_point(data = data[data$Region == "Roman object", ], size = 2, alpha = 0.5) +
+  
+  scale_colour_manual(values = colours) +
+  scale_T_continuous (name = expression({}^206*"Pb (%)"), limits = c(0.258,0.252)) +
+  scale_L_continuous (name = expression({}^207*"Pb (%)"), limits = c(0.213,0.219)) +
+  scale_R_continuous (name = expression({}^208*"Pb (%)"), limits = c(0.529,0.535)) +
+  theme_bw() +
+  theme(legend.position = c(0.95,0.95),
         legend.justification = c(1,1),
-        legend.box.just      = 'left') +
-  theme(legend.text=element_text(size=12),legend.key = element_rect(fill = NA,colour=NA))+
-  scale_T_continuous (limits = c(0.258,0.252))+
-  scale_L_continuous (limits = c(0.213,0.219))+
-  scale_R_continuous (limits = c(0.529,0.535))
+        legend.box.just = 'left', 
+        legend.text = element_text(size = 12),
+        legend.key = element_rect(fill = NA, colour=NA),
+        plot.margin = unit(c(0,0,0,0), "mm"))
+  
 
-plot
+# draw plot
+plt
 
 ```
 
@@ -629,10 +587,7 @@ The use of any single bivariate plot is insufficient for provenancing and is vis
 #| label: fig-3dplot
 #| fig-cap: "The same dataset visualised as a three-dimensional plot. "
 #| message: false
-#| echo: false
-
-##load dataset
-Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+#| code-summary: "Show the code"
 
 N_Eifel<-Roman_case[which(Roman_case$Region=="Northern Eifel"),]
 Sauerland<-Roman_case[which(Roman_case$Region=="Sauerland"),]
@@ -671,10 +626,7 @@ This plotting method applies kernel density estimation to a three-dimensional di
 #| label: fig-3dKDEplot
 #| fig-cap: "Three-dimensional plot with the KDEs of the mining regions."
 #| message: false
-#| echo: false
-
-##load dataset
-Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+#| code-summary: "Show the code"
 
 # select variables to compute KDE
 N_Eifel_1<-subset(N_Eifel, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
