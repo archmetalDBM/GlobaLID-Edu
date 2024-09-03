@@ -122,11 +122,14 @@ Rodríguez et al. 2023 propose "A Matching Algorithm for Lead Isotope Analyses" 
 
 $$
 IF (\frac{^{206}Pb}{^{204}Pb})_{a} - (\frac{^{206}Pb}{^{204}Pb})_{b} \le AU_{(\frac{^{206}Pb}{^{204}Pb})_{a,b}},   Then
-$$ $$
+$$
+$$
 IF (\frac{^{207}Pb}{^{204}Pb})_{a} - (\frac{^{207}Pb}{^{204}Pb})_{b} \le AU_{(\frac{^{207}Pb}{^{204}Pb})_{a,b}},   Then
-$$ $$
+$$
+$$
 IF (\frac{^{208}Pb}{^{204}Pb})_{a} - (\frac{^{208}Pb}{^{204}Pb})_{b} \le AU_{(\frac{^{208}Pb}{^{204}Pb})_{a,b}},   Match (a=b)
 $$
+
 
 The anaytical uncertainty can be estimated from the published results of the Given that published LIA are obtained at different laboratories and in order to compare them, the analytical uncertainty has to consider the variety of results that can be obtained at any laboratory for the same sample. This can be estimated from the published results of the interlaboratory lead standard known as NBS-981 (National Institute of Standards and Technology -formerly National Bureau of Standards-, USA). Rodríguez et al. (2023) collected 358 analyses of NBS-981 datast measured by TIMS or MC-ICP-MS obtain LIA in 88 laboratories. Due to non-normal distribution of these measurements, the authors suggested the adoption of the relative range (%) of data spread from the minumun to the maxiumum ratios, as shown below:
 
@@ -210,19 +213,19 @@ where n is the sample size, h is the kernel bandwidth and the kernel K is a summ
 
 where d is the number of dimensions (parameters measured) and n is the number of samples in the data set. This estimate approaches optimality as the data approach multivariate normality. The details of the calculation are given in Bronk Ramsey et al. (2015, 42).
 
-The tool [OxPlot](https://c14.arch.ox.ac.uk/oxplot/OxPlot.html) developed by Christopher Bronk Ramsey is capable of testing the degree of overlap between two KDE distributions (REF). In an archaeological sense, we can compare two assemblages X (artifacts) and Y (ore sources) with n and m samples respectively to answer the question can use the kernel density estimates derived above for X and Y to answer the question "How likely is it that each of the individual samples in assemblage Y could belong to the distribution defined by X?" Mathematically, the equation below deifnes the ratio of the likelihood of assemblage Y being a subset of assemblage X
+The tool [OxPlot](https://c14.arch.ox.ac.uk/oxplot/OxPlot.html) developed by Christopher Bronk Ramsey is capable of testing the degree of overlap between two KDE distributions (REF). In an archaeological sense, we can compare two assemblages X (ore sources) and Y (artifacts) with n and m samples respectively to answer the question "How likely is it that each of the individual samples in assemblage Y could belong to the distribution defined by X?" It can be mathematically expressed as the following equation:
 
-This value should approach 1 if the distribution of the two data sets is similar. Determining the threshold for the significance of matches is usually arbitrary. Statistically speaking, if the value of the ratio falls below 0.05, then it is probably safe to say, at the equivalent of 95% confidence, that the two distributions are different. This method therefore works best to rule out the ore sources.
+This ratio should approach 1 if the distribution of the two data sets is similar, but it could exceed 1 if data set Y
+is located on top of the densest area of data set X. Determining the threshold for the significance of matches is usually arbitrary. Statistically speaking, if the value of the ratio falls below 0.05, then it is probably safe to say, at the equivalent of 95% confidence, that the two distributions are different. This method therefore works best to rule out the potential ore sources.
 
-De Ceuster and Degryse, 2020
+We treated Roman objects and ore sources as individual assemblages and calcuated the overlap between all pairs of KDE distributions. The outcome, expressed as a KDE matrix (Table), clearly rules out the ore deposits in Cartagena, Laurion, SM-Linares, SM-Los,and Tuscany as likely lead sources. On the contrary, lead ores from Germany (Bergisches Land, Northern Eifel, Sauerland) and France (Montagne Noire) appear to be more relevant with the production of these Roman lead objects. It has to be noted that this approach regards Roman artifacts as a whole assemblage rather than a single object assumed by other approaches. 
 
-This method has received much criticism due to its unrealistic assumption of the normality of data points, which has since been shown to be a valid criticism (Baxter and Gale 1998). Alternatively, both Beardah and Baxter (1999) and Scaife et al. (1999) adopted the more robust kernel density estimates (KDEs) to model the isotopic extent of orefields. Despite the early introduction of this approach into the archaeological literature by Baxter and his colleagues (Baxter et al. 1997; Baxter 2003, 29–36), it has not been widely adopted for interpreting lead isotope data. However, KDEs have been fully integrated into Geographical Information Systems, with various userfriendly packages to explore the spatial distribution of archaeological finds (Conolly and Lake 2006). Kernel density estimates (KDEs) are a non-parametric way of converting continuous data such as histograms or scatter plots into a smoothed probability density function, using a smoothing parameter h, called the kernel. The use of KDEs has three main advantages over other means of smoothing such data. First, KDEs do not assume that the data has to be normally distributed, which is useful for lead isotope ratios (although the way in which the kernel h is usually derived is to use an approximation that becomes more optimal the closer the distribution is to normality). Second, KDEs can produce smoother distributions than conventional histograms, the appearance of which is significantly affected by the choices of bin width and the start/end points of bins. Third, the KDEs can easily generate a multidimensional visualization to compare different data sets in a way that histograms cannot.
 
-@fig-KDEmatching displays KDE probabilities of a sample derived from potential mining regionsregions
+De Ceuster and Degryse (2020) proposed another KDE method to compare a single sample with the probability distributions of targeted mining regions. Since the sum of probability under a normalized density curve is always equal to 1, or 100%, one can compute the probability of a single isotopic measurement within a given interval under that curve. The interval is defined by 10 times the standard deviation (SD) and from which is from which the relative probability for all possible sources is calculated by integrating each density function over that interval. The outcome is displayed as the probability of a single object per region in terms of three commonly-used ratios (206Pb/204Pb, 207Pb/204Pb, and 208Pb/204Pb). The ore deposit containing the highest relative percentage of the all three ratios is considered as the most likely source. The only cavet is that one has to look for the optimal bandwidth for each mining region. At the moment, the authors apply the same bandwidth for all regions. @fig-KDEmatching displays KDE probabilities of a Roman ingot (D-135/1) in comparison with potential mining regions. It clearly shows that there are multiple candidates for the sources including ore deposits in Germany, France and Sardina.
 
 ```{r}
 #| label: fig-KDEmatching
-#| fig-cap: "KDE probabilities of the potential mining regions"
+#| fig-cap: "KDE probabilities of a Roman ingot vesus the potential mining regions. Some regions have near-zero percentages and are not plotted in the diagram"
 #| message: false
 #| warning: false
 
@@ -232,19 +235,19 @@ Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFa
 ## select column names X204.206,207/206,208/206,208/204,207/204,206/204,Region 
 data<- Roman_case %>% select(X208.204, X207.204, X206.204, Region_1, Country) %>%
                 filter(Region_1 %in% c("Northern Eifel", "Sauerland", "Bergische Land",
-                         "Laurion", "Cevennes", "Cartagena",
+                         "Laurion", "Cevennes", "Cartagena","Montagne Noire",
                          "SM-Linares", "Sardinia", "Tuscany"))
 
 
-## select  random Roman lead object D-121/1 from Bode et al. 2009 (18.412 sd=0.02),(15.657 sd=0.01),(38.497 sd=0.035) 
+## select a Roman lead ingot D-135/1 from Bode et al. 2009 (18.332 sd=0.02),(15.605 sd=0.01),(38.272 sd=0.035) 
 ## and produce the upper and lower bound of 206, 207, 208 using 10xsd. 
 ## possible improvement: pull out random point from dataset or enter own value
-object_206_lower <- 18.412-10*0.02
-object_206_upper <- 18.412+10*0.02
-object_207_lower <- 15.657-10*0.01
-object_207_upper <- 15.657+10*0.01
-object_208_lower <- 38.497-10*0.035
-object_208_upper <- 38.497+10*0.035
+object_206_lower <- 18.332-10*0.02
+object_206_upper <- 18.332+10*0.02
+object_207_lower <- 15.605-10*0.01
+object_207_upper <- 15.605+10*0.01
+object_208_lower <- 38.272-10*0.035
+object_208_upper <- 38.272+10*0.035
 
 ## create an empty dataframe to hold the region and KDE matching results 206/204
 result_df_206 <- data.frame(Region_1 = character(0), matching_density = numeric(0)) 
@@ -252,7 +255,7 @@ result_df_206 <- data.frame(Region_1 = character(0), matching_density = numeric(
 ## make a full loop for 206/204
 for (region in unique(data$Region_1)) {
   subset_data <- data$X206.204[data$Region_1 == region]
-  KDE_206 <- density(subset_data,bw=0.03)
+  KDE_206 <- density(subset_data,bw=0.05)
   KDE_match_206 <- try(integrate.xy(KDE_206$x,KDE_206$y, object_206_lower, object_206_upper),silent=TRUE)
   if("try-error" %in% class(KDE_match_206)) KDE_match_206 <- 0 #make sure if there is no match, the probability will be zero
   result_df_206 <- rbind(result_df_206, data.frame(Region_1 = region, matching_density = KDE_match_206))
@@ -264,7 +267,7 @@ result_df_207 <- data.frame(Region_1 = character(0), matching_density = numeric(
 ## make a full loop for 207/204
 for (region in unique(data$Region_1)) {
   subset_data <- data$X207.204[data$Region_1 == region]
-  KDE_207 <- density(subset_data,bw=0.03)
+  KDE_207 <- density(subset_data,bw=0.05)
   KDE_match_207 <- try(integrate.xy(KDE_207$x,KDE_207$y, object_207_lower, object_207_upper),silent=TRUE)
   if("try-error" %in% class(KDE_match_207)) KDE_match_207 <- 0 #make sure if there is no match, the probability will be zero
   result_df_207 <- rbind(result_df_207, data.frame(Region_1 = region, matching_density = KDE_match_207))
@@ -276,7 +279,7 @@ result_df_208 <- data.frame(Region_1 = character(0), matching_density = numeric(
 ## make a full loop for 208/204
 for (region in unique(data$Region_1)) {
   subset_data <- data$X208.204[data$Region_1 == region]
-  KDE_208 <- density(subset_data,bw=0.03)
+  KDE_208 <- density(subset_data,bw=0.05)
   KDE_match_208 <- try(integrate.xy(KDE_208$x,KDE_208$y, object_208_lower, object_208_upper),silent=TRUE)
   if("try-error" %in% class(KDE_match_208)) KDE_match_208 <- 0 #make sure if there is no match, the probability will be zero
   result_df_208 <- rbind(result_df_208, data.frame(Region_1 = region, matching_density = KDE_match_208))
@@ -296,9 +299,14 @@ combine_percentage <-data.frame(percentages206,percentages207,percentages208,Reg
 fig <- plot_ly(combine_percentage, x = ~Region, y = ~percentages206, type = 'bar', name = 'percentages206')
 fig <- fig %>% add_trace(y = ~percentages207, name = 'percentages207')
 fig <- fig %>% add_trace(y = ~percentages208, name = 'percentages208')
-fig <- fig %>% layout(yaxis = list(title = '%'), barmode = 'group')
+fig <- fig %>% layout(yaxis = list(title = ''), barmode = 'group')
 fig
 ```
+
+### Convex hull
+
+
+
 
 ## Self check
 
