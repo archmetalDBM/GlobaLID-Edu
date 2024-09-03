@@ -22,19 +22,27 @@ It is assumed that readers are familiar with concepts of the previous chapter on
 ## Outline
 
 ::: {style="text-align: justify"}
-The "eyeballing" technique is the simplest and most straightforward method for interpreting lead isotopic ratios. However, it can become unreliable and subjective under certain circumstances, especially when it comes to large and heterogeneous datasets. Employing statistical tools offers a more objective and effective way to analyze complex data patterns. The following section will introduce various statistical methods recently applied to the study of lead isotopes in archaeological metals. We use the dataset of Roman lead objects published by Bode et al. (2009) to showcase these different approaches.
+In archaeology, lead isotope ratios are conventionally intepreted based on a pair of bivariate scatter plots, with either 204Pb or 206Pb as denominator.Although a graphical inspection of binary plots has been considered as a standard and simple way to derive proveance conclusions, this "eyeballing" technique can result in unreliable and subjective estimation under certain circumstances, especially when it comes to large and heterogeneous datasets with overlapping values. Employing statistical tools offers a more objective and effective way to analyze complex data patterns. The following section will introduce various statistical methods recently applied to the study of lead isotopes in archaeological metals. We use the dataset of Roman lead objects published by Bode et al. (2009) to showcase these different approaches.
 :::
 
-The following statistical methods are discussed: 
+The following statistical methods are discussed:
 
 <ul>
+
 <li>Euclidean distance</li>
+
 <li>Analytical uncertainties</li>
+
 <li>Dimensional reduction and cluster analysis</li>
+
 <li>Kernel density estimation</li>
+
 <li>Convex hull</li>
+
 <li>Binary mixing model</li>
+
 <li>Bayesian mixing model</li>
+
 </ul>
 
 ## Learning content
@@ -67,16 +75,13 @@ $$
 
 The method was already employed in the early publications as a way to evaluate the relationship between metal artefacts and potential ore sources (e.g. Stos-Gale and Gale 2009) and appear occasionally in recent articles (e.g. Westner et al. 2020). For the cluster analysis, Euclidean distance is sometimes a prerequisite step to determine the closeness between data points. However, critics argue that under this approach both artifact and ore data are examined on a point-by-point basis instead of treated as parts of isotopic populations. In other words, the concepts of artifact assemblage and ore cluster are neglected (Albarede et al. 2020)
 
-To demonstrate how Euclidean distance can be explored to determine the provenance of artifacts, we compare the distance between a Roman lead ingot and European ore deposits. The smaller the distance is, the closer the ingot matches the reference ore sources. To make the results more intuitive, we adopt a similarity score (s) proposed by Toby Segaran (Segaran 2007), as formulated below: 
+To demonstrate how Euclidean distance can be explored to determine the provenance of artifacts, we compare the distance between a Roman lead ingot and European ore deposits. The smaller the distance is, the closer the ingot matches the reference ore sources. To make the results more intuitive, we adopt a similarity score (s) proposed by Toby Segaran (Segaran 2007), as formulated below:
 
 $$
 s(p, q) = \frac{1}{1+d(p, q)}
 $$
 
-
-
-
-@fig-EDmatching displays a boxplot of the similarity score (= 1 / 1+ED) based on the euclidean distances between one point (Roman ingot) and reference points (ore data). The higher score indicates a higher likelihood to be the source, which should be Northern Eifel in this case. 
+@fig-EDmatching displays a boxplot of the similarity score (= 1 / 1+ED) based on the euclidean distances between one point (Roman ingot) and reference points (ore data). The higher score indicates a higher likelihood to be the source, which should be Northern Eifel in this case.
 
 ```{r}
 #| label: fig-EDmatching
@@ -85,7 +90,7 @@ $$
 #| warning: false
 
 ##load dataset
-Roman_case <- read.csv("example_dataset/Roman_1.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
 
 ## select ore and ingot data
 ore<- Roman_case %>% select(X208.204, X207.204, X206.204, Region_1) %>%
@@ -113,33 +118,26 @@ fig
 
 ### Analytical uncertainty
 
-Rodríguez et al. 2023 propose "A Matching Algorithm for Lead Isotope Analyses" (AMALIA) based on the analytical uncertainties of isotopic ratios. In order to say that a metal artifact could have been derived from a pontential ore deposit, the difference between their lead isotopic compositions should be smaller than, or equal to the respective analytical uncertainty (AU). For any isotope ratio given for two samples a and b to be considered equal, it must fulfill the following equaitons: 
-
+Rodríguez et al. 2023 propose "A Matching Algorithm for Lead Isotope Analyses" (AMALIA) based on the analytical uncertainties of isotopic ratios. In order to say that a metal artifact could have been derived from a pontential ore deposit, the difference between their lead isotopic compositions should be smaller than, or equal to the respective analytical uncertainty (AU). For any isotope ratio given for two samples a and b to be considered equal, it must fulfill the following equaitons:
 
 $$
 IF (\frac{^{206}Pb}{^{204}Pb})_{a} - (\frac{^{206}Pb}{^{204}Pb})_{b} \le AU_{(\frac{^{206}Pb}{^{204}Pb})_{a,b}},   Then
-$$
-$$
+$$ $$
 IF (\frac{^{207}Pb}{^{204}Pb})_{a} - (\frac{^{207}Pb}{^{204}Pb})_{b} \le AU_{(\frac{^{207}Pb}{^{204}Pb})_{a,b}},   Then
-$$
-$$
+$$ $$
 IF (\frac{^{208}Pb}{^{204}Pb})_{a} - (\frac{^{208}Pb}{^{204}Pb})_{b} \le AU_{(\frac{^{208}Pb}{^{204}Pb})_{a,b}},   Match (a=b)
 $$
 
-The anaytical uncertainty can be estimated from the published results of the 
-Given that published LIA are obtained at different laboratories and in order to compare them, the analytical uncertainty has to consider the variety of results that can be obtained at any laboratory for the same sample. This can be estimated from the published results of the interlaboratory lead standard known as NBS-981 (National Institute of Standards and Technology -formerly National Bureau of Standards-, USA). Rodríguez et al. (2023) collected 358 analyses of NBS-981 datast measured by TIMS or MC-ICP-MS obtain LIA in 88 laboratories. Due to non-normal distribution of these measurements, the authors suggested the adoption of the relative range (%) of data spread from the minumun to the maxiumum ratios, as shown below: 
+The anaytical uncertainty can be estimated from the published results of the Given that published LIA are obtained at different laboratories and in order to compare them, the analytical uncertainty has to consider the variety of results that can be obtained at any laboratory for the same sample. This can be estimated from the published results of the interlaboratory lead standard known as NBS-981 (National Institute of Standards and Technology -formerly National Bureau of Standards-, USA). Rodríguez et al. (2023) collected 358 analyses of NBS-981 datast measured by TIMS or MC-ICP-MS obtain LIA in 88 laboratories. Due to non-normal distribution of these measurements, the authors suggested the adoption of the relative range (%) of data spread from the minumun to the maxiumum ratios, as shown below:
 
-| Summary       | 206Pb/204Pb | 207Pb/208Pb | 208Pb/204Pb | 207Pb/206Pb | 208Pb/206Pb |
-| -----------   | ----------- | ----------- | ----------- | ----------- | ----------- |
-|Min            | 16.928      | 15.480      | 36.663      | 0.9141      | 2.1648      |
-|Max            | 16.945      | 15.502      | 36.736      | 0.9153      | 2.1692      |
-|Absolute range | 0.017       | 0.022       | 0.073       | 0.0012      | 0.0044      |
-|Relative range | 0.1         | 0.14        | 0.20        | 0.13        | 0.20        |
+| Summary        | 206Pb/204Pb | 207Pb/208Pb | 208Pb/204Pb | 207Pb/206Pb | 208Pb/206Pb |
+|------------|------------|------------|------------|------------|------------|
+| Min            | 16.928      | 15.480      | 36.663      | 0.9141      | 2.1648      |
+| Max            | 16.945      | 15.502      | 36.736      | 0.9153      | 2.1692      |
+| Absolute range | 0.017       | 0.022       | 0.073       | 0.0012      | 0.0044      |
+| Relative range | 0.1         | 0.14        | 0.20        | 0.13        | 0.20        |
 
-
-
-
-@tbl-uncertainty show the difference between a sample point (Roman ingot) and reference points (ore data). If the difference is equal or smaller then defined analytical uncertainties, two data points are considered to be a match. This approach is introduced by Rodríguez et al. (2023)
+@tbl-uncertainty show the difference between a data point (Roman ingot) and reference points (ore data). If the difference is equal or smaller then defined analytical uncertainties, two data points are considered to be a match. It turns out that 81% of ore data from the northern Eifel are within ranges of the analytical error, followed by Sauerland with 52%.
 
 ```{r}
 #| label: tbl-uncertainty
@@ -148,7 +146,7 @@ Given that published LIA are obtained at different laboratories and in order to 
 #| warning: false
 
 ##load dataset
-Roman_case <- read.csv("example_dataset/Roman_1.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
 
 ## divide lead isotope data into ore (reference points) and ingot (sample) and extract information about regions  
 ore<- Roman_case  %>%
@@ -204,6 +202,22 @@ summary_df %>%
   kable_styling(full_width = FALSE)
 ```
 
+### Kernel density estimation
+
+Baxter and Gale (1998) pointed out that lead isotope ratios of many ore deposits actually do not comply with a normal distribution. This prohibits any parametric statistical approach using the mean and standard deviation. Alternatively, both Beardah and Baxter (1999) and Scaife et al. (1999) turned to a more robust non-parametric kernel density estimates (KDEs) to define the isotopic extent of ore fields (as introduced by Chapter 20). It was noted that larger sample sizes were preferable (i.e., several dozen), and that the choice of smoothing and orientation parameters can lead to different KDE distributions (Baxter et al. 1997, 2000). The univariate kernel density estimator (\^f h) of the parent function (f) from which the samples are derived is mathematically defined as follows:
+
+where n is the sample size, h is the kernel bandwidth and the kernel K is a summed probability density function over all the samples. According to Zhang et al. (2006), a commonly used approximation for the optimal bandwidth of the multidimensional kernel is as follows:
+
+where d is the number of dimensions (parameters measured) and n is the number of samples in the data set. This estimate approaches optimality as the data approach multivariate normality. The details of the calculation are given in Bronk Ramsey et al. (2015, 42).
+
+The tool [OxPlot](https://c14.arch.ox.ac.uk/oxplot/OxPlot.html) developed by Christopher Bronk Ramsey is capable of testing the degree of overlap between two KDE distributions (REF). In an archaeological sense, we can compare two assemblages X (artifacts) and Y (ore sources) with n and m samples respectively to answer the question can use the kernel density estimates derived above for X and Y to answer the question "How likely is it that each of the individual samples in assemblage Y could belong to the distribution defined by X?" Mathematically, the equation below deifnes the ratio of the likelihood of assemblage Y being a subset of assemblage X
+
+This value should approach 1 if the distribution of the two data sets is similar. Determining the threshold for the significance of matches is usually arbitrary. Statistically speaking, if the value of the ratio falls below 0.05, then it is probably safe to say, at the equivalent of 95% confidence, that the two distributions are different. This method therefore works best to rule out the ore sources.
+
+De Ceuster and Degryse, 2020
+
+This method has received much criticism due to its unrealistic assumption of the normality of data points, which has since been shown to be a valid criticism (Baxter and Gale 1998). Alternatively, both Beardah and Baxter (1999) and Scaife et al. (1999) adopted the more robust kernel density estimates (KDEs) to model the isotopic extent of orefields. Despite the early introduction of this approach into the archaeological literature by Baxter and his colleagues (Baxter et al. 1997; Baxter 2003, 29–36), it has not been widely adopted for interpreting lead isotope data. However, KDEs have been fully integrated into Geographical Information Systems, with various userfriendly packages to explore the spatial distribution of archaeological finds (Conolly and Lake 2006). Kernel density estimates (KDEs) are a non-parametric way of converting continuous data such as histograms or scatter plots into a smoothed probability density function, using a smoothing parameter h, called the kernel. The use of KDEs has three main advantages over other means of smoothing such data. First, KDEs do not assume that the data has to be normally distributed, which is useful for lead isotope ratios (although the way in which the kernel h is usually derived is to use an approximation that becomes more optimal the closer the distribution is to normality). Second, KDEs can produce smoother distributions than conventional histograms, the appearance of which is significantly affected by the choices of bin width and the start/end points of bins. Third, the KDEs can easily generate a multidimensional visualization to compare different data sets in a way that histograms cannot.
+
 @fig-KDEmatching displays KDE probabilities of a sample derived from potential mining regionsregions
 
 ```{r}
@@ -213,7 +227,7 @@ summary_df %>%
 #| warning: false
 
 ##load dataset
-Roman_case <- read.csv("example_dataset/Roman_1.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
+Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFactors=FALSE, header = TRUE)
 
 ## select column names X204.206,207/206,208/206,208/204,207/204,206/204,Region 
 data<- Roman_case %>% select(X208.204, X207.204, X206.204, Region_1, Country) %>%
