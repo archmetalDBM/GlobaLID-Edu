@@ -37,7 +37,7 @@ The following statistical methods are discussed:
 
 <li>Kernel density estimation</li>
 
-<li>Convex hull</li>
+<li>Sample convex hull</li>
 
 <li>Binary mixing model</li>
 
@@ -303,9 +303,19 @@ fig <- fig %>% layout(yaxis = list(title = ''), barmode = 'group')
 fig
 ```
 
-### Convex hull
+### Sample convex hull
+
+The conventional provenance research would tend to determine the Pb isotopic field of an ore deposit and use it as a reference point for exploring the origin of archaeological objects. Gentelli et al.(2021) adopted an opposite strategy by matching the ores with the spread of sample data. This resulted in the construction of the "sample convex hull",defined as the smallest volume in the 3-dimensional space of Pb isotopic ratios that contains all the sample values. They applied this method to the fragments of cut and bent silver items from Iron Age hoards in southern Levant. The samples from each hoard were subject to the cluster analysis to form one to three distinct groups. This avoided the problem of an outlier within a sample set that would create the unwanted empty volume in a convex hull. The next step was to construct the convex volume bounded by sample data using Delaunay triangulation (Figure X e.g.Aurenhammer et al.) Finally, an algorithm was run for each data point of the ore database against each convex hull. The ore data falling inside the hull of each hoard are considered "hits" (Table). 
+
+### Binary mixing model
+
+To address the extent of mixing and recycling in ancient Greek silver coinage, Albarede et al. (2024) turned to the distribution of lead isotope data and came up with a new binary mixing model to estimate the production of fresh and scrap silver for minting. At the first step, the authors performed the PCA on 112 silver coins from Athen and  examineed which principal component would explain the variability of data. It turned out that the first component c1 accounts for 97.7% of variance with the rather small contribution from c2 and c3. This indicates that no more than two end-members are present in the mixture.
 
 
+### Dimension reduction and cluster analysis
+
+
+### Bayesian mixing model
 
 
 ## Self check
