@@ -1,5 +1,5 @@
 ---
-title: Visualisation of lead isotope data
+title: Data Visualisation
 author: 
   - name: Yiu-Kang Hsu
     orcid: 0000-0002-2439-4863
@@ -30,6 +30,7 @@ All plots were created in [R](https://cran.r-project.org) with support of differ
 Let's start with loading the required R packages:
 -->
 ```
+
 ```{r}
 #| label: load-pkgs
 #| code-summary: "Packages"
@@ -81,6 +82,7 @@ data1$Region <- factor(data1$Region, levels = c('Northern Eifel','Sauerland','Be
 
 
 # initial plot setup
+unique(data1$Region)
 roman.col <- factor(data1$Region, label = c('red','blue','green', 'black'))
 roman.symbol <- factor(data1$Region, labels = c('diamond', 'triangle-up', 'square','cross-thin'))
 
@@ -164,7 +166,7 @@ data <- subset(Roman_case, select=c('Age','Mu','Kappa','Region') )
 ## remove missing values 
 data1<-na.omit(data)
 
-## select region of interset for plotting 
+## select region of interest for plotting 
 data2 <- subset(data1,Region %in% c('Northern Eifel','Sauerland','Bergisches Land','Roman object') )
 
 ## reorder the plotting levels
@@ -271,7 +273,7 @@ p_206 <- ggplot(data1, aes(x=Pb206.Pb204,y= Pb207.Pb204, color = Region,shape = 
                      labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),
                      values = c(23,24,22,3))+
   scale_colour_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values = c("black","black","black","black"))+
-  scale_fill_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergisches Land","Roman object"),values =alpha(c("red","blue", "green","black"),0.8))+
+  scale_fill_manual(name="",labels = c("Northern Eifel)", "Sauerland","Bergischess Land","Roman object"),values =alpha(c("red","blue", "green","black"),0.8))+
   stat_ellipse(level = 0.9,type = "t",linewidth=0.1,show.legend = NA)+
   theme_bw()
 
@@ -324,19 +326,19 @@ Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFa
 # select individual regions/assemblages
 N_Eifel<-Roman_case[which(Roman_case$Region=="Northern Eifel"),]
 Sauerland<-Roman_case[which(Roman_case$Region=="Sauerland"),]
-Bergisches_Land<-Roman_case[which(Roman_case$Region=="Bergisches Land"),]
+Bergischess_Land<-Roman_case[which(Roman_case$Region=="Bergisches Land"),]
 Roman_object<-Roman_case[which(Roman_case$Region=="Roman object"),]
 
 # select variables to compute KDE
 
 N_Eifel_206v207<-subset(N_Eifel, select=c(Pb206.Pb204,Pb207.Pb204))
 Sauerland_206v207<-subset(Sauerland, select=c(Pb206.Pb204,Pb207.Pb204))
-Bergisches_Land_206v207<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb207.Pb204))
+Bergischess_Land_206v207<-subset(Bergischess_Land, select=c(Pb206.Pb204,Pb207.Pb204))
 Roman_object_206v207<-subset(Roman_object, select=c(Pb206.Pb204,Pb207.Pb204))
 
 N_Eifel_206v208<-subset(N_Eifel, select=c(Pb206.Pb204,Pb208.Pb204))
 Sauerland_206v208<-subset(Sauerland, select=c(Pb206.Pb204,Pb208.Pb204))
-Bergisches_Land_206v208<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb208.Pb204))
+Bergischess_Land_206v208<-subset(Bergischess_Land, select=c(Pb206.Pb204,Pb208.Pb204))
 Roman_object_206v208<-subset(Roman_object, select=c(Pb206.Pb204,Pb208.Pb204))
 
 
@@ -344,7 +346,7 @@ Roman_object_206v208<-subset(Roman_object, select=c(Pb206.Pb204,Pb208.Pb204))
 
 N_Eifel_206v207_kdh<-ks::kde(N_Eifel_206v207,  compute.cont = TRUE,gridsize = 1024)
 Sauerland_206v207_kdh<-ks::kde(Sauerland_206v207,  compute.cont = TRUE,gridsize = 1024)
-Bergisches_Land_206v207_kdh<-ks::kde(Bergisches_Land_206v207,  compute.cont = TRUE,gridsize = 1024)
+Bergischess_Land_206v207_kdh<-ks::kde(Bergischess_Land_206v207,  compute.cont = TRUE,gridsize = 1024)
 
 ## compute KDE for contour 95%, 75%, and 50%
 N_Eifel_206v207_95<- with(N_Eifel_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
@@ -373,23 +375,23 @@ Sauerland_206v207_50 <- lapply(Sauerland_206v207_50, data.frame)
 Sauerland_206v207_50 <- purrr::map_dfr(.x=Sauerland_206v207_50, .f=~., .id="group")
 
 
-Bergisches_Land_206v207_95<- with(Bergisches_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
-Bergisches_Land_206v207_95 <- lapply(Bergisches_Land_206v207_95, data.frame)    
-Bergisches_Land_206v207_95 <- purrr::map_dfr(.x=Bergisches_Land_206v207_95, .f=~., .id="group")
+Bergischess_Land_206v207_95<- with(Bergischess_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+Bergischess_Land_206v207_95 <- lapply(Bergischess_Land_206v207_95, data.frame)    
+Bergischess_Land_206v207_95 <- purrr::map_dfr(.x=Bergischess_Land_206v207_95, .f=~., .id="group")
 
-Bergisches_Land_206v207_75<- with(Bergisches_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
-Bergisches_Land_206v207_75 <- lapply(Bergisches_Land_206v207_75, data.frame)    
-Bergisches_Land_206v207_75 <- purrr::map_dfr(.x=Bergisches_Land_206v207_75, .f=~., .id="group")
+Bergischess_Land_206v207_75<- with(Bergischess_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+Bergischess_Land_206v207_75 <- lapply(Bergischess_Land_206v207_75, data.frame)    
+Bergischess_Land_206v207_75 <- purrr::map_dfr(.x=Bergischess_Land_206v207_75, .f=~., .id="group")
 
-Bergisches_Land_206v207_50<- with(Bergisches_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
-Bergisches_Land_206v207_50 <- lapply(Bergisches_Land_206v207_50, data.frame)    
-Bergisches_Land_206v207_50 <- purrr::map_dfr(.x=Bergisches_Land_206v207_50, .f=~., .id="group")
+Bergischess_Land_206v207_50<- with(Bergischess_Land_206v207_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+Bergischess_Land_206v207_50 <- lapply(Bergischess_Land_206v207_50, data.frame)    
+Bergischess_Land_206v207_50 <- purrr::map_dfr(.x=Bergischess_Land_206v207_50, .f=~., .id="group")
 
 # 2-D KDE computation for lead isotopes 206/204 vs 208/204
 
 N_Eifel_206v208_kdh<-ks::kde(N_Eifel_206v208,  compute.cont = TRUE,gridsize = 1024)
 Sauerland_206v208_kdh<-ks::kde(Sauerland_206v208,  compute.cont = TRUE,gridsize = 1024)
-Bergisches_Land_206v208_kdh<-ks::kde(Bergisches_Land_206v208,  compute.cont = TRUE,gridsize = 1024)
+Bergischess_Land_206v208_kdh<-ks::kde(Bergischess_Land_206v208,  compute.cont = TRUE,gridsize = 1024)
 
 ## compute KDE for contour 95%, 75%, and 50%
 N_Eifel_206v208_95<- with(N_Eifel_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
@@ -418,17 +420,17 @@ Sauerland_206v208_50 <- lapply(Sauerland_206v208_50, data.frame)
 Sauerland_206v208_50 <- purrr::map_dfr(.x=Sauerland_206v208_50, .f=~., .id="group")
 
 
-Bergisches_Land_206v208_95<- with(Bergisches_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
-Bergisches_Land_206v208_95 <- lapply(Bergisches_Land_206v208_95, data.frame)    
-Bergisches_Land_206v208_95 <- purrr::map_dfr(.x=Bergisches_Land_206v208_95, .f=~., .id="group")
+Bergischess_Land_206v208_95<- with(Bergischess_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["5%"]))
+Bergischess_Land_206v208_95 <- lapply(Bergischess_Land_206v208_95, data.frame)    
+Bergischess_Land_206v208_95 <- purrr::map_dfr(.x=Bergischess_Land_206v208_95, .f=~., .id="group")
 
-Bergisches_Land_206v208_75<- with(Bergisches_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
-Bergisches_Land_206v208_75 <- lapply(Bergisches_Land_206v208_75, data.frame)    
-Bergisches_Land_206v208_75 <- purrr::map_dfr(.x=Bergisches_Land_206v208_75, .f=~., .id="group")
+Bergischess_Land_206v208_75<- with(Bergischess_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["25%"]))
+Bergischess_Land_206v208_75 <- lapply(Bergischess_Land_206v208_75, data.frame)    
+Bergischess_Land_206v208_75 <- purrr::map_dfr(.x=Bergischess_Land_206v208_75, .f=~., .id="group")
 
-Bergisches_Land_206v208_50<- with(Bergisches_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
-Bergisches_Land_206v208_50 <- lapply(Bergisches_Land_206v208_50, data.frame)    
-Bergisches_Land_206v208_50 <- purrr::map_dfr(.x=Bergisches_Land_206v208_50, .f=~., .id="group")
+Bergischess_Land_206v208_50<- with(Bergischess_Land_206v208_kdh, contourLines(x=eval.points[[1]], y=eval.points[[2]], z=estimate, levels=cont["50%"]))
+Bergischess_Land_206v208_50 <- lapply(Bergischess_Land_206v208_50, data.frame)    
+Bergischess_Land_206v208_50 <- purrr::map_dfr(.x=Bergischess_Land_206v208_50, .f=~., .id="group")
 
 
 ## plot 2d-kde diagram for 206/204 vs 207/204
@@ -439,16 +441,16 @@ k1<-ggplot(data=Roman_object_206v207, aes(x = Pb206.Pb204, y = Pb207.Pb204)) +
   geom_polygon(aes(x,y,group=group),data=Sauerland_206v207_95,color="blue",fill="blue",alpha=0.30) +
   geom_polygon(aes(x,y,group=group),data=Sauerland_206v207_75,color="blue",fill="blue",alpha=0.20) +
   geom_polygon(aes(x,y,group=group),data=Sauerland_206v207_50,color="blue",fill="blue",alpha=0.10) +
-  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v207_95,color="green",fill="green",alpha=0.30) +
-  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v207_75,color="green",fill="green",alpha=0.20) +
-  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v207_50,color="green",fill="green",alpha=0.10) +
+  geom_polygon(aes(x,y,group=group),data=Bergischess_Land_206v207_95,color="green",fill="green",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=Bergischess_Land_206v207_75,color="green",fill="green",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=Bergischess_Land_206v207_50,color="green",fill="green",alpha=0.10) +
   geom_point(shape=3,size=2.3,color="black",alpha=0.65)+
   annotate("rect", xmin=18.35, xmax=18.38, ymin=15.54 , ymax=15.55, alpha=0.5, color="red", fill="red")+
   annotate(geom = "text", x = 18.475, y = 15.545, label = "Northern Eifel",size =3, hjust = "left")+
   annotate("rect", xmin=18.35, xmax=18.38, ymin=15.527 , ymax=15.537, alpha=0.5, color="blue", fill="blue")+
   annotate(geom = "text", x = 18.452, y = 15.532, label = "Sauerland", size =3,hjust = "left")+
   annotate("rect", xmin=18.35, xmax=18.38, ymin=15.514 , ymax=15.524, alpha=0.5, color="green", fill="green")+
-  annotate(geom = "text", x = 18.482, y = 15.519, label = "Bergisches Land",size =3, hjust = "left")+
+  annotate(geom = "text", x = 18.482, y = 15.519, label = "Bergischess Land",size =3, hjust = "left")+
   annotate(geom = "point", x = 18.365, y = 15.507,shape = 3, colour = "black",alpha=0.5, size = 3) + 
   annotate(geom = "text", x = 18.475, y = 15.507, label = "Roman object",size =3, hjust = "left")+
   theme_bw()+
@@ -474,16 +476,16 @@ k2<-ggplot(data=Roman_object_206v208, aes(x = Pb206.Pb204, y = Pb208.Pb204)) +
   geom_polygon(aes(x,y,group=group),data=Sauerland_206v208_95,color="blue",fill="blue",alpha=0.30) +
   geom_polygon(aes(x,y,group=group),data=Sauerland_206v208_75,color="blue",fill="blue",alpha=0.20) +
   geom_polygon(aes(x,y,group=group),data=Sauerland_206v208_50,color="blue",fill="blue",alpha=0.10) +
-  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v208_95,color="green",fill="green",alpha=0.30) +
-  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v208_75,color="green",fill="green",alpha=0.20) +
-  geom_polygon(aes(x,y,group=group),data=Bergisches_Land_206v208_50,color="green",fill="green",alpha=0.10) +
+  geom_polygon(aes(x,y,group=group),data=Bergischess_Land_206v208_95,color="green",fill="green",alpha=0.30) +
+  geom_polygon(aes(x,y,group=group),data=Bergischess_Land_206v208_75,color="green",fill="green",alpha=0.20) +
+  geom_polygon(aes(x,y,group=group),data=Bergischess_Land_206v208_50,color="green",fill="green",alpha=0.10) +
   geom_point(shape=3,size=3,color="black",alpha=0.65)+
   annotate("rect", xmin=18.35, xmax=18.38, ymin=38.07 , ymax=38.1, alpha=0.5, color="red", fill="red")+
   annotate(geom = "text", x = 18.475, y = 38.078, label = "Northern Eifel",size =3,hjust = "left")+
   annotate("rect", xmin=18.35, xmax=18.38, ymin=38.03 , ymax=38.06, alpha=0.5, color="blue", fill="blue")+
   annotate(geom = "text", x = 18.452, y = 38.045, label = "Sauerland",size =3, hjust = "left")+
   annotate("rect", xmin=18.35, xmax=18.38, ymin=37.99 , ymax=38.02, alpha=0.5, color="green", fill="green")+
-  annotate(geom = "text", x = 18.482, y = 38.005, label = "Bergisches Land",size =3, hjust = "left")+
+  annotate(geom = "text", x = 18.482, y = 38.005, label = "Bergischess Land",size =3, hjust = "left")+
   annotate(geom = "point", x = 18.365, y = 37.965, colour = "black",shape =3, alpha=0.5, size = 3) + 
   annotate(geom = "text", x = 18.475, y = 37.965, label = "Roman object",size =3, hjust = "left")+
   theme_bw()+
@@ -635,14 +637,14 @@ Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFa
 
 N_Eifel<-Roman_case[which(Roman_case$Region=="Northern Eifel"),]
 Sauerland<-Roman_case[which(Roman_case$Region=="Sauerland"),]
-Bergisches_Land<-Roman_case[which(Roman_case$Region=="Bergisches Land"),]
+Bergischess_Land<-Roman_case[which(Roman_case$Region=="Bergisches Land"),]
 Roman_object<-Roman_case[which(Roman_case$Region=="Roman object"),]
 
 N_Eifel_1<-subset(N_Eifel, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
 Sauerland_1<-subset(Sauerland, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
-Bergisches_Land_1<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
+Bergischess_Land_1<-subset(Bergischess_Land, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
 Roman_object_1<-subset(Roman_object, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204,Region))
-total <- rbind(N_Eifel_1, Sauerland_1,Bergisches_Land_1,Roman_object_1)
+total <- rbind(N_Eifel_1, Sauerland_1,Bergischess_Land_1,Roman_object_1)
 
 total$Region <- factor(total$Region ,levels = c("Northern Eifel", "Sauerland", "Bergisches Land","Roman object"))# reordering 
 
@@ -678,15 +680,15 @@ Roman_case <- read.csv("example_dataset/Roman.csv",encoding="UTF-8", stringsAsFa
 # select variables to compute KDE
 N_Eifel_1<-subset(N_Eifel, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
 Sauerland_1<-subset(Sauerland, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
-Bergisches_Land_1<-subset(Bergisches_Land, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
+Bergischess_Land_1<-subset(Bergischess_Land, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
 Roman_object_1<-subset(Roman_object, select=c(Pb206.Pb204,Pb207.Pb204,Pb208.Pb204))
 
 N_Eifel_H.pi <- Hpi(N_Eifel_1,binned=TRUE) ## b is a matrix of x,y,z points
 N_Eifel_1_kde<-kde(N_Eifel_1,H=N_Eifel_H.pi)
 Sauerland_H.pi <- Hpi(Sauerland_1,binned=TRUE) ## b is a matrix of x,y,z points
 Sauerland_1_kde<-kde(Sauerland_1,H=Sauerland_H.pi)
-Bergisches_Land_H.pi <- Hpi(Bergisches_Land_1,binned=TRUE) ## b is a matrix of x,y,z points
-Bergisches_Land_1_kde<-kde(Bergisches_Land_1,H=Bergisches_Land_H.pi)
+Bergischess_Land_H.pi <- Hpi(Bergischess_Land_1,binned=TRUE) ## b is a matrix of x,y,z points
+Bergischess_Land_1_kde<-kde(Bergischess_Land_1,H=Bergischess_Land_H.pi)
 Roman_object_H.pi <- Hpi(Roman_object_1,binned=TRUE) ## b is a matrix of x,y,z points
 Roman_object_1_kde<-kde(Roman_object_1,H=Roman_object_H.pi)
 
@@ -694,7 +696,7 @@ Roman_object_1_kde<-kde(Roman_object_1,H=Roman_object_H.pi)
 #par3d(cex=1)
 plot(N_Eifel_1_kde,display="rgl",cont=c(95),col.fun=colorRampPalette(c('red')), col.pt = 'red',xlab="", ylab="", zlab="",add=FALSE, drawpoints = FALSE, box=FALSE, axes=FALSE) 
 plot(Sauerland_1_kde,display="rgl",cont=c(95),col.fun=colorRampPalette(c('blue')), col.pt = 'blue',xlab="", ylab="", zlab="",add=TRUE, drawpoints = FALSE, box=FALSE, axes=FALSE)
-plot(Bergisches_Land_1_kde,display="rgl",cont=c(95),col.fun=colorRampPalette(c('green')), col.pt = 'green',xlab="", ylab="", zlab="",add=TRUE, drawpoints = FALSE, box=FALSE, axes=FALSE)
+plot(Bergischess_Land_1_kde,display="rgl",cont=c(95),col.fun=colorRampPalette(c('green')), col.pt = 'green',xlab="", ylab="", zlab="",add=TRUE, drawpoints = FALSE, box=FALSE, axes=FALSE)
 plot(Roman_object_1_kde,display="rgl", cont=c(0),col.fun=colorRampPalette(c('transparent')),col.pt = 'black',size=6, pch=3,alpha=2,xlab="", ylab="", zlab="",add=TRUE, drawpoints = TRUE, box=TRUE, axes=FALSE)
 title3d(xlab = expression({}^206*"Pb/"*{}^204*"Pb"), ylab = expression({}^207*"Pb/"*{}^204*"Pb"), zlab = expression({}^208*"Pb/"*{}^204*"Pb"))
 # add legend
