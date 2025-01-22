@@ -220,7 +220,7 @@ HC
 
 ### Kernel density estimation
 
-#### Prinviple
+#### Principle
 
 @Baxter.1998 pointed out that lead isotope ratios of many ore deposits actually do not comply with a normal distribution. This prohibits any parametric statistical approach using the mean and standard deviation. Alternatively, both @Beardah.1999 and @Scaife.1999 turned to a more robust non-parametric kernel density estimates (KDEs) to define the isotopic extent of ore fields (as introduced by Chapter 20). It was noted that larger sample sizes were preferable (i.e., several dozen), and that the choice of smoothing and orientation parameters can lead to different KDE distributions @Baxter.1997. The univariate kernel density estimator (\^f h) of the parent function (f) from which the samples are derived is mathematically defined as follows:
 
