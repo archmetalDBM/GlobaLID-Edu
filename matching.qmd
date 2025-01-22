@@ -213,21 +213,27 @@ summary_df %>%
 
 ### Dimension reduction and cluster analysis
 
-Strictly speaking, these statisical techiqnues 
-PCA and UPMA, 
-HC
+There are certainly a variety of statistical methods that can handle these processes. It is however beyond our  capability to go through each of them. This section concentrates on the selected techniques that occur recently in the publications, namely, Principal Component Analysis (PCA), Uniform Manifold Approximation and Projection (UMAP), and hierarchical clustering (HA). 
 
+#### Principal Component Analysis
+[PCA](https://www.datacamp.com/tutorial/pca-analysis-r) is a widely used technique for dimension reduction to improve interpretability and computational efficiency. It transforms the original dataset into a new set of uncorrelated variables called principal components (PCs) through an orthogonal transformation. These PCs are linear combinations of the original features and are ranked in descending order of variance. The first principal component typically captures the maximum variance in the data. Components with minimal variance are usually disregarded, allowing for effective dimension reduction while preserving essential information.
+
+#### Uniform Manifold Approximation and Projection
+
+[UMAP](https://umap-learn.readthedocs.io/en/latest/) is another method for dimensiona reduction based in Riemannian geometry and algebraic topology. It models both local and global structures of the data and creates a graph in the high-dimensional space and optimizes it into a low-dimensional graph that preserves neighborhood relationships as accurately as possible. This method is highly regarded for its efficiency, scalability, and ability to capture complex, non-linear patterns, making it particularly useful for data visualisation and machine learning preprocessing.
+
+#### Hierarchical clustering
+
+[Hierarchical clustering](https://www.w3schools.com/python/python_ml_hierarchial_clustering.asp) is an unsupervised learning technique used to group data points into clusters based on their similarities. As an unsupervised method, it does not require the use of labels to define each data point (like a dataset of cell phones where each one is classified by their brand name). The goal of an unsupervised method is to explore and understand data pattern without having  prior knowledge of the its structure. 
 
 ### Kernel density estimation
 
 #### Principle
 
-@Baxter.1998 pointed out that lead isotope ratios of many ore deposits actually do not comply with a normal distribution. This prohibits any parametric statistical approach using the mean and standard deviation. Alternatively, both @Beardah.1999 and @Scaife.1999 turned to a more robust non-parametric kernel density estimates (KDEs) to define the isotopic extent of ore fields (as introduced by Chapter 20). It was noted that larger sample sizes were preferable (i.e., several dozen), and that the choice of smoothing and orientation parameters can lead to different KDE distributions @Baxter.1997. The univariate kernel density estimator (\^f h) of the parent function (f) from which the samples are derived is mathematically defined as follows:
+@Baxter.1998 pointed out that lead isotope ratios of many ore deposits actually do not comply with a normal distribution. This prohibits any parametric statistical approach using the mean and standard deviation. Alternatively, both @Beardah.1999 and @Scaife.1999 turned to a more robust non-parametric kernel density estimates (KDEs) to define the isotopic extent of ore fields (as introduced by Chapter 20). It was noted that larger sample sizes were preferable (i.e., several dozen), and that the choice of smoothing and orientation parameters can lead to different KDE distributions @Baxter.1997. The univariate kernel density estimator ($\hat{f}_{h}$) of the parent function ($f$) from which the samples are derived is mathematically defined as follows:
 
 $$
-
 \hat{f}_{h}(x) =\frac{1}{n}\sum_{i = 1}^{n} K_{h}(x-x_{i})=\frac{1}{nh}\sum_{i = 1}^{n} K(\frac{x-x_{i}}{h})
-
 $$
 
 where n is the sample size, h is the kernel bandwidth and the kernel K is a summed probability density function over all the samples. According to @Zhang.2006, a commonly used approximation for the optimal bandwidth of the multidimensional kernel is as follows:
@@ -248,7 +254,7 @@ $$
 
 This ratio B<sub>YX</sub> is interpreted as how likely dataset Y is derived from dataset X. This value should approach 1 if the distribution of the two data sets is similar, but it could exceed 1 if dataset Y is located on top of the densest area of data set X. Determining the threshold for the significance of matches is usually arbitrary. Statistically speaking, if the value of the ratio falls below 0.05, then it is probably safe to say, at the equivalent of 95% confidence, that the two distributions are different. This method therefore works best to rule out the potential ore sources.
 
-We treated Roman objects and ore sources as individual assemblages and calculated the overlap between all pairs of KDE distributions. @tbl-kdematrix shows the outcome of a KDE matrix. Based the row G, one can clearly rule out the ore deposits in Cartagena, Laurion, SM-Linares, SM-Los,and Tuscany as likely lead sources due to their insiginifiant likelihoods.  On the contrary, lead ores from Germany (Bergisches Land, Northern Eifel, Sauerland) and France (Montagne Noire) exhibit higher probabilitis and therefore appear to be more relevant with the production of these Roman lead objects. It has to be noted that this approach treats Roman artefacts as a whole assemblage rather than a single object assumed by other approaches.
+We treated Roman objects and ore sources as individual assemblages and calculated the overlap between all pairs of KDE distributions. @tbl-kdematrix shows the outcome of a KDE matrix where, for example, the pair of $B_{GA}$ represent the probability of dataset from Bergisches Land to be the source of the Roman objects. According to row G, one can clearly rule out the ore deposits in Cartagena (0.03), Laurion (0), SM-Linares (0), SM-Los (0),and Tuscany(0.03) as likely lead sources due to their insignificant likelihoods.  On the contrary, lead ores from Germany (Bergisches Land, Northern Eifel, Sauerland) and France (Montagne Noire) exhibit higher probabilitis and therefore appear to be more relevant with the production of these Roman lead objects. It has to be noted that this approach treats Roman artefacts as a whole assemblage rather than a single object assumed by other approaches.
 
 ```{r}
 #| label: tbl-kdematrix
@@ -257,7 +263,14 @@ We treated Roman objects and ore sources as individual assemblages and calculate
 #| warning: false
 
 ##load dataset
-kde_matrix <-as.matrix(read.csv("example_dataset/Roman_kde_matrix.csv"))
+kde<-read.csv("example_dataset/Roman_kde_matrix.csv")
+# Limit numeric columns to 2 decimal places
+kde <- data.frame(lapply(kde, function(col) {
+  if (is.numeric(col)) round(col, 2) else col
+}))
+# transform data frame to matrix
+kde_matrix <- as.matrix(kde)
+
 kde_matrix%>%
   kable(format = "html") %>%
   kable_styling(full_width = FALSE)
@@ -350,21 +363,33 @@ fig
 
 ### Sample convex hull
 
-A typical provenance study tends to define lead isotopic field of an ore deposit/district as a reference to trace the origins of archaeological objects. Nevertheless, @Gentelli.2021 adopted an alternative strategy by grouping sample data to be compared with those of ores. It is achieved through the construction of a "sample convex hull", expressed as the smallest volume in the 3-dimensional space of sample isotope ratios.  They applied this method to the fragments of cut and bent silver items from Iron Age hoards in southern Levant. By clustering samples within each hoard, they identified up too three distinct clusters. The next step was to generate the convex volume bounded by sample data using Delaunay triangulation (Aurenhammer.2013). This avoided the problem of outliers within a sample set that would create the unwanted empty volume in a convex hull. Finally, an algorithm was run for each data point of the ore database against each convex hull. Each ore data falling inside the hull of each hoard are considered a match. 
+A typical provenance study tends to defin the lead isotopic field of an ore deposit or district as a reference to trace the origins of archaeological objects. However, @Gentelli.2021 employed an alternative approach by grouping sample data for comparison with ore data. This was done by constructing a "sample convex hull," which represents the smallest volume in 3-dimensional space based on sample isotope ratios. The method was applied to fragments of cut and bent silver items from Iron Age hoards in the southern Levant. By clustering the samples within each hoard, they identified up to three distinct groups. The next step involved generating the convex volume surrounding the sample data using Delaunay triangulation (Aurenhammer.2013). This technique addressed the issue of outliers, which could otherwise create undesirable empty volumes within the convex hull. Finally, an algorithm was applied to each data point in the ore database, comparing it against each convex hull. Any ore data falling within the hull of a hoard were considered a match.
+
 
 ### Binary mixing model
 
-To address the extent of mixing and recycling in ancient Greek silver coinage, Albarede et al. (2024) turned to the distribution of lead isotope data and came up with a new binary mixing model to estimate the production of fresh and scrap silver for minting. At the first step, the authors performed the PCA on 112 silver coins from Athens and examined which principal component would explain the variability of data. It turned out that the first component c1 accounts for 97.7% of variance with the rather small contribution from c2 and c3. This indicates that no more than two end-members are present in the mixture.
+A binary mixing model in lead isotopic studies estimates the proportions of two distinct ore sources contributing to a final isotopic signature of a sample. The sample is treated as a mixture whose composition is a weighted average of the two sources' ratios, expressed as a linear combination of their respective values.
+
+A recent application was brought up by Albarede et al. (2024) in which they estimated the production of fresh and scrap metal in ancient Greek silver coinage. At the first step, the authors performed the PCA on 112 silver coins from Athens and examined which principal component would explain the variability of data. It turned out that the first component c1 accounts for 97.7% of variance with the rather small contribution from c2 and c3. This indicates that no more than two end-members are present in the mixture.
 
 
 
 ### Bayesian mixing model
 
+As opposed to the binary mixing which deals with only two possible end members, the Bayesian mixing models are  powerful tools for estimating the contributions of multiple sources to a mixture. These models are based on Bayesian statistical framework to account for uncertainties in isotopic data, including variability in source signatures and measurement errors. They incorporate prior information, such as known source contributions, and allow for flexible modeling of complex scenarios, such as overlapping isotopic ranges or multiple isotopes.
+
+By leveraging Markov Chain Monte Carlo (MCMC) methods, Bayesian mixing models estimate posterior distributions for source proportions, providing robust insights into ecological diets, archaeological resource use, and geoscientific tracing. Their ability to integrate uncertainty and complexity makes them invaluable for interdisciplinary research.
+
+To show the application of this method, we utilise the R package (MixSIAR) to calculate the probabilities of source contributions in the Roman lead objects. 
+
+
 ## Self check
 
-Now you can provide answers to the following questions:
+What key factors should be considered when matching isotopic data with reference ore samples in a provenance study?
 
--   ...
+What are the advantages of using non-parametric methods over parametric methods when comparing isotopic datasets?
+
+How can one determine if a sample dataset results from a mixture of different ore sources?
 
 ## Further reading
 
